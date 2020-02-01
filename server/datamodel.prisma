@@ -1,0 +1,42 @@
+type User {
+  id: ID! @id
+  name: String!
+  email: String! @unique
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  feedbackProjects: [FeedbackProject!]!
+  feedbackRounds: [FeedbackRound!]!
+}
+
+type FeedbackProject {
+  id: ID! @id
+  name: String!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  createdBy: User @relation(link: INLINE)
+}
+
+type FeedbackSubject {
+  id: ID! @id
+  name: String!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  project: FeedbackProject! @relation(link: TABLE)
+  createdBy: User @relation(link: INLINE)
+}
+
+type FeedbackMedia {
+  id: ID! @id
+  name: String!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  subject: FeedbackProject! @relation(link: INLINE)
+}
+
+type FeedbackRound {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  roundEnd: DateTime
+  users: [User!]! @relation(link: TABLE)
+}
