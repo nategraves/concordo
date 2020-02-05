@@ -2,11 +2,7 @@
   // Please don't change this file manually but run `prisma generate` to update it.
   // For more information, please read the docs: https://www.prisma.io/docs/prisma-client/
 
-export const typeDefs = /* GraphQL */ `type AggregateFeedbackMedia {
-  count: Int!
-}
-
-type AggregateFeedbackProject {
+export const typeDefs = /* GraphQL */ `type AggregateDepartment {
   count: Int!
 }
 
@@ -14,7 +10,19 @@ type AggregateFeedbackRound {
   count: Int!
 }
 
-type AggregateFeedbackSubject {
+type AggregateFeedbackTarget {
+  count: Int!
+}
+
+type AggregateMedia {
+  count: Int!
+}
+
+type AggregateProject {
+  count: Int!
+}
+
+type AggregateScript {
   count: Int!
 }
 
@@ -28,77 +36,149 @@ type BatchPayload {
 
 scalar DateTime
 
-type FeedbackMedia {
+type Department {
   id: ID!
   name: String!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  subject: FeedbackProject!
+  projects(where: ProjectWhereInput, orderBy: ProjectOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Project!]
 }
 
-type FeedbackMediaConnection {
+type DepartmentConnection {
   pageInfo: PageInfo!
-  edges: [FeedbackMediaEdge]!
-  aggregate: AggregateFeedbackMedia!
+  edges: [DepartmentEdge]!
+  aggregate: AggregateDepartment!
 }
 
-input FeedbackMediaCreateInput {
+input DepartmentCreateInput {
   id: ID
   name: String!
-  subject: FeedbackProjectCreateOneInput!
+  projects: ProjectCreateManyWithoutDepartmentsInput
 }
 
-type FeedbackMediaEdge {
-  node: FeedbackMedia!
+input DepartmentCreateManyWithoutProjectsInput {
+  create: [DepartmentCreateWithoutProjectsInput!]
+  connect: [DepartmentWhereUniqueInput!]
+}
+
+input DepartmentCreateWithoutProjectsInput {
+  id: ID
+  name: String!
+}
+
+type DepartmentEdge {
+  node: Department!
   cursor: String!
 }
 
-enum FeedbackMediaOrderByInput {
+enum DepartmentOrderByInput {
   id_ASC
   id_DESC
   name_ASC
   name_DESC
-  createdAt_ASC
-  createdAt_DESC
-  updatedAt_ASC
-  updatedAt_DESC
 }
 
-type FeedbackMediaPreviousValues {
+type DepartmentPreviousValues {
   id: ID!
   name: String!
-  createdAt: DateTime!
-  updatedAt: DateTime!
 }
 
-type FeedbackMediaSubscriptionPayload {
+input DepartmentScalarWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  AND: [DepartmentScalarWhereInput!]
+  OR: [DepartmentScalarWhereInput!]
+  NOT: [DepartmentScalarWhereInput!]
+}
+
+type DepartmentSubscriptionPayload {
   mutation: MutationType!
-  node: FeedbackMedia
+  node: Department
   updatedFields: [String!]
-  previousValues: FeedbackMediaPreviousValues
+  previousValues: DepartmentPreviousValues
 }
 
-input FeedbackMediaSubscriptionWhereInput {
+input DepartmentSubscriptionWhereInput {
   mutation_in: [MutationType!]
   updatedFields_contains: String
   updatedFields_contains_every: [String!]
   updatedFields_contains_some: [String!]
-  node: FeedbackMediaWhereInput
-  AND: [FeedbackMediaSubscriptionWhereInput!]
-  OR: [FeedbackMediaSubscriptionWhereInput!]
-  NOT: [FeedbackMediaSubscriptionWhereInput!]
+  node: DepartmentWhereInput
+  AND: [DepartmentSubscriptionWhereInput!]
+  OR: [DepartmentSubscriptionWhereInput!]
+  NOT: [DepartmentSubscriptionWhereInput!]
 }
 
-input FeedbackMediaUpdateInput {
+input DepartmentUpdateInput {
   name: String
-  subject: FeedbackProjectUpdateOneRequiredInput
+  projects: ProjectUpdateManyWithoutDepartmentsInput
 }
 
-input FeedbackMediaUpdateManyMutationInput {
+input DepartmentUpdateManyDataInput {
   name: String
 }
 
-input FeedbackMediaWhereInput {
+input DepartmentUpdateManyMutationInput {
+  name: String
+}
+
+input DepartmentUpdateManyWithoutProjectsInput {
+  create: [DepartmentCreateWithoutProjectsInput!]
+  delete: [DepartmentWhereUniqueInput!]
+  connect: [DepartmentWhereUniqueInput!]
+  set: [DepartmentWhereUniqueInput!]
+  disconnect: [DepartmentWhereUniqueInput!]
+  update: [DepartmentUpdateWithWhereUniqueWithoutProjectsInput!]
+  upsert: [DepartmentUpsertWithWhereUniqueWithoutProjectsInput!]
+  deleteMany: [DepartmentScalarWhereInput!]
+  updateMany: [DepartmentUpdateManyWithWhereNestedInput!]
+}
+
+input DepartmentUpdateManyWithWhereNestedInput {
+  where: DepartmentScalarWhereInput!
+  data: DepartmentUpdateManyDataInput!
+}
+
+input DepartmentUpdateWithoutProjectsDataInput {
+  name: String
+}
+
+input DepartmentUpdateWithWhereUniqueWithoutProjectsInput {
+  where: DepartmentWhereUniqueInput!
+  data: DepartmentUpdateWithoutProjectsDataInput!
+}
+
+input DepartmentUpsertWithWhereUniqueWithoutProjectsInput {
+  where: DepartmentWhereUniqueInput!
+  update: DepartmentUpdateWithoutProjectsDataInput!
+  create: DepartmentCreateWithoutProjectsInput!
+}
+
+input DepartmentWhereInput {
   id: ID
   id_not: ID
   id_in: [ID!]
@@ -127,272 +207,15 @@ input FeedbackMediaWhereInput {
   name_not_starts_with: String
   name_ends_with: String
   name_not_ends_with: String
-  createdAt: DateTime
-  createdAt_not: DateTime
-  createdAt_in: [DateTime!]
-  createdAt_not_in: [DateTime!]
-  createdAt_lt: DateTime
-  createdAt_lte: DateTime
-  createdAt_gt: DateTime
-  createdAt_gte: DateTime
-  updatedAt: DateTime
-  updatedAt_not: DateTime
-  updatedAt_in: [DateTime!]
-  updatedAt_not_in: [DateTime!]
-  updatedAt_lt: DateTime
-  updatedAt_lte: DateTime
-  updatedAt_gt: DateTime
-  updatedAt_gte: DateTime
-  subject: FeedbackProjectWhereInput
-  AND: [FeedbackMediaWhereInput!]
-  OR: [FeedbackMediaWhereInput!]
-  NOT: [FeedbackMediaWhereInput!]
+  projects_every: ProjectWhereInput
+  projects_some: ProjectWhereInput
+  projects_none: ProjectWhereInput
+  AND: [DepartmentWhereInput!]
+  OR: [DepartmentWhereInput!]
+  NOT: [DepartmentWhereInput!]
 }
 
-input FeedbackMediaWhereUniqueInput {
-  id: ID
-}
-
-type FeedbackProject {
-  id: ID!
-  name: String!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  createdBy: User
-}
-
-type FeedbackProjectConnection {
-  pageInfo: PageInfo!
-  edges: [FeedbackProjectEdge]!
-  aggregate: AggregateFeedbackProject!
-}
-
-input FeedbackProjectCreateInput {
-  id: ID
-  name: String!
-  createdBy: UserCreateOneWithoutFeedbackProjectsInput
-}
-
-input FeedbackProjectCreateManyWithoutCreatedByInput {
-  create: [FeedbackProjectCreateWithoutCreatedByInput!]
-  connect: [FeedbackProjectWhereUniqueInput!]
-}
-
-input FeedbackProjectCreateOneInput {
-  create: FeedbackProjectCreateInput
-  connect: FeedbackProjectWhereUniqueInput
-}
-
-input FeedbackProjectCreateWithoutCreatedByInput {
-  id: ID
-  name: String!
-}
-
-type FeedbackProjectEdge {
-  node: FeedbackProject!
-  cursor: String!
-}
-
-enum FeedbackProjectOrderByInput {
-  id_ASC
-  id_DESC
-  name_ASC
-  name_DESC
-  createdAt_ASC
-  createdAt_DESC
-  updatedAt_ASC
-  updatedAt_DESC
-}
-
-type FeedbackProjectPreviousValues {
-  id: ID!
-  name: String!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-}
-
-input FeedbackProjectScalarWhereInput {
-  id: ID
-  id_not: ID
-  id_in: [ID!]
-  id_not_in: [ID!]
-  id_lt: ID
-  id_lte: ID
-  id_gt: ID
-  id_gte: ID
-  id_contains: ID
-  id_not_contains: ID
-  id_starts_with: ID
-  id_not_starts_with: ID
-  id_ends_with: ID
-  id_not_ends_with: ID
-  name: String
-  name_not: String
-  name_in: [String!]
-  name_not_in: [String!]
-  name_lt: String
-  name_lte: String
-  name_gt: String
-  name_gte: String
-  name_contains: String
-  name_not_contains: String
-  name_starts_with: String
-  name_not_starts_with: String
-  name_ends_with: String
-  name_not_ends_with: String
-  createdAt: DateTime
-  createdAt_not: DateTime
-  createdAt_in: [DateTime!]
-  createdAt_not_in: [DateTime!]
-  createdAt_lt: DateTime
-  createdAt_lte: DateTime
-  createdAt_gt: DateTime
-  createdAt_gte: DateTime
-  updatedAt: DateTime
-  updatedAt_not: DateTime
-  updatedAt_in: [DateTime!]
-  updatedAt_not_in: [DateTime!]
-  updatedAt_lt: DateTime
-  updatedAt_lte: DateTime
-  updatedAt_gt: DateTime
-  updatedAt_gte: DateTime
-  AND: [FeedbackProjectScalarWhereInput!]
-  OR: [FeedbackProjectScalarWhereInput!]
-  NOT: [FeedbackProjectScalarWhereInput!]
-}
-
-type FeedbackProjectSubscriptionPayload {
-  mutation: MutationType!
-  node: FeedbackProject
-  updatedFields: [String!]
-  previousValues: FeedbackProjectPreviousValues
-}
-
-input FeedbackProjectSubscriptionWhereInput {
-  mutation_in: [MutationType!]
-  updatedFields_contains: String
-  updatedFields_contains_every: [String!]
-  updatedFields_contains_some: [String!]
-  node: FeedbackProjectWhereInput
-  AND: [FeedbackProjectSubscriptionWhereInput!]
-  OR: [FeedbackProjectSubscriptionWhereInput!]
-  NOT: [FeedbackProjectSubscriptionWhereInput!]
-}
-
-input FeedbackProjectUpdateDataInput {
-  name: String
-  createdBy: UserUpdateOneWithoutFeedbackProjectsInput
-}
-
-input FeedbackProjectUpdateInput {
-  name: String
-  createdBy: UserUpdateOneWithoutFeedbackProjectsInput
-}
-
-input FeedbackProjectUpdateManyDataInput {
-  name: String
-}
-
-input FeedbackProjectUpdateManyMutationInput {
-  name: String
-}
-
-input FeedbackProjectUpdateManyWithoutCreatedByInput {
-  create: [FeedbackProjectCreateWithoutCreatedByInput!]
-  delete: [FeedbackProjectWhereUniqueInput!]
-  connect: [FeedbackProjectWhereUniqueInput!]
-  set: [FeedbackProjectWhereUniqueInput!]
-  disconnect: [FeedbackProjectWhereUniqueInput!]
-  update: [FeedbackProjectUpdateWithWhereUniqueWithoutCreatedByInput!]
-  upsert: [FeedbackProjectUpsertWithWhereUniqueWithoutCreatedByInput!]
-  deleteMany: [FeedbackProjectScalarWhereInput!]
-  updateMany: [FeedbackProjectUpdateManyWithWhereNestedInput!]
-}
-
-input FeedbackProjectUpdateManyWithWhereNestedInput {
-  where: FeedbackProjectScalarWhereInput!
-  data: FeedbackProjectUpdateManyDataInput!
-}
-
-input FeedbackProjectUpdateOneRequiredInput {
-  create: FeedbackProjectCreateInput
-  update: FeedbackProjectUpdateDataInput
-  upsert: FeedbackProjectUpsertNestedInput
-  connect: FeedbackProjectWhereUniqueInput
-}
-
-input FeedbackProjectUpdateWithoutCreatedByDataInput {
-  name: String
-}
-
-input FeedbackProjectUpdateWithWhereUniqueWithoutCreatedByInput {
-  where: FeedbackProjectWhereUniqueInput!
-  data: FeedbackProjectUpdateWithoutCreatedByDataInput!
-}
-
-input FeedbackProjectUpsertNestedInput {
-  update: FeedbackProjectUpdateDataInput!
-  create: FeedbackProjectCreateInput!
-}
-
-input FeedbackProjectUpsertWithWhereUniqueWithoutCreatedByInput {
-  where: FeedbackProjectWhereUniqueInput!
-  update: FeedbackProjectUpdateWithoutCreatedByDataInput!
-  create: FeedbackProjectCreateWithoutCreatedByInput!
-}
-
-input FeedbackProjectWhereInput {
-  id: ID
-  id_not: ID
-  id_in: [ID!]
-  id_not_in: [ID!]
-  id_lt: ID
-  id_lte: ID
-  id_gt: ID
-  id_gte: ID
-  id_contains: ID
-  id_not_contains: ID
-  id_starts_with: ID
-  id_not_starts_with: ID
-  id_ends_with: ID
-  id_not_ends_with: ID
-  name: String
-  name_not: String
-  name_in: [String!]
-  name_not_in: [String!]
-  name_lt: String
-  name_lte: String
-  name_gt: String
-  name_gte: String
-  name_contains: String
-  name_not_contains: String
-  name_starts_with: String
-  name_not_starts_with: String
-  name_ends_with: String
-  name_not_ends_with: String
-  createdAt: DateTime
-  createdAt_not: DateTime
-  createdAt_in: [DateTime!]
-  createdAt_not_in: [DateTime!]
-  createdAt_lt: DateTime
-  createdAt_lte: DateTime
-  createdAt_gt: DateTime
-  createdAt_gte: DateTime
-  updatedAt: DateTime
-  updatedAt_not: DateTime
-  updatedAt_in: [DateTime!]
-  updatedAt_not_in: [DateTime!]
-  updatedAt_lt: DateTime
-  updatedAt_lte: DateTime
-  updatedAt_gt: DateTime
-  updatedAt_gte: DateTime
-  createdBy: UserWhereInput
-  AND: [FeedbackProjectWhereInput!]
-  OR: [FeedbackProjectWhereInput!]
-  NOT: [FeedbackProjectWhereInput!]
-}
-
-input FeedbackProjectWhereUniqueInput {
+input DepartmentWhereUniqueInput {
   id: ID
 }
 
@@ -607,34 +430,39 @@ input FeedbackRoundWhereUniqueInput {
   id: ID
 }
 
-type FeedbackSubject {
+type FeedbackTarget {
   id: ID!
   name: String!
   createdAt: DateTime!
   updatedAt: DateTime!
-  project: FeedbackProject!
+  project: Project!
   createdBy: User
 }
 
-type FeedbackSubjectConnection {
+type FeedbackTargetConnection {
   pageInfo: PageInfo!
-  edges: [FeedbackSubjectEdge]!
-  aggregate: AggregateFeedbackSubject!
+  edges: [FeedbackTargetEdge]!
+  aggregate: AggregateFeedbackTarget!
 }
 
-input FeedbackSubjectCreateInput {
+input FeedbackTargetCreateInput {
   id: ID
   name: String!
-  project: FeedbackProjectCreateOneInput!
+  project: ProjectCreateOneInput!
   createdBy: UserCreateOneInput
 }
 
-type FeedbackSubjectEdge {
-  node: FeedbackSubject!
+input FeedbackTargetCreateOneInput {
+  create: FeedbackTargetCreateInput
+  connect: FeedbackTargetWhereUniqueInput
+}
+
+type FeedbackTargetEdge {
+  node: FeedbackTarget!
   cursor: String!
 }
 
-enum FeedbackSubjectOrderByInput {
+enum FeedbackTargetOrderByInput {
   id_ASC
   id_DESC
   name_ASC
@@ -645,42 +473,60 @@ enum FeedbackSubjectOrderByInput {
   updatedAt_DESC
 }
 
-type FeedbackSubjectPreviousValues {
+type FeedbackTargetPreviousValues {
   id: ID!
   name: String!
   createdAt: DateTime!
   updatedAt: DateTime!
 }
 
-type FeedbackSubjectSubscriptionPayload {
+type FeedbackTargetSubscriptionPayload {
   mutation: MutationType!
-  node: FeedbackSubject
+  node: FeedbackTarget
   updatedFields: [String!]
-  previousValues: FeedbackSubjectPreviousValues
+  previousValues: FeedbackTargetPreviousValues
 }
 
-input FeedbackSubjectSubscriptionWhereInput {
+input FeedbackTargetSubscriptionWhereInput {
   mutation_in: [MutationType!]
   updatedFields_contains: String
   updatedFields_contains_every: [String!]
   updatedFields_contains_some: [String!]
-  node: FeedbackSubjectWhereInput
-  AND: [FeedbackSubjectSubscriptionWhereInput!]
-  OR: [FeedbackSubjectSubscriptionWhereInput!]
-  NOT: [FeedbackSubjectSubscriptionWhereInput!]
+  node: FeedbackTargetWhereInput
+  AND: [FeedbackTargetSubscriptionWhereInput!]
+  OR: [FeedbackTargetSubscriptionWhereInput!]
+  NOT: [FeedbackTargetSubscriptionWhereInput!]
 }
 
-input FeedbackSubjectUpdateInput {
+input FeedbackTargetUpdateDataInput {
   name: String
-  project: FeedbackProjectUpdateOneRequiredInput
+  project: ProjectUpdateOneRequiredInput
   createdBy: UserUpdateOneInput
 }
 
-input FeedbackSubjectUpdateManyMutationInput {
+input FeedbackTargetUpdateInput {
+  name: String
+  project: ProjectUpdateOneRequiredInput
+  createdBy: UserUpdateOneInput
+}
+
+input FeedbackTargetUpdateManyMutationInput {
   name: String
 }
 
-input FeedbackSubjectWhereInput {
+input FeedbackTargetUpdateOneRequiredInput {
+  create: FeedbackTargetCreateInput
+  update: FeedbackTargetUpdateDataInput
+  upsert: FeedbackTargetUpsertNestedInput
+  connect: FeedbackTargetWhereUniqueInput
+}
+
+input FeedbackTargetUpsertNestedInput {
+  update: FeedbackTargetUpdateDataInput!
+  create: FeedbackTargetCreateInput!
+}
+
+input FeedbackTargetWhereInput {
   id: ID
   id_not: ID
   id_in: [ID!]
@@ -725,44 +571,178 @@ input FeedbackSubjectWhereInput {
   updatedAt_lte: DateTime
   updatedAt_gt: DateTime
   updatedAt_gte: DateTime
-  project: FeedbackProjectWhereInput
+  project: ProjectWhereInput
   createdBy: UserWhereInput
-  AND: [FeedbackSubjectWhereInput!]
-  OR: [FeedbackSubjectWhereInput!]
-  NOT: [FeedbackSubjectWhereInput!]
+  AND: [FeedbackTargetWhereInput!]
+  OR: [FeedbackTargetWhereInput!]
+  NOT: [FeedbackTargetWhereInput!]
 }
 
-input FeedbackSubjectWhereUniqueInput {
+input FeedbackTargetWhereUniqueInput {
   id: ID
 }
 
 scalar Long
 
+type Media {
+  id: ID!
+  name: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  target: FeedbackTarget!
+}
+
+type MediaConnection {
+  pageInfo: PageInfo!
+  edges: [MediaEdge]!
+  aggregate: AggregateMedia!
+}
+
+input MediaCreateInput {
+  id: ID
+  name: String!
+  target: FeedbackTargetCreateOneInput!
+}
+
+type MediaEdge {
+  node: Media!
+  cursor: String!
+}
+
+enum MediaOrderByInput {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type MediaPreviousValues {
+  id: ID!
+  name: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type MediaSubscriptionPayload {
+  mutation: MutationType!
+  node: Media
+  updatedFields: [String!]
+  previousValues: MediaPreviousValues
+}
+
+input MediaSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: MediaWhereInput
+  AND: [MediaSubscriptionWhereInput!]
+  OR: [MediaSubscriptionWhereInput!]
+  NOT: [MediaSubscriptionWhereInput!]
+}
+
+input MediaUpdateInput {
+  name: String
+  target: FeedbackTargetUpdateOneRequiredInput
+}
+
+input MediaUpdateManyMutationInput {
+  name: String
+}
+
+input MediaWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+  updatedAt_not: DateTime
+  updatedAt_in: [DateTime!]
+  updatedAt_not_in: [DateTime!]
+  updatedAt_lt: DateTime
+  updatedAt_lte: DateTime
+  updatedAt_gt: DateTime
+  updatedAt_gte: DateTime
+  target: FeedbackTargetWhereInput
+  AND: [MediaWhereInput!]
+  OR: [MediaWhereInput!]
+  NOT: [MediaWhereInput!]
+}
+
+input MediaWhereUniqueInput {
+  id: ID
+}
+
 type Mutation {
-  createFeedbackMedia(data: FeedbackMediaCreateInput!): FeedbackMedia!
-  updateFeedbackMedia(data: FeedbackMediaUpdateInput!, where: FeedbackMediaWhereUniqueInput!): FeedbackMedia
-  updateManyFeedbackMedias(data: FeedbackMediaUpdateManyMutationInput!, where: FeedbackMediaWhereInput): BatchPayload!
-  upsertFeedbackMedia(where: FeedbackMediaWhereUniqueInput!, create: FeedbackMediaCreateInput!, update: FeedbackMediaUpdateInput!): FeedbackMedia!
-  deleteFeedbackMedia(where: FeedbackMediaWhereUniqueInput!): FeedbackMedia
-  deleteManyFeedbackMedias(where: FeedbackMediaWhereInput): BatchPayload!
-  createFeedbackProject(data: FeedbackProjectCreateInput!): FeedbackProject!
-  updateFeedbackProject(data: FeedbackProjectUpdateInput!, where: FeedbackProjectWhereUniqueInput!): FeedbackProject
-  updateManyFeedbackProjects(data: FeedbackProjectUpdateManyMutationInput!, where: FeedbackProjectWhereInput): BatchPayload!
-  upsertFeedbackProject(where: FeedbackProjectWhereUniqueInput!, create: FeedbackProjectCreateInput!, update: FeedbackProjectUpdateInput!): FeedbackProject!
-  deleteFeedbackProject(where: FeedbackProjectWhereUniqueInput!): FeedbackProject
-  deleteManyFeedbackProjects(where: FeedbackProjectWhereInput): BatchPayload!
+  createDepartment(data: DepartmentCreateInput!): Department!
+  updateDepartment(data: DepartmentUpdateInput!, where: DepartmentWhereUniqueInput!): Department
+  updateManyDepartments(data: DepartmentUpdateManyMutationInput!, where: DepartmentWhereInput): BatchPayload!
+  upsertDepartment(where: DepartmentWhereUniqueInput!, create: DepartmentCreateInput!, update: DepartmentUpdateInput!): Department!
+  deleteDepartment(where: DepartmentWhereUniqueInput!): Department
+  deleteManyDepartments(where: DepartmentWhereInput): BatchPayload!
   createFeedbackRound(data: FeedbackRoundCreateInput!): FeedbackRound!
   updateFeedbackRound(data: FeedbackRoundUpdateInput!, where: FeedbackRoundWhereUniqueInput!): FeedbackRound
   updateManyFeedbackRounds(data: FeedbackRoundUpdateManyMutationInput!, where: FeedbackRoundWhereInput): BatchPayload!
   upsertFeedbackRound(where: FeedbackRoundWhereUniqueInput!, create: FeedbackRoundCreateInput!, update: FeedbackRoundUpdateInput!): FeedbackRound!
   deleteFeedbackRound(where: FeedbackRoundWhereUniqueInput!): FeedbackRound
   deleteManyFeedbackRounds(where: FeedbackRoundWhereInput): BatchPayload!
-  createFeedbackSubject(data: FeedbackSubjectCreateInput!): FeedbackSubject!
-  updateFeedbackSubject(data: FeedbackSubjectUpdateInput!, where: FeedbackSubjectWhereUniqueInput!): FeedbackSubject
-  updateManyFeedbackSubjects(data: FeedbackSubjectUpdateManyMutationInput!, where: FeedbackSubjectWhereInput): BatchPayload!
-  upsertFeedbackSubject(where: FeedbackSubjectWhereUniqueInput!, create: FeedbackSubjectCreateInput!, update: FeedbackSubjectUpdateInput!): FeedbackSubject!
-  deleteFeedbackSubject(where: FeedbackSubjectWhereUniqueInput!): FeedbackSubject
-  deleteManyFeedbackSubjects(where: FeedbackSubjectWhereInput): BatchPayload!
+  createFeedbackTarget(data: FeedbackTargetCreateInput!): FeedbackTarget!
+  updateFeedbackTarget(data: FeedbackTargetUpdateInput!, where: FeedbackTargetWhereUniqueInput!): FeedbackTarget
+  updateManyFeedbackTargets(data: FeedbackTargetUpdateManyMutationInput!, where: FeedbackTargetWhereInput): BatchPayload!
+  upsertFeedbackTarget(where: FeedbackTargetWhereUniqueInput!, create: FeedbackTargetCreateInput!, update: FeedbackTargetUpdateInput!): FeedbackTarget!
+  deleteFeedbackTarget(where: FeedbackTargetWhereUniqueInput!): FeedbackTarget
+  deleteManyFeedbackTargets(where: FeedbackTargetWhereInput): BatchPayload!
+  createMedia(data: MediaCreateInput!): Media!
+  updateMedia(data: MediaUpdateInput!, where: MediaWhereUniqueInput!): Media
+  updateManyMedias(data: MediaUpdateManyMutationInput!, where: MediaWhereInput): BatchPayload!
+  upsertMedia(where: MediaWhereUniqueInput!, create: MediaCreateInput!, update: MediaUpdateInput!): Media!
+  deleteMedia(where: MediaWhereUniqueInput!): Media
+  deleteManyMedias(where: MediaWhereInput): BatchPayload!
+  createProject(data: ProjectCreateInput!): Project!
+  updateProject(data: ProjectUpdateInput!, where: ProjectWhereUniqueInput!): Project
+  updateManyProjects(data: ProjectUpdateManyMutationInput!, where: ProjectWhereInput): BatchPayload!
+  upsertProject(where: ProjectWhereUniqueInput!, create: ProjectCreateInput!, update: ProjectUpdateInput!): Project!
+  deleteProject(where: ProjectWhereUniqueInput!): Project
+  deleteManyProjects(where: ProjectWhereInput): BatchPayload!
+  createScript(data: ScriptCreateInput!): Script!
+  deleteScript(where: ScriptWhereUniqueInput!): Script
+  deleteManyScripts(where: ScriptWhereInput): BatchPayload!
   createUser(data: UserCreateInput!): User!
   updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
   updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
@@ -788,30 +768,399 @@ type PageInfo {
   endCursor: String
 }
 
+type Project {
+  id: ID!
+  name: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  createdBy: User
+  departments(where: DepartmentWhereInput, orderBy: DepartmentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Department!]
+}
+
+type ProjectConnection {
+  pageInfo: PageInfo!
+  edges: [ProjectEdge]!
+  aggregate: AggregateProject!
+}
+
+input ProjectCreateInput {
+  id: ID
+  name: String!
+  createdBy: UserCreateOneWithoutProjectsInput
+  departments: DepartmentCreateManyWithoutProjectsInput
+}
+
+input ProjectCreateManyWithoutCreatedByInput {
+  create: [ProjectCreateWithoutCreatedByInput!]
+  connect: [ProjectWhereUniqueInput!]
+}
+
+input ProjectCreateManyWithoutDepartmentsInput {
+  create: [ProjectCreateWithoutDepartmentsInput!]
+  connect: [ProjectWhereUniqueInput!]
+}
+
+input ProjectCreateOneInput {
+  create: ProjectCreateInput
+  connect: ProjectWhereUniqueInput
+}
+
+input ProjectCreateWithoutCreatedByInput {
+  id: ID
+  name: String!
+  departments: DepartmentCreateManyWithoutProjectsInput
+}
+
+input ProjectCreateWithoutDepartmentsInput {
+  id: ID
+  name: String!
+  createdBy: UserCreateOneWithoutProjectsInput
+}
+
+type ProjectEdge {
+  node: Project!
+  cursor: String!
+}
+
+enum ProjectOrderByInput {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type ProjectPreviousValues {
+  id: ID!
+  name: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+input ProjectScalarWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+  updatedAt_not: DateTime
+  updatedAt_in: [DateTime!]
+  updatedAt_not_in: [DateTime!]
+  updatedAt_lt: DateTime
+  updatedAt_lte: DateTime
+  updatedAt_gt: DateTime
+  updatedAt_gte: DateTime
+  AND: [ProjectScalarWhereInput!]
+  OR: [ProjectScalarWhereInput!]
+  NOT: [ProjectScalarWhereInput!]
+}
+
+type ProjectSubscriptionPayload {
+  mutation: MutationType!
+  node: Project
+  updatedFields: [String!]
+  previousValues: ProjectPreviousValues
+}
+
+input ProjectSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: ProjectWhereInput
+  AND: [ProjectSubscriptionWhereInput!]
+  OR: [ProjectSubscriptionWhereInput!]
+  NOT: [ProjectSubscriptionWhereInput!]
+}
+
+input ProjectUpdateDataInput {
+  name: String
+  createdBy: UserUpdateOneWithoutProjectsInput
+  departments: DepartmentUpdateManyWithoutProjectsInput
+}
+
+input ProjectUpdateInput {
+  name: String
+  createdBy: UserUpdateOneWithoutProjectsInput
+  departments: DepartmentUpdateManyWithoutProjectsInput
+}
+
+input ProjectUpdateManyDataInput {
+  name: String
+}
+
+input ProjectUpdateManyMutationInput {
+  name: String
+}
+
+input ProjectUpdateManyWithoutCreatedByInput {
+  create: [ProjectCreateWithoutCreatedByInput!]
+  delete: [ProjectWhereUniqueInput!]
+  connect: [ProjectWhereUniqueInput!]
+  set: [ProjectWhereUniqueInput!]
+  disconnect: [ProjectWhereUniqueInput!]
+  update: [ProjectUpdateWithWhereUniqueWithoutCreatedByInput!]
+  upsert: [ProjectUpsertWithWhereUniqueWithoutCreatedByInput!]
+  deleteMany: [ProjectScalarWhereInput!]
+  updateMany: [ProjectUpdateManyWithWhereNestedInput!]
+}
+
+input ProjectUpdateManyWithoutDepartmentsInput {
+  create: [ProjectCreateWithoutDepartmentsInput!]
+  delete: [ProjectWhereUniqueInput!]
+  connect: [ProjectWhereUniqueInput!]
+  set: [ProjectWhereUniqueInput!]
+  disconnect: [ProjectWhereUniqueInput!]
+  update: [ProjectUpdateWithWhereUniqueWithoutDepartmentsInput!]
+  upsert: [ProjectUpsertWithWhereUniqueWithoutDepartmentsInput!]
+  deleteMany: [ProjectScalarWhereInput!]
+  updateMany: [ProjectUpdateManyWithWhereNestedInput!]
+}
+
+input ProjectUpdateManyWithWhereNestedInput {
+  where: ProjectScalarWhereInput!
+  data: ProjectUpdateManyDataInput!
+}
+
+input ProjectUpdateOneRequiredInput {
+  create: ProjectCreateInput
+  update: ProjectUpdateDataInput
+  upsert: ProjectUpsertNestedInput
+  connect: ProjectWhereUniqueInput
+}
+
+input ProjectUpdateWithoutCreatedByDataInput {
+  name: String
+  departments: DepartmentUpdateManyWithoutProjectsInput
+}
+
+input ProjectUpdateWithoutDepartmentsDataInput {
+  name: String
+  createdBy: UserUpdateOneWithoutProjectsInput
+}
+
+input ProjectUpdateWithWhereUniqueWithoutCreatedByInput {
+  where: ProjectWhereUniqueInput!
+  data: ProjectUpdateWithoutCreatedByDataInput!
+}
+
+input ProjectUpdateWithWhereUniqueWithoutDepartmentsInput {
+  where: ProjectWhereUniqueInput!
+  data: ProjectUpdateWithoutDepartmentsDataInput!
+}
+
+input ProjectUpsertNestedInput {
+  update: ProjectUpdateDataInput!
+  create: ProjectCreateInput!
+}
+
+input ProjectUpsertWithWhereUniqueWithoutCreatedByInput {
+  where: ProjectWhereUniqueInput!
+  update: ProjectUpdateWithoutCreatedByDataInput!
+  create: ProjectCreateWithoutCreatedByInput!
+}
+
+input ProjectUpsertWithWhereUniqueWithoutDepartmentsInput {
+  where: ProjectWhereUniqueInput!
+  update: ProjectUpdateWithoutDepartmentsDataInput!
+  create: ProjectCreateWithoutDepartmentsInput!
+}
+
+input ProjectWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+  updatedAt_not: DateTime
+  updatedAt_in: [DateTime!]
+  updatedAt_not_in: [DateTime!]
+  updatedAt_lt: DateTime
+  updatedAt_lte: DateTime
+  updatedAt_gt: DateTime
+  updatedAt_gte: DateTime
+  createdBy: UserWhereInput
+  departments_every: DepartmentWhereInput
+  departments_some: DepartmentWhereInput
+  departments_none: DepartmentWhereInput
+  AND: [ProjectWhereInput!]
+  OR: [ProjectWhereInput!]
+  NOT: [ProjectWhereInput!]
+}
+
+input ProjectWhereUniqueInput {
+  id: ID
+}
+
 type Query {
-  feedbackMedia(where: FeedbackMediaWhereUniqueInput!): FeedbackMedia
-  feedbackMedias(where: FeedbackMediaWhereInput, orderBy: FeedbackMediaOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [FeedbackMedia]!
-  feedbackMediasConnection(where: FeedbackMediaWhereInput, orderBy: FeedbackMediaOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): FeedbackMediaConnection!
-  feedbackProject(where: FeedbackProjectWhereUniqueInput!): FeedbackProject
-  feedbackProjects(where: FeedbackProjectWhereInput, orderBy: FeedbackProjectOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [FeedbackProject]!
-  feedbackProjectsConnection(where: FeedbackProjectWhereInput, orderBy: FeedbackProjectOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): FeedbackProjectConnection!
+  department(where: DepartmentWhereUniqueInput!): Department
+  departments(where: DepartmentWhereInput, orderBy: DepartmentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Department]!
+  departmentsConnection(where: DepartmentWhereInput, orderBy: DepartmentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): DepartmentConnection!
   feedbackRound(where: FeedbackRoundWhereUniqueInput!): FeedbackRound
   feedbackRounds(where: FeedbackRoundWhereInput, orderBy: FeedbackRoundOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [FeedbackRound]!
   feedbackRoundsConnection(where: FeedbackRoundWhereInput, orderBy: FeedbackRoundOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): FeedbackRoundConnection!
-  feedbackSubject(where: FeedbackSubjectWhereUniqueInput!): FeedbackSubject
-  feedbackSubjects(where: FeedbackSubjectWhereInput, orderBy: FeedbackSubjectOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [FeedbackSubject]!
-  feedbackSubjectsConnection(where: FeedbackSubjectWhereInput, orderBy: FeedbackSubjectOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): FeedbackSubjectConnection!
+  feedbackTarget(where: FeedbackTargetWhereUniqueInput!): FeedbackTarget
+  feedbackTargets(where: FeedbackTargetWhereInput, orderBy: FeedbackTargetOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [FeedbackTarget]!
+  feedbackTargetsConnection(where: FeedbackTargetWhereInput, orderBy: FeedbackTargetOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): FeedbackTargetConnection!
+  media(where: MediaWhereUniqueInput!): Media
+  medias(where: MediaWhereInput, orderBy: MediaOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Media]!
+  mediasConnection(where: MediaWhereInput, orderBy: MediaOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): MediaConnection!
+  project(where: ProjectWhereUniqueInput!): Project
+  projects(where: ProjectWhereInput, orderBy: ProjectOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Project]!
+  projectsConnection(where: ProjectWhereInput, orderBy: ProjectOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ProjectConnection!
+  script(where: ScriptWhereUniqueInput!): Script
+  scripts(where: ScriptWhereInput, orderBy: ScriptOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Script]!
+  scriptsConnection(where: ScriptWhereInput, orderBy: ScriptOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ScriptConnection!
   user(where: UserWhereUniqueInput!): User
   users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
   usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
   node(id: ID!): Node
 }
 
+type Script {
+  id: ID!
+}
+
+type ScriptConnection {
+  pageInfo: PageInfo!
+  edges: [ScriptEdge]!
+  aggregate: AggregateScript!
+}
+
+input ScriptCreateInput {
+  id: ID
+}
+
+type ScriptEdge {
+  node: Script!
+  cursor: String!
+}
+
+enum ScriptOrderByInput {
+  id_ASC
+  id_DESC
+}
+
+type ScriptPreviousValues {
+  id: ID!
+}
+
+type ScriptSubscriptionPayload {
+  mutation: MutationType!
+  node: Script
+  updatedFields: [String!]
+  previousValues: ScriptPreviousValues
+}
+
+input ScriptSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: ScriptWhereInput
+  AND: [ScriptSubscriptionWhereInput!]
+  OR: [ScriptSubscriptionWhereInput!]
+  NOT: [ScriptSubscriptionWhereInput!]
+}
+
+input ScriptWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  AND: [ScriptWhereInput!]
+  OR: [ScriptWhereInput!]
+  NOT: [ScriptWhereInput!]
+}
+
+input ScriptWhereUniqueInput {
+  id: ID
+}
+
 type Subscription {
-  feedbackMedia(where: FeedbackMediaSubscriptionWhereInput): FeedbackMediaSubscriptionPayload
-  feedbackProject(where: FeedbackProjectSubscriptionWhereInput): FeedbackProjectSubscriptionPayload
+  department(where: DepartmentSubscriptionWhereInput): DepartmentSubscriptionPayload
   feedbackRound(where: FeedbackRoundSubscriptionWhereInput): FeedbackRoundSubscriptionPayload
-  feedbackSubject(where: FeedbackSubjectSubscriptionWhereInput): FeedbackSubjectSubscriptionPayload
+  feedbackTarget(where: FeedbackTargetSubscriptionWhereInput): FeedbackTargetSubscriptionPayload
+  media(where: MediaSubscriptionWhereInput): MediaSubscriptionPayload
+  project(where: ProjectSubscriptionWhereInput): ProjectSubscriptionPayload
+  script(where: ScriptSubscriptionWhereInput): ScriptSubscriptionPayload
   user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
 }
 
@@ -821,7 +1170,7 @@ type User {
   email: String!
   createdAt: DateTime!
   updatedAt: DateTime!
-  feedbackProjects(where: FeedbackProjectWhereInput, orderBy: FeedbackProjectOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [FeedbackProject!]
+  projects(where: ProjectWhereInput, orderBy: ProjectOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Project!]
   feedbackRounds(where: FeedbackRoundWhereInput, orderBy: FeedbackRoundOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [FeedbackRound!]
 }
 
@@ -835,7 +1184,7 @@ input UserCreateInput {
   id: ID
   name: String!
   email: String!
-  feedbackProjects: FeedbackProjectCreateManyWithoutCreatedByInput
+  projects: ProjectCreateManyWithoutCreatedByInput
   feedbackRounds: FeedbackRoundCreateManyWithoutUsersInput
 }
 
@@ -849,23 +1198,23 @@ input UserCreateOneInput {
   connect: UserWhereUniqueInput
 }
 
-input UserCreateOneWithoutFeedbackProjectsInput {
-  create: UserCreateWithoutFeedbackProjectsInput
+input UserCreateOneWithoutProjectsInput {
+  create: UserCreateWithoutProjectsInput
   connect: UserWhereUniqueInput
-}
-
-input UserCreateWithoutFeedbackProjectsInput {
-  id: ID
-  name: String!
-  email: String!
-  feedbackRounds: FeedbackRoundCreateManyWithoutUsersInput
 }
 
 input UserCreateWithoutFeedbackRoundsInput {
   id: ID
   name: String!
   email: String!
-  feedbackProjects: FeedbackProjectCreateManyWithoutCreatedByInput
+  projects: ProjectCreateManyWithoutCreatedByInput
+}
+
+input UserCreateWithoutProjectsInput {
+  id: ID
+  name: String!
+  email: String!
+  feedbackRounds: FeedbackRoundCreateManyWithoutUsersInput
 }
 
 type UserEdge {
@@ -979,14 +1328,14 @@ input UserSubscriptionWhereInput {
 input UserUpdateDataInput {
   name: String
   email: String
-  feedbackProjects: FeedbackProjectUpdateManyWithoutCreatedByInput
+  projects: ProjectUpdateManyWithoutCreatedByInput
   feedbackRounds: FeedbackRoundUpdateManyWithoutUsersInput
 }
 
 input UserUpdateInput {
   name: String
   email: String
-  feedbackProjects: FeedbackProjectUpdateManyWithoutCreatedByInput
+  projects: ProjectUpdateManyWithoutCreatedByInput
   feedbackRounds: FeedbackRoundUpdateManyWithoutUsersInput
 }
 
@@ -1026,25 +1375,25 @@ input UserUpdateOneInput {
   connect: UserWhereUniqueInput
 }
 
-input UserUpdateOneWithoutFeedbackProjectsInput {
-  create: UserCreateWithoutFeedbackProjectsInput
-  update: UserUpdateWithoutFeedbackProjectsDataInput
-  upsert: UserUpsertWithoutFeedbackProjectsInput
+input UserUpdateOneWithoutProjectsInput {
+  create: UserCreateWithoutProjectsInput
+  update: UserUpdateWithoutProjectsDataInput
+  upsert: UserUpsertWithoutProjectsInput
   delete: Boolean
   disconnect: Boolean
   connect: UserWhereUniqueInput
 }
 
-input UserUpdateWithoutFeedbackProjectsDataInput {
-  name: String
-  email: String
-  feedbackRounds: FeedbackRoundUpdateManyWithoutUsersInput
-}
-
 input UserUpdateWithoutFeedbackRoundsDataInput {
   name: String
   email: String
-  feedbackProjects: FeedbackProjectUpdateManyWithoutCreatedByInput
+  projects: ProjectUpdateManyWithoutCreatedByInput
+}
+
+input UserUpdateWithoutProjectsDataInput {
+  name: String
+  email: String
+  feedbackRounds: FeedbackRoundUpdateManyWithoutUsersInput
 }
 
 input UserUpdateWithWhereUniqueWithoutFeedbackRoundsInput {
@@ -1057,9 +1406,9 @@ input UserUpsertNestedInput {
   create: UserCreateInput!
 }
 
-input UserUpsertWithoutFeedbackProjectsInput {
-  update: UserUpdateWithoutFeedbackProjectsDataInput!
-  create: UserCreateWithoutFeedbackProjectsInput!
+input UserUpsertWithoutProjectsInput {
+  update: UserUpdateWithoutProjectsDataInput!
+  create: UserCreateWithoutProjectsInput!
 }
 
 input UserUpsertWithWhereUniqueWithoutFeedbackRoundsInput {
@@ -1127,9 +1476,9 @@ input UserWhereInput {
   updatedAt_lte: DateTime
   updatedAt_gt: DateTime
   updatedAt_gte: DateTime
-  feedbackProjects_every: FeedbackProjectWhereInput
-  feedbackProjects_some: FeedbackProjectWhereInput
-  feedbackProjects_none: FeedbackProjectWhereInput
+  projects_every: ProjectWhereInput
+  projects_some: ProjectWhereInput
+  projects_none: ProjectWhereInput
   feedbackRounds_every: FeedbackRoundWhereInput
   feedbackRounds_some: FeedbackRoundWhereInput
   feedbackRounds_none: FeedbackRoundWhereInput

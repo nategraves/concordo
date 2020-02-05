@@ -16,23 +16,31 @@ export interface NexusPrismaTypes {
     fields: {
       Query: QueryObject
       User: UserObject
-      FeedbackProject: FeedbackProjectObject
+      Project: ProjectObject
+      Department: DepartmentObject
       FeedbackRound: FeedbackRoundObject
       UserConnection: UserConnectionObject
       PageInfo: PageInfoObject
       UserEdge: UserEdgeObject
       AggregateUser: AggregateUserObject
-      FeedbackProjectConnection: FeedbackProjectConnectionObject
-      FeedbackProjectEdge: FeedbackProjectEdgeObject
-      AggregateFeedbackProject: AggregateFeedbackProjectObject
-      FeedbackSubject: FeedbackSubjectObject
-      FeedbackSubjectConnection: FeedbackSubjectConnectionObject
-      FeedbackSubjectEdge: FeedbackSubjectEdgeObject
-      AggregateFeedbackSubject: AggregateFeedbackSubjectObject
-      FeedbackMedia: FeedbackMediaObject
-      FeedbackMediaConnection: FeedbackMediaConnectionObject
-      FeedbackMediaEdge: FeedbackMediaEdgeObject
-      AggregateFeedbackMedia: AggregateFeedbackMediaObject
+      Script: ScriptObject
+      ScriptConnection: ScriptConnectionObject
+      ScriptEdge: ScriptEdgeObject
+      AggregateScript: AggregateScriptObject
+      ProjectConnection: ProjectConnectionObject
+      ProjectEdge: ProjectEdgeObject
+      AggregateProject: AggregateProjectObject
+      FeedbackTarget: FeedbackTargetObject
+      FeedbackTargetConnection: FeedbackTargetConnectionObject
+      FeedbackTargetEdge: FeedbackTargetEdgeObject
+      AggregateFeedbackTarget: AggregateFeedbackTargetObject
+      DepartmentConnection: DepartmentConnectionObject
+      DepartmentEdge: DepartmentEdgeObject
+      AggregateDepartment: AggregateDepartmentObject
+      Media: MediaObject
+      MediaConnection: MediaConnectionObject
+      MediaEdge: MediaEdgeObject
+      AggregateMedia: AggregateMediaObject
       FeedbackRoundConnection: FeedbackRoundConnectionObject
       FeedbackRoundEdge: FeedbackRoundEdgeObject
       AggregateFeedbackRound: AggregateFeedbackRoundObject
@@ -41,35 +49,47 @@ export interface NexusPrismaTypes {
       Subscription: SubscriptionObject
       UserSubscriptionPayload: UserSubscriptionPayloadObject
       UserPreviousValues: UserPreviousValuesObject
-      FeedbackProjectSubscriptionPayload: FeedbackProjectSubscriptionPayloadObject
-      FeedbackProjectPreviousValues: FeedbackProjectPreviousValuesObject
-      FeedbackSubjectSubscriptionPayload: FeedbackSubjectSubscriptionPayloadObject
-      FeedbackSubjectPreviousValues: FeedbackSubjectPreviousValuesObject
-      FeedbackMediaSubscriptionPayload: FeedbackMediaSubscriptionPayloadObject
-      FeedbackMediaPreviousValues: FeedbackMediaPreviousValuesObject
+      ScriptSubscriptionPayload: ScriptSubscriptionPayloadObject
+      ScriptPreviousValues: ScriptPreviousValuesObject
+      ProjectSubscriptionPayload: ProjectSubscriptionPayloadObject
+      ProjectPreviousValues: ProjectPreviousValuesObject
+      FeedbackTargetSubscriptionPayload: FeedbackTargetSubscriptionPayloadObject
+      FeedbackTargetPreviousValues: FeedbackTargetPreviousValuesObject
+      DepartmentSubscriptionPayload: DepartmentSubscriptionPayloadObject
+      DepartmentPreviousValues: DepartmentPreviousValuesObject
+      MediaSubscriptionPayload: MediaSubscriptionPayloadObject
+      MediaPreviousValues: MediaPreviousValuesObject
       FeedbackRoundSubscriptionPayload: FeedbackRoundSubscriptionPayloadObject
       FeedbackRoundPreviousValues: FeedbackRoundPreviousValuesObject
     }
     fieldsDetails: {
       Query: QueryFieldDetails
       User: UserFieldDetails
-      FeedbackProject: FeedbackProjectFieldDetails
+      Project: ProjectFieldDetails
+      Department: DepartmentFieldDetails
       FeedbackRound: FeedbackRoundFieldDetails
       UserConnection: UserConnectionFieldDetails
       PageInfo: PageInfoFieldDetails
       UserEdge: UserEdgeFieldDetails
       AggregateUser: AggregateUserFieldDetails
-      FeedbackProjectConnection: FeedbackProjectConnectionFieldDetails
-      FeedbackProjectEdge: FeedbackProjectEdgeFieldDetails
-      AggregateFeedbackProject: AggregateFeedbackProjectFieldDetails
-      FeedbackSubject: FeedbackSubjectFieldDetails
-      FeedbackSubjectConnection: FeedbackSubjectConnectionFieldDetails
-      FeedbackSubjectEdge: FeedbackSubjectEdgeFieldDetails
-      AggregateFeedbackSubject: AggregateFeedbackSubjectFieldDetails
-      FeedbackMedia: FeedbackMediaFieldDetails
-      FeedbackMediaConnection: FeedbackMediaConnectionFieldDetails
-      FeedbackMediaEdge: FeedbackMediaEdgeFieldDetails
-      AggregateFeedbackMedia: AggregateFeedbackMediaFieldDetails
+      Script: ScriptFieldDetails
+      ScriptConnection: ScriptConnectionFieldDetails
+      ScriptEdge: ScriptEdgeFieldDetails
+      AggregateScript: AggregateScriptFieldDetails
+      ProjectConnection: ProjectConnectionFieldDetails
+      ProjectEdge: ProjectEdgeFieldDetails
+      AggregateProject: AggregateProjectFieldDetails
+      FeedbackTarget: FeedbackTargetFieldDetails
+      FeedbackTargetConnection: FeedbackTargetConnectionFieldDetails
+      FeedbackTargetEdge: FeedbackTargetEdgeFieldDetails
+      AggregateFeedbackTarget: AggregateFeedbackTargetFieldDetails
+      DepartmentConnection: DepartmentConnectionFieldDetails
+      DepartmentEdge: DepartmentEdgeFieldDetails
+      AggregateDepartment: AggregateDepartmentFieldDetails
+      Media: MediaFieldDetails
+      MediaConnection: MediaConnectionFieldDetails
+      MediaEdge: MediaEdgeFieldDetails
+      AggregateMedia: AggregateMediaFieldDetails
       FeedbackRoundConnection: FeedbackRoundConnectionFieldDetails
       FeedbackRoundEdge: FeedbackRoundEdgeFieldDetails
       AggregateFeedbackRound: AggregateFeedbackRoundFieldDetails
@@ -78,12 +98,16 @@ export interface NexusPrismaTypes {
       Subscription: SubscriptionFieldDetails
       UserSubscriptionPayload: UserSubscriptionPayloadFieldDetails
       UserPreviousValues: UserPreviousValuesFieldDetails
-      FeedbackProjectSubscriptionPayload: FeedbackProjectSubscriptionPayloadFieldDetails
-      FeedbackProjectPreviousValues: FeedbackProjectPreviousValuesFieldDetails
-      FeedbackSubjectSubscriptionPayload: FeedbackSubjectSubscriptionPayloadFieldDetails
-      FeedbackSubjectPreviousValues: FeedbackSubjectPreviousValuesFieldDetails
-      FeedbackMediaSubscriptionPayload: FeedbackMediaSubscriptionPayloadFieldDetails
-      FeedbackMediaPreviousValues: FeedbackMediaPreviousValuesFieldDetails
+      ScriptSubscriptionPayload: ScriptSubscriptionPayloadFieldDetails
+      ScriptPreviousValues: ScriptPreviousValuesFieldDetails
+      ProjectSubscriptionPayload: ProjectSubscriptionPayloadFieldDetails
+      ProjectPreviousValues: ProjectPreviousValuesFieldDetails
+      FeedbackTargetSubscriptionPayload: FeedbackTargetSubscriptionPayloadFieldDetails
+      FeedbackTargetPreviousValues: FeedbackTargetPreviousValuesFieldDetails
+      DepartmentSubscriptionPayload: DepartmentSubscriptionPayloadFieldDetails
+      DepartmentPreviousValues: DepartmentPreviousValuesFieldDetails
+      MediaSubscriptionPayload: MediaSubscriptionPayloadFieldDetails
+      MediaPreviousValues: MediaPreviousValuesFieldDetails
       FeedbackRoundSubscriptionPayload: FeedbackRoundSubscriptionPayloadFieldDetails
       FeedbackRoundPreviousValues: FeedbackRoundPreviousValuesFieldDetails
     }
@@ -91,28 +115,41 @@ export interface NexusPrismaTypes {
   inputTypes: {
     fields: {
       UserWhereUniqueInput: UserWhereUniqueInputInputObject
-      FeedbackProjectWhereInput: FeedbackProjectWhereInputInputObject
+      ProjectWhereInput: ProjectWhereInputInputObject
       UserWhereInput: UserWhereInputInputObject
       FeedbackRoundWhereInput: FeedbackRoundWhereInputInputObject
-      FeedbackProjectWhereUniqueInput: FeedbackProjectWhereUniqueInputInputObject
-      FeedbackSubjectWhereUniqueInput: FeedbackSubjectWhereUniqueInputInputObject
-      FeedbackSubjectWhereInput: FeedbackSubjectWhereInputInputObject
-      FeedbackMediaWhereUniqueInput: FeedbackMediaWhereUniqueInputInputObject
-      FeedbackMediaWhereInput: FeedbackMediaWhereInputInputObject
+      DepartmentWhereInput: DepartmentWhereInputInputObject
+      ScriptWhereUniqueInput: ScriptWhereUniqueInputInputObject
+      ScriptWhereInput: ScriptWhereInputInputObject
+      ProjectWhereUniqueInput: ProjectWhereUniqueInputInputObject
+      FeedbackTargetWhereUniqueInput: FeedbackTargetWhereUniqueInputInputObject
+      FeedbackTargetWhereInput: FeedbackTargetWhereInputInputObject
+      DepartmentWhereUniqueInput: DepartmentWhereUniqueInputInputObject
+      MediaWhereUniqueInput: MediaWhereUniqueInputInputObject
+      MediaWhereInput: MediaWhereInputInputObject
       FeedbackRoundWhereUniqueInput: FeedbackRoundWhereUniqueInputInputObject
       UserCreateInput: UserCreateInputInputObject
-      FeedbackProjectCreateManyWithoutCreatedByInput: FeedbackProjectCreateManyWithoutCreatedByInputInputObject
-      FeedbackProjectCreateWithoutCreatedByInput: FeedbackProjectCreateWithoutCreatedByInputInputObject
+      ProjectCreateManyWithoutCreatedByInput: ProjectCreateManyWithoutCreatedByInputInputObject
+      ProjectCreateWithoutCreatedByInput: ProjectCreateWithoutCreatedByInputInputObject
+      DepartmentCreateManyWithoutProjectsInput: DepartmentCreateManyWithoutProjectsInputInputObject
+      DepartmentCreateWithoutProjectsInput: DepartmentCreateWithoutProjectsInputInputObject
       FeedbackRoundCreateManyWithoutUsersInput: FeedbackRoundCreateManyWithoutUsersInputInputObject
       FeedbackRoundCreateWithoutUsersInput: FeedbackRoundCreateWithoutUsersInputInputObject
       UserUpdateInput: UserUpdateInputInputObject
-      FeedbackProjectUpdateManyWithoutCreatedByInput: FeedbackProjectUpdateManyWithoutCreatedByInputInputObject
-      FeedbackProjectUpdateWithWhereUniqueWithoutCreatedByInput: FeedbackProjectUpdateWithWhereUniqueWithoutCreatedByInputInputObject
-      FeedbackProjectUpdateWithoutCreatedByDataInput: FeedbackProjectUpdateWithoutCreatedByDataInputInputObject
-      FeedbackProjectUpsertWithWhereUniqueWithoutCreatedByInput: FeedbackProjectUpsertWithWhereUniqueWithoutCreatedByInputInputObject
-      FeedbackProjectScalarWhereInput: FeedbackProjectScalarWhereInputInputObject
-      FeedbackProjectUpdateManyWithWhereNestedInput: FeedbackProjectUpdateManyWithWhereNestedInputInputObject
-      FeedbackProjectUpdateManyDataInput: FeedbackProjectUpdateManyDataInputInputObject
+      ProjectUpdateManyWithoutCreatedByInput: ProjectUpdateManyWithoutCreatedByInputInputObject
+      ProjectUpdateWithWhereUniqueWithoutCreatedByInput: ProjectUpdateWithWhereUniqueWithoutCreatedByInputInputObject
+      ProjectUpdateWithoutCreatedByDataInput: ProjectUpdateWithoutCreatedByDataInputInputObject
+      DepartmentUpdateManyWithoutProjectsInput: DepartmentUpdateManyWithoutProjectsInputInputObject
+      DepartmentUpdateWithWhereUniqueWithoutProjectsInput: DepartmentUpdateWithWhereUniqueWithoutProjectsInputInputObject
+      DepartmentUpdateWithoutProjectsDataInput: DepartmentUpdateWithoutProjectsDataInputInputObject
+      DepartmentUpsertWithWhereUniqueWithoutProjectsInput: DepartmentUpsertWithWhereUniqueWithoutProjectsInputInputObject
+      DepartmentScalarWhereInput: DepartmentScalarWhereInputInputObject
+      DepartmentUpdateManyWithWhereNestedInput: DepartmentUpdateManyWithWhereNestedInputInputObject
+      DepartmentUpdateManyDataInput: DepartmentUpdateManyDataInputInputObject
+      ProjectUpsertWithWhereUniqueWithoutCreatedByInput: ProjectUpsertWithWhereUniqueWithoutCreatedByInputInputObject
+      ProjectScalarWhereInput: ProjectScalarWhereInputInputObject
+      ProjectUpdateManyWithWhereNestedInput: ProjectUpdateManyWithWhereNestedInputInputObject
+      ProjectUpdateManyDataInput: ProjectUpdateManyDataInputInputObject
       FeedbackRoundUpdateManyWithoutUsersInput: FeedbackRoundUpdateManyWithoutUsersInputInputObject
       FeedbackRoundUpdateWithWhereUniqueWithoutUsersInput: FeedbackRoundUpdateWithWhereUniqueWithoutUsersInputInputObject
       FeedbackRoundUpdateWithoutUsersDataInput: FeedbackRoundUpdateWithoutUsersDataInputInputObject
@@ -121,28 +158,42 @@ export interface NexusPrismaTypes {
       FeedbackRoundUpdateManyWithWhereNestedInput: FeedbackRoundUpdateManyWithWhereNestedInputInputObject
       FeedbackRoundUpdateManyDataInput: FeedbackRoundUpdateManyDataInputInputObject
       UserUpdateManyMutationInput: UserUpdateManyMutationInputInputObject
-      FeedbackProjectCreateInput: FeedbackProjectCreateInputInputObject
-      UserCreateOneWithoutFeedbackProjectsInput: UserCreateOneWithoutFeedbackProjectsInputInputObject
-      UserCreateWithoutFeedbackProjectsInput: UserCreateWithoutFeedbackProjectsInputInputObject
-      FeedbackProjectUpdateInput: FeedbackProjectUpdateInputInputObject
-      UserUpdateOneWithoutFeedbackProjectsInput: UserUpdateOneWithoutFeedbackProjectsInputInputObject
-      UserUpdateWithoutFeedbackProjectsDataInput: UserUpdateWithoutFeedbackProjectsDataInputInputObject
-      UserUpsertWithoutFeedbackProjectsInput: UserUpsertWithoutFeedbackProjectsInputInputObject
-      FeedbackProjectUpdateManyMutationInput: FeedbackProjectUpdateManyMutationInputInputObject
-      FeedbackSubjectCreateInput: FeedbackSubjectCreateInputInputObject
-      FeedbackProjectCreateOneInput: FeedbackProjectCreateOneInputInputObject
+      ScriptCreateInput: ScriptCreateInputInputObject
+      ProjectCreateInput: ProjectCreateInputInputObject
+      UserCreateOneWithoutProjectsInput: UserCreateOneWithoutProjectsInputInputObject
+      UserCreateWithoutProjectsInput: UserCreateWithoutProjectsInputInputObject
+      ProjectUpdateInput: ProjectUpdateInputInputObject
+      UserUpdateOneWithoutProjectsInput: UserUpdateOneWithoutProjectsInputInputObject
+      UserUpdateWithoutProjectsDataInput: UserUpdateWithoutProjectsDataInputInputObject
+      UserUpsertWithoutProjectsInput: UserUpsertWithoutProjectsInputInputObject
+      ProjectUpdateManyMutationInput: ProjectUpdateManyMutationInputInputObject
+      FeedbackTargetCreateInput: FeedbackTargetCreateInputInputObject
+      ProjectCreateOneInput: ProjectCreateOneInputInputObject
       UserCreateOneInput: UserCreateOneInputInputObject
-      FeedbackSubjectUpdateInput: FeedbackSubjectUpdateInputInputObject
-      FeedbackProjectUpdateOneRequiredInput: FeedbackProjectUpdateOneRequiredInputInputObject
-      FeedbackProjectUpdateDataInput: FeedbackProjectUpdateDataInputInputObject
-      FeedbackProjectUpsertNestedInput: FeedbackProjectUpsertNestedInputInputObject
+      FeedbackTargetUpdateInput: FeedbackTargetUpdateInputInputObject
+      ProjectUpdateOneRequiredInput: ProjectUpdateOneRequiredInputInputObject
+      ProjectUpdateDataInput: ProjectUpdateDataInputInputObject
+      ProjectUpsertNestedInput: ProjectUpsertNestedInputInputObject
       UserUpdateOneInput: UserUpdateOneInputInputObject
       UserUpdateDataInput: UserUpdateDataInputInputObject
       UserUpsertNestedInput: UserUpsertNestedInputInputObject
-      FeedbackSubjectUpdateManyMutationInput: FeedbackSubjectUpdateManyMutationInputInputObject
-      FeedbackMediaCreateInput: FeedbackMediaCreateInputInputObject
-      FeedbackMediaUpdateInput: FeedbackMediaUpdateInputInputObject
-      FeedbackMediaUpdateManyMutationInput: FeedbackMediaUpdateManyMutationInputInputObject
+      FeedbackTargetUpdateManyMutationInput: FeedbackTargetUpdateManyMutationInputInputObject
+      DepartmentCreateInput: DepartmentCreateInputInputObject
+      ProjectCreateManyWithoutDepartmentsInput: ProjectCreateManyWithoutDepartmentsInputInputObject
+      ProjectCreateWithoutDepartmentsInput: ProjectCreateWithoutDepartmentsInputInputObject
+      DepartmentUpdateInput: DepartmentUpdateInputInputObject
+      ProjectUpdateManyWithoutDepartmentsInput: ProjectUpdateManyWithoutDepartmentsInputInputObject
+      ProjectUpdateWithWhereUniqueWithoutDepartmentsInput: ProjectUpdateWithWhereUniqueWithoutDepartmentsInputInputObject
+      ProjectUpdateWithoutDepartmentsDataInput: ProjectUpdateWithoutDepartmentsDataInputInputObject
+      ProjectUpsertWithWhereUniqueWithoutDepartmentsInput: ProjectUpsertWithWhereUniqueWithoutDepartmentsInputInputObject
+      DepartmentUpdateManyMutationInput: DepartmentUpdateManyMutationInputInputObject
+      MediaCreateInput: MediaCreateInputInputObject
+      FeedbackTargetCreateOneInput: FeedbackTargetCreateOneInputInputObject
+      MediaUpdateInput: MediaUpdateInputInputObject
+      FeedbackTargetUpdateOneRequiredInput: FeedbackTargetUpdateOneRequiredInputInputObject
+      FeedbackTargetUpdateDataInput: FeedbackTargetUpdateDataInputInputObject
+      FeedbackTargetUpsertNestedInput: FeedbackTargetUpsertNestedInputInputObject
+      MediaUpdateManyMutationInput: MediaUpdateManyMutationInputInputObject
       FeedbackRoundCreateInput: FeedbackRoundCreateInputInputObject
       UserCreateManyWithoutFeedbackRoundsInput: UserCreateManyWithoutFeedbackRoundsInputInputObject
       UserCreateWithoutFeedbackRoundsInput: UserCreateWithoutFeedbackRoundsInputInputObject
@@ -156,18 +207,22 @@ export interface NexusPrismaTypes {
       UserUpdateManyDataInput: UserUpdateManyDataInputInputObject
       FeedbackRoundUpdateManyMutationInput: FeedbackRoundUpdateManyMutationInputInputObject
       UserSubscriptionWhereInput: UserSubscriptionWhereInputInputObject
-      FeedbackProjectSubscriptionWhereInput: FeedbackProjectSubscriptionWhereInputInputObject
-      FeedbackSubjectSubscriptionWhereInput: FeedbackSubjectSubscriptionWhereInputInputObject
-      FeedbackMediaSubscriptionWhereInput: FeedbackMediaSubscriptionWhereInputInputObject
+      ScriptSubscriptionWhereInput: ScriptSubscriptionWhereInputInputObject
+      ProjectSubscriptionWhereInput: ProjectSubscriptionWhereInputInputObject
+      FeedbackTargetSubscriptionWhereInput: FeedbackTargetSubscriptionWhereInputInputObject
+      DepartmentSubscriptionWhereInput: DepartmentSubscriptionWhereInputInputObject
+      MediaSubscriptionWhereInput: MediaSubscriptionWhereInputInputObject
       FeedbackRoundSubscriptionWhereInput: FeedbackRoundSubscriptionWhereInputInputObject
     }
   }
   enumTypes: {
-    FeedbackProjectOrderByInput: FeedbackProjectOrderByInputValues,
+    ProjectOrderByInput: ProjectOrderByInputValues,
+    DepartmentOrderByInput: DepartmentOrderByInputValues,
     FeedbackRoundOrderByInput: FeedbackRoundOrderByInputValues,
     UserOrderByInput: UserOrderByInputValues,
-    FeedbackSubjectOrderByInput: FeedbackSubjectOrderByInputValues,
-    FeedbackMediaOrderByInput: FeedbackMediaOrderByInputValues,
+    ScriptOrderByInput: ScriptOrderByInputValues,
+    FeedbackTargetOrderByInput: FeedbackTargetOrderByInputValues,
+    MediaOrderByInput: MediaOrderByInputValues,
     MutationType: MutationTypeValues,
   }
 }
@@ -179,15 +234,21 @@ type QueryObject =
   | { name: 'user', args?: QueryUserArgs[] | false, alias?: string  } 
   | { name: 'users', args?: QueryUsersArgs[] | false, alias?: string  } 
   | { name: 'usersConnection', args?: QueryUsersConnectionArgs[] | false, alias?: string  } 
-  | { name: 'feedbackProject', args?: QueryFeedbackProjectArgs[] | false, alias?: string  } 
-  | { name: 'feedbackProjects', args?: QueryFeedbackProjectsArgs[] | false, alias?: string  } 
-  | { name: 'feedbackProjectsConnection', args?: QueryFeedbackProjectsConnectionArgs[] | false, alias?: string  } 
-  | { name: 'feedbackSubject', args?: QueryFeedbackSubjectArgs[] | false, alias?: string  } 
-  | { name: 'feedbackSubjects', args?: QueryFeedbackSubjectsArgs[] | false, alias?: string  } 
-  | { name: 'feedbackSubjectsConnection', args?: QueryFeedbackSubjectsConnectionArgs[] | false, alias?: string  } 
-  | { name: 'feedbackMedia', args?: QueryFeedbackMediaArgs[] | false, alias?: string  } 
-  | { name: 'feedbackMedias', args?: QueryFeedbackMediasArgs[] | false, alias?: string  } 
-  | { name: 'feedbackMediasConnection', args?: QueryFeedbackMediasConnectionArgs[] | false, alias?: string  } 
+  | { name: 'script', args?: QueryScriptArgs[] | false, alias?: string  } 
+  | { name: 'scripts', args?: QueryScriptsArgs[] | false, alias?: string  } 
+  | { name: 'scriptsConnection', args?: QueryScriptsConnectionArgs[] | false, alias?: string  } 
+  | { name: 'project', args?: QueryProjectArgs[] | false, alias?: string  } 
+  | { name: 'projects', args?: QueryProjectsArgs[] | false, alias?: string  } 
+  | { name: 'projectsConnection', args?: QueryProjectsConnectionArgs[] | false, alias?: string  } 
+  | { name: 'feedbackTarget', args?: QueryFeedbackTargetArgs[] | false, alias?: string  } 
+  | { name: 'feedbackTargets', args?: QueryFeedbackTargetsArgs[] | false, alias?: string  } 
+  | { name: 'feedbackTargetsConnection', args?: QueryFeedbackTargetsConnectionArgs[] | false, alias?: string  } 
+  | { name: 'department', args?: QueryDepartmentArgs[] | false, alias?: string  } 
+  | { name: 'departments', args?: QueryDepartmentsArgs[] | false, alias?: string  } 
+  | { name: 'departmentsConnection', args?: QueryDepartmentsConnectionArgs[] | false, alias?: string  } 
+  | { name: 'media', args?: QueryMediaArgs[] | false, alias?: string  } 
+  | { name: 'medias', args?: QueryMediasArgs[] | false, alias?: string  } 
+  | { name: 'mediasConnection', args?: QueryMediasConnectionArgs[] | false, alias?: string  } 
   | { name: 'feedbackRound', args?: QueryFeedbackRoundArgs[] | false, alias?: string  } 
   | { name: 'feedbackRounds', args?: QueryFeedbackRoundsArgs[] | false, alias?: string  } 
   | { name: 'feedbackRoundsConnection', args?: QueryFeedbackRoundsConnectionArgs[] | false, alias?: string  } 
@@ -196,15 +257,21 @@ type QueryFields =
   | 'user'
   | 'users'
   | 'usersConnection'
-  | 'feedbackProject'
-  | 'feedbackProjects'
-  | 'feedbackProjectsConnection'
-  | 'feedbackSubject'
-  | 'feedbackSubjects'
-  | 'feedbackSubjectsConnection'
-  | 'feedbackMedia'
-  | 'feedbackMedias'
-  | 'feedbackMediasConnection'
+  | 'script'
+  | 'scripts'
+  | 'scriptsConnection'
+  | 'project'
+  | 'projects'
+  | 'projectsConnection'
+  | 'feedbackTarget'
+  | 'feedbackTargets'
+  | 'feedbackTargetsConnection'
+  | 'department'
+  | 'departments'
+  | 'departmentsConnection'
+  | 'media'
+  | 'medias'
+  | 'mediasConnection'
   | 'feedbackRound'
   | 'feedbackRounds'
   | 'feedbackRoundsConnection'
@@ -228,17 +295,9 @@ type QueryUsersConnectionArgs =
   | 'before'
   | 'first'
   | 'last'
-type QueryFeedbackProjectArgs =
+type QueryScriptArgs =
   | 'where'
-type QueryFeedbackProjectsArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryFeedbackProjectsConnectionArgs =
+type QueryScriptsArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -246,9 +305,7 @@ type QueryFeedbackProjectsConnectionArgs =
   | 'before'
   | 'first'
   | 'last'
-type QueryFeedbackSubjectArgs =
-  | 'where'
-type QueryFeedbackSubjectsArgs =
+type QueryScriptsConnectionArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -256,7 +313,9 @@ type QueryFeedbackSubjectsArgs =
   | 'before'
   | 'first'
   | 'last'
-type QueryFeedbackSubjectsConnectionArgs =
+type QueryProjectArgs =
+  | 'where'
+type QueryProjectsArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -264,9 +323,7 @@ type QueryFeedbackSubjectsConnectionArgs =
   | 'before'
   | 'first'
   | 'last'
-type QueryFeedbackMediaArgs =
-  | 'where'
-type QueryFeedbackMediasArgs =
+type QueryProjectsConnectionArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -274,7 +331,53 @@ type QueryFeedbackMediasArgs =
   | 'before'
   | 'first'
   | 'last'
-type QueryFeedbackMediasConnectionArgs =
+type QueryFeedbackTargetArgs =
+  | 'where'
+type QueryFeedbackTargetsArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryFeedbackTargetsConnectionArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryDepartmentArgs =
+  | 'where'
+type QueryDepartmentsArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryDepartmentsConnectionArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryMediaArgs =
+  | 'where'
+type QueryMediasArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryMediasConnectionArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -342,122 +445,200 @@ export interface QueryFieldDetails {
       info?: GraphQLResolveInfo
     ) => Promise<prisma.UserConnection> | prisma.UserConnection
   }
-  feedbackProject: {
-    type: 'FeedbackProject'
-    args: Record<QueryFeedbackProjectArgs, core.NexusArgDef<string>>
+  script: {
+    type: 'Script'
+    args: Record<QueryScriptArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where: FeedbackProjectWhereUniqueInput }  ,
+      args: { where: ScriptWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackProject | null> | prisma.FeedbackProject | null
+    ) => Promise<prisma.Script | null> | prisma.Script | null
   }
-  feedbackProjects: {
-    type: 'FeedbackProject'
-    args: Record<QueryFeedbackProjectsArgs, core.NexusArgDef<string>>
+  scripts: {
+    type: 'Script'
+    args: Record<QueryScriptsArgs, core.NexusArgDef<string>>
     description: string
     list: true
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: FeedbackProjectWhereInput | null, orderBy?: prisma.FeedbackProjectOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: ScriptWhereInput | null, orderBy?: prisma.ScriptOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackProject[]> | prisma.FeedbackProject[]
+    ) => Promise<prisma.Script[]> | prisma.Script[]
   }
-  feedbackProjectsConnection: {
-    type: 'FeedbackProjectConnection'
-    args: Record<QueryFeedbackProjectsConnectionArgs, core.NexusArgDef<string>>
+  scriptsConnection: {
+    type: 'ScriptConnection'
+    args: Record<QueryScriptsConnectionArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: FeedbackProjectWhereInput | null, orderBy?: prisma.FeedbackProjectOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: ScriptWhereInput | null, orderBy?: prisma.ScriptOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackProjectConnection> | prisma.FeedbackProjectConnection
+    ) => Promise<prisma.ScriptConnection> | prisma.ScriptConnection
   }
-  feedbackSubject: {
-    type: 'FeedbackSubject'
-    args: Record<QueryFeedbackSubjectArgs, core.NexusArgDef<string>>
+  project: {
+    type: 'Project'
+    args: Record<QueryProjectArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where: FeedbackSubjectWhereUniqueInput }  ,
+      args: { where: ProjectWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackSubject | null> | prisma.FeedbackSubject | null
+    ) => Promise<prisma.Project | null> | prisma.Project | null
   }
-  feedbackSubjects: {
-    type: 'FeedbackSubject'
-    args: Record<QueryFeedbackSubjectsArgs, core.NexusArgDef<string>>
+  projects: {
+    type: 'Project'
+    args: Record<QueryProjectsArgs, core.NexusArgDef<string>>
     description: string
     list: true
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: FeedbackSubjectWhereInput | null, orderBy?: prisma.FeedbackSubjectOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: ProjectWhereInput | null, orderBy?: prisma.ProjectOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackSubject[]> | prisma.FeedbackSubject[]
+    ) => Promise<prisma.Project[]> | prisma.Project[]
   }
-  feedbackSubjectsConnection: {
-    type: 'FeedbackSubjectConnection'
-    args: Record<QueryFeedbackSubjectsConnectionArgs, core.NexusArgDef<string>>
+  projectsConnection: {
+    type: 'ProjectConnection'
+    args: Record<QueryProjectsConnectionArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: FeedbackSubjectWhereInput | null, orderBy?: prisma.FeedbackSubjectOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: ProjectWhereInput | null, orderBy?: prisma.ProjectOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackSubjectConnection> | prisma.FeedbackSubjectConnection
+    ) => Promise<prisma.ProjectConnection> | prisma.ProjectConnection
   }
-  feedbackMedia: {
-    type: 'FeedbackMedia'
-    args: Record<QueryFeedbackMediaArgs, core.NexusArgDef<string>>
+  feedbackTarget: {
+    type: 'FeedbackTarget'
+    args: Record<QueryFeedbackTargetArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where: FeedbackMediaWhereUniqueInput }  ,
+      args: { where: FeedbackTargetWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackMedia | null> | prisma.FeedbackMedia | null
+    ) => Promise<prisma.FeedbackTarget | null> | prisma.FeedbackTarget | null
   }
-  feedbackMedias: {
-    type: 'FeedbackMedia'
-    args: Record<QueryFeedbackMediasArgs, core.NexusArgDef<string>>
+  feedbackTargets: {
+    type: 'FeedbackTarget'
+    args: Record<QueryFeedbackTargetsArgs, core.NexusArgDef<string>>
     description: string
     list: true
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: FeedbackMediaWhereInput | null, orderBy?: prisma.FeedbackMediaOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: FeedbackTargetWhereInput | null, orderBy?: prisma.FeedbackTargetOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackMedia[]> | prisma.FeedbackMedia[]
+    ) => Promise<prisma.FeedbackTarget[]> | prisma.FeedbackTarget[]
   }
-  feedbackMediasConnection: {
-    type: 'FeedbackMediaConnection'
-    args: Record<QueryFeedbackMediasConnectionArgs, core.NexusArgDef<string>>
+  feedbackTargetsConnection: {
+    type: 'FeedbackTargetConnection'
+    args: Record<QueryFeedbackTargetsConnectionArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: FeedbackMediaWhereInput | null, orderBy?: prisma.FeedbackMediaOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: FeedbackTargetWhereInput | null, orderBy?: prisma.FeedbackTargetOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackMediaConnection> | prisma.FeedbackMediaConnection
+    ) => Promise<prisma.FeedbackTargetConnection> | prisma.FeedbackTargetConnection
+  }
+  department: {
+    type: 'Department'
+    args: Record<QueryDepartmentArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where: DepartmentWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Department | null> | prisma.Department | null
+  }
+  departments: {
+    type: 'Department'
+    args: Record<QueryDepartmentsArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: DepartmentWhereInput | null, orderBy?: prisma.DepartmentOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Department[]> | prisma.Department[]
+  }
+  departmentsConnection: {
+    type: 'DepartmentConnection'
+    args: Record<QueryDepartmentsConnectionArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: DepartmentWhereInput | null, orderBy?: prisma.DepartmentOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.DepartmentConnection> | prisma.DepartmentConnection
+  }
+  media: {
+    type: 'Media'
+    args: Record<QueryMediaArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where: MediaWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Media | null> | prisma.Media | null
+  }
+  medias: {
+    type: 'Media'
+    args: Record<QueryMediasArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: MediaWhereInput | null, orderBy?: prisma.MediaOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Media[]> | prisma.Media[]
+  }
+  mediasConnection: {
+    type: 'MediaConnection'
+    args: Record<QueryMediasConnectionArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: MediaWhereInput | null, orderBy?: prisma.MediaOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MediaConnection> | prisma.MediaConnection
   }
   feedbackRound: {
     type: 'FeedbackRound'
@@ -510,7 +691,7 @@ type UserObject =
   | { name: 'email', args?: [] | false, alias?: string  } 
   | { name: 'createdAt', args?: [] | false, alias?: string  } 
   | { name: 'updatedAt', args?: [] | false, alias?: string  } 
-  | { name: 'feedbackProjects', args?: UserFeedbackProjectsArgs[] | false, alias?: string  } 
+  | { name: 'projects', args?: UserProjectsArgs[] | false, alias?: string  } 
   | { name: 'feedbackRounds', args?: UserFeedbackRoundsArgs[] | false, alias?: string  } 
 
 type UserFields =
@@ -519,11 +700,11 @@ type UserFields =
   | 'email'
   | 'createdAt'
   | 'updatedAt'
-  | 'feedbackProjects'
+  | 'projects'
   | 'feedbackRounds'
 
 
-type UserFeedbackProjectsArgs =
+type UserProjectsArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -582,18 +763,18 @@ export interface UserFieldDetails {
     nullable: false
     resolve: undefined
   }
-  feedbackProjects: {
-    type: 'FeedbackProject'
-    args: Record<UserFeedbackProjectsArgs, core.NexusArgDef<string>>
+  projects: {
+    type: 'Project'
+    args: Record<UserProjectsArgs, core.NexusArgDef<string>>
     description: string
     list: true
     nullable: false
     resolve: (
       root: core.RootValue<"User">,
-      args: { where?: FeedbackProjectWhereInput | null, orderBy?: prisma.FeedbackProjectOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: ProjectWhereInput | null, orderBy?: prisma.ProjectOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackProject[]> | prisma.FeedbackProject[]
+    ) => Promise<prisma.Project[]> | prisma.Project[]
   }
   feedbackRounds: {
     type: 'FeedbackRound'
@@ -611,28 +792,37 @@ export interface UserFieldDetails {
 }
   
 
-// Types for FeedbackProject
+// Types for Project
 
-type FeedbackProjectObject =
-  | FeedbackProjectFields
+type ProjectObject =
+  | ProjectFields
   | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'name', args?: [] | false, alias?: string  } 
   | { name: 'createdAt', args?: [] | false, alias?: string  } 
   | { name: 'updatedAt', args?: [] | false, alias?: string  } 
   | { name: 'createdBy', args?: [] | false, alias?: string  } 
+  | { name: 'departments', args?: ProjectDepartmentsArgs[] | false, alias?: string  } 
 
-type FeedbackProjectFields =
+type ProjectFields =
   | 'id'
   | 'name'
   | 'createdAt'
   | 'updatedAt'
   | 'createdBy'
+  | 'departments'
 
 
-
+type ProjectDepartmentsArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
   
 
-export interface FeedbackProjectFieldDetails {
+export interface ProjectFieldDetails {
   id: {
     type: 'ID'
     args: {}
@@ -672,11 +862,81 @@ export interface FeedbackProjectFieldDetails {
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"FeedbackProject">,
+      root: core.RootValue<"Project">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.User | null> | prisma.User | null
+  }
+  departments: {
+    type: 'Department'
+    args: Record<ProjectDepartmentsArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Project">,
+      args: { where?: DepartmentWhereInput | null, orderBy?: prisma.DepartmentOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Department[]> | prisma.Department[]
+  }
+}
+  
+
+// Types for Department
+
+type DepartmentObject =
+  | DepartmentFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'name', args?: [] | false, alias?: string  } 
+  | { name: 'projects', args?: DepartmentProjectsArgs[] | false, alias?: string  } 
+
+type DepartmentFields =
+  | 'id'
+  | 'name'
+  | 'projects'
+
+
+type DepartmentProjectsArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+  
+
+export interface DepartmentFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  name: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  projects: {
+    type: 'Project'
+    args: Record<DepartmentProjectsArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Department">,
+      args: { where?: ProjectWhereInput | null, orderBy?: prisma.ProjectOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Project[]> | prisma.Project[]
   }
 }
   
@@ -938,15 +1198,40 @@ export interface AggregateUserFieldDetails {
 }
   
 
-// Types for FeedbackProjectConnection
+// Types for Script
 
-type FeedbackProjectConnectionObject =
-  | FeedbackProjectConnectionFields
+type ScriptObject =
+  | ScriptFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+
+type ScriptFields =
+  | 'id'
+
+
+
+  
+
+export interface ScriptFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for ScriptConnection
+
+type ScriptConnectionObject =
+  | ScriptConnectionFields
   | { name: 'pageInfo', args?: [] | false, alias?: string  } 
   | { name: 'edges', args?: [] | false, alias?: string  } 
   | { name: 'aggregate', args?: [] | false, alias?: string  } 
 
-type FeedbackProjectConnectionFields =
+type ScriptConnectionFields =
   | 'pageInfo'
   | 'edges'
   | 'aggregate'
@@ -955,7 +1240,7 @@ type FeedbackProjectConnectionFields =
 
   
 
-export interface FeedbackProjectConnectionFieldDetails {
+export interface ScriptConnectionFieldDetails {
   pageInfo: {
     type: 'PageInfo'
     args: {}
@@ -963,49 +1248,49 @@ export interface FeedbackProjectConnectionFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackProjectConnection">,
+      root: core.RootValue<"ScriptConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.PageInfo> | prisma.PageInfo
   }
   edges: {
-    type: 'FeedbackProjectEdge'
+    type: 'ScriptEdge'
     args: {}
     description: string
     list: true
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackProjectConnection">,
+      root: core.RootValue<"ScriptConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackProjectEdge[]> | prisma.FeedbackProjectEdge[]
+    ) => Promise<prisma.ScriptEdge[]> | prisma.ScriptEdge[]
   }
   aggregate: {
-    type: 'AggregateFeedbackProject'
+    type: 'AggregateScript'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackProjectConnection">,
+      root: core.RootValue<"ScriptConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregateFeedbackProject> | prisma.AggregateFeedbackProject
+    ) => Promise<prisma.AggregateScript> | prisma.AggregateScript
   }
 }
   
 
-// Types for FeedbackProjectEdge
+// Types for ScriptEdge
 
-type FeedbackProjectEdgeObject =
-  | FeedbackProjectEdgeFields
+type ScriptEdgeObject =
+  | ScriptEdgeFields
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'cursor', args?: [] | false, alias?: string  } 
 
-type FeedbackProjectEdgeFields =
+type ScriptEdgeFields =
   | 'node'
   | 'cursor'
 
@@ -1013,19 +1298,19 @@ type FeedbackProjectEdgeFields =
 
   
 
-export interface FeedbackProjectEdgeFieldDetails {
+export interface ScriptEdgeFieldDetails {
   node: {
-    type: 'FeedbackProject'
+    type: 'Script'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackProjectEdge">,
+      root: core.RootValue<"ScriptEdge">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackProject> | prisma.FeedbackProject
+    ) => Promise<prisma.Script> | prisma.Script
   }
   cursor: {
     type: 'String'
@@ -1038,20 +1323,20 @@ export interface FeedbackProjectEdgeFieldDetails {
 }
   
 
-// Types for AggregateFeedbackProject
+// Types for AggregateScript
 
-type AggregateFeedbackProjectObject =
-  | AggregateFeedbackProjectFields
+type AggregateScriptObject =
+  | AggregateScriptFields
   | { name: 'count', args?: [] | false, alias?: string  } 
 
-type AggregateFeedbackProjectFields =
+type AggregateScriptFields =
   | 'count'
 
 
 
   
 
-export interface AggregateFeedbackProjectFieldDetails {
+export interface AggregateScriptFieldDetails {
   count: {
     type: 'Int'
     args: {}
@@ -1063,10 +1348,135 @@ export interface AggregateFeedbackProjectFieldDetails {
 }
   
 
-// Types for FeedbackSubject
+// Types for ProjectConnection
 
-type FeedbackSubjectObject =
-  | FeedbackSubjectFields
+type ProjectConnectionObject =
+  | ProjectConnectionFields
+  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
+  | { name: 'edges', args?: [] | false, alias?: string  } 
+  | { name: 'aggregate', args?: [] | false, alias?: string  } 
+
+type ProjectConnectionFields =
+  | 'pageInfo'
+  | 'edges'
+  | 'aggregate'
+
+
+
+  
+
+export interface ProjectConnectionFieldDetails {
+  pageInfo: {
+    type: 'PageInfo'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"ProjectConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PageInfo> | prisma.PageInfo
+  }
+  edges: {
+    type: 'ProjectEdge'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"ProjectConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.ProjectEdge[]> | prisma.ProjectEdge[]
+  }
+  aggregate: {
+    type: 'AggregateProject'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"ProjectConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.AggregateProject> | prisma.AggregateProject
+  }
+}
+  
+
+// Types for ProjectEdge
+
+type ProjectEdgeObject =
+  | ProjectEdgeFields
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'cursor', args?: [] | false, alias?: string  } 
+
+type ProjectEdgeFields =
+  | 'node'
+  | 'cursor'
+
+
+
+  
+
+export interface ProjectEdgeFieldDetails {
+  node: {
+    type: 'Project'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"ProjectEdge">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Project> | prisma.Project
+  }
+  cursor: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for AggregateProject
+
+type AggregateProjectObject =
+  | AggregateProjectFields
+  | { name: 'count', args?: [] | false, alias?: string  } 
+
+type AggregateProjectFields =
+  | 'count'
+
+
+
+  
+
+export interface AggregateProjectFieldDetails {
+  count: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for FeedbackTarget
+
+type FeedbackTargetObject =
+  | FeedbackTargetFields
   | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'name', args?: [] | false, alias?: string  } 
   | { name: 'createdAt', args?: [] | false, alias?: string  } 
@@ -1074,7 +1484,7 @@ type FeedbackSubjectObject =
   | { name: 'project', args?: [] | false, alias?: string  } 
   | { name: 'createdBy', args?: [] | false, alias?: string  } 
 
-type FeedbackSubjectFields =
+type FeedbackTargetFields =
   | 'id'
   | 'name'
   | 'createdAt'
@@ -1086,7 +1496,7 @@ type FeedbackSubjectFields =
 
   
 
-export interface FeedbackSubjectFieldDetails {
+export interface FeedbackTargetFieldDetails {
   id: {
     type: 'ID'
     args: {}
@@ -1120,17 +1530,17 @@ export interface FeedbackSubjectFieldDetails {
     resolve: undefined
   }
   project: {
-    type: 'FeedbackProject'
+    type: 'Project'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackSubject">,
+      root: core.RootValue<"FeedbackTarget">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackProject> | prisma.FeedbackProject
+    ) => Promise<prisma.Project> | prisma.Project
   }
   createdBy: {
     type: 'User'
@@ -1139,7 +1549,7 @@ export interface FeedbackSubjectFieldDetails {
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"FeedbackSubject">,
+      root: core.RootValue<"FeedbackTarget">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
@@ -1148,15 +1558,15 @@ export interface FeedbackSubjectFieldDetails {
 }
   
 
-// Types for FeedbackSubjectConnection
+// Types for FeedbackTargetConnection
 
-type FeedbackSubjectConnectionObject =
-  | FeedbackSubjectConnectionFields
+type FeedbackTargetConnectionObject =
+  | FeedbackTargetConnectionFields
   | { name: 'pageInfo', args?: [] | false, alias?: string  } 
   | { name: 'edges', args?: [] | false, alias?: string  } 
   | { name: 'aggregate', args?: [] | false, alias?: string  } 
 
-type FeedbackSubjectConnectionFields =
+type FeedbackTargetConnectionFields =
   | 'pageInfo'
   | 'edges'
   | 'aggregate'
@@ -1165,7 +1575,7 @@ type FeedbackSubjectConnectionFields =
 
   
 
-export interface FeedbackSubjectConnectionFieldDetails {
+export interface FeedbackTargetConnectionFieldDetails {
   pageInfo: {
     type: 'PageInfo'
     args: {}
@@ -1173,49 +1583,49 @@ export interface FeedbackSubjectConnectionFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackSubjectConnection">,
+      root: core.RootValue<"FeedbackTargetConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.PageInfo> | prisma.PageInfo
   }
   edges: {
-    type: 'FeedbackSubjectEdge'
+    type: 'FeedbackTargetEdge'
     args: {}
     description: string
     list: true
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackSubjectConnection">,
+      root: core.RootValue<"FeedbackTargetConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackSubjectEdge[]> | prisma.FeedbackSubjectEdge[]
+    ) => Promise<prisma.FeedbackTargetEdge[]> | prisma.FeedbackTargetEdge[]
   }
   aggregate: {
-    type: 'AggregateFeedbackSubject'
+    type: 'AggregateFeedbackTarget'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackSubjectConnection">,
+      root: core.RootValue<"FeedbackTargetConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregateFeedbackSubject> | prisma.AggregateFeedbackSubject
+    ) => Promise<prisma.AggregateFeedbackTarget> | prisma.AggregateFeedbackTarget
   }
 }
   
 
-// Types for FeedbackSubjectEdge
+// Types for FeedbackTargetEdge
 
-type FeedbackSubjectEdgeObject =
-  | FeedbackSubjectEdgeFields
+type FeedbackTargetEdgeObject =
+  | FeedbackTargetEdgeFields
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'cursor', args?: [] | false, alias?: string  } 
 
-type FeedbackSubjectEdgeFields =
+type FeedbackTargetEdgeFields =
   | 'node'
   | 'cursor'
 
@@ -1223,19 +1633,19 @@ type FeedbackSubjectEdgeFields =
 
   
 
-export interface FeedbackSubjectEdgeFieldDetails {
+export interface FeedbackTargetEdgeFieldDetails {
   node: {
-    type: 'FeedbackSubject'
+    type: 'FeedbackTarget'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackSubjectEdge">,
+      root: core.RootValue<"FeedbackTargetEdge">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackSubject> | prisma.FeedbackSubject
+    ) => Promise<prisma.FeedbackTarget> | prisma.FeedbackTarget
   }
   cursor: {
     type: 'String'
@@ -1248,20 +1658,20 @@ export interface FeedbackSubjectEdgeFieldDetails {
 }
   
 
-// Types for AggregateFeedbackSubject
+// Types for AggregateFeedbackTarget
 
-type AggregateFeedbackSubjectObject =
-  | AggregateFeedbackSubjectFields
+type AggregateFeedbackTargetObject =
+  | AggregateFeedbackTargetFields
   | { name: 'count', args?: [] | false, alias?: string  } 
 
-type AggregateFeedbackSubjectFields =
+type AggregateFeedbackTargetFields =
   | 'count'
 
 
 
   
 
-export interface AggregateFeedbackSubjectFieldDetails {
+export interface AggregateFeedbackTargetFieldDetails {
   count: {
     type: 'Int'
     args: {}
@@ -1273,28 +1683,153 @@ export interface AggregateFeedbackSubjectFieldDetails {
 }
   
 
-// Types for FeedbackMedia
+// Types for DepartmentConnection
 
-type FeedbackMediaObject =
-  | FeedbackMediaFields
-  | { name: 'id', args?: [] | false, alias?: string  } 
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'createdAt', args?: [] | false, alias?: string  } 
-  | { name: 'updatedAt', args?: [] | false, alias?: string  } 
-  | { name: 'subject', args?: [] | false, alias?: string  } 
+type DepartmentConnectionObject =
+  | DepartmentConnectionFields
+  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
+  | { name: 'edges', args?: [] | false, alias?: string  } 
+  | { name: 'aggregate', args?: [] | false, alias?: string  } 
 
-type FeedbackMediaFields =
-  | 'id'
-  | 'name'
-  | 'createdAt'
-  | 'updatedAt'
-  | 'subject'
+type DepartmentConnectionFields =
+  | 'pageInfo'
+  | 'edges'
+  | 'aggregate'
 
 
 
   
 
-export interface FeedbackMediaFieldDetails {
+export interface DepartmentConnectionFieldDetails {
+  pageInfo: {
+    type: 'PageInfo'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"DepartmentConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PageInfo> | prisma.PageInfo
+  }
+  edges: {
+    type: 'DepartmentEdge'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"DepartmentConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.DepartmentEdge[]> | prisma.DepartmentEdge[]
+  }
+  aggregate: {
+    type: 'AggregateDepartment'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"DepartmentConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.AggregateDepartment> | prisma.AggregateDepartment
+  }
+}
+  
+
+// Types for DepartmentEdge
+
+type DepartmentEdgeObject =
+  | DepartmentEdgeFields
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'cursor', args?: [] | false, alias?: string  } 
+
+type DepartmentEdgeFields =
+  | 'node'
+  | 'cursor'
+
+
+
+  
+
+export interface DepartmentEdgeFieldDetails {
+  node: {
+    type: 'Department'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"DepartmentEdge">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Department> | prisma.Department
+  }
+  cursor: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for AggregateDepartment
+
+type AggregateDepartmentObject =
+  | AggregateDepartmentFields
+  | { name: 'count', args?: [] | false, alias?: string  } 
+
+type AggregateDepartmentFields =
+  | 'count'
+
+
+
+  
+
+export interface AggregateDepartmentFieldDetails {
+  count: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for Media
+
+type MediaObject =
+  | MediaFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'name', args?: [] | false, alias?: string  } 
+  | { name: 'createdAt', args?: [] | false, alias?: string  } 
+  | { name: 'updatedAt', args?: [] | false, alias?: string  } 
+  | { name: 'target', args?: [] | false, alias?: string  } 
+
+type MediaFields =
+  | 'id'
+  | 'name'
+  | 'createdAt'
+  | 'updatedAt'
+  | 'target'
+
+
+
+  
+
+export interface MediaFieldDetails {
   id: {
     type: 'ID'
     args: {}
@@ -1327,31 +1862,31 @@ export interface FeedbackMediaFieldDetails {
     nullable: false
     resolve: undefined
   }
-  subject: {
-    type: 'FeedbackProject'
+  target: {
+    type: 'FeedbackTarget'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackMedia">,
+      root: core.RootValue<"Media">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackProject> | prisma.FeedbackProject
+    ) => Promise<prisma.FeedbackTarget> | prisma.FeedbackTarget
   }
 }
   
 
-// Types for FeedbackMediaConnection
+// Types for MediaConnection
 
-type FeedbackMediaConnectionObject =
-  | FeedbackMediaConnectionFields
+type MediaConnectionObject =
+  | MediaConnectionFields
   | { name: 'pageInfo', args?: [] | false, alias?: string  } 
   | { name: 'edges', args?: [] | false, alias?: string  } 
   | { name: 'aggregate', args?: [] | false, alias?: string  } 
 
-type FeedbackMediaConnectionFields =
+type MediaConnectionFields =
   | 'pageInfo'
   | 'edges'
   | 'aggregate'
@@ -1360,7 +1895,7 @@ type FeedbackMediaConnectionFields =
 
   
 
-export interface FeedbackMediaConnectionFieldDetails {
+export interface MediaConnectionFieldDetails {
   pageInfo: {
     type: 'PageInfo'
     args: {}
@@ -1368,49 +1903,49 @@ export interface FeedbackMediaConnectionFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackMediaConnection">,
+      root: core.RootValue<"MediaConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.PageInfo> | prisma.PageInfo
   }
   edges: {
-    type: 'FeedbackMediaEdge'
+    type: 'MediaEdge'
     args: {}
     description: string
     list: true
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackMediaConnection">,
+      root: core.RootValue<"MediaConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackMediaEdge[]> | prisma.FeedbackMediaEdge[]
+    ) => Promise<prisma.MediaEdge[]> | prisma.MediaEdge[]
   }
   aggregate: {
-    type: 'AggregateFeedbackMedia'
+    type: 'AggregateMedia'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackMediaConnection">,
+      root: core.RootValue<"MediaConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregateFeedbackMedia> | prisma.AggregateFeedbackMedia
+    ) => Promise<prisma.AggregateMedia> | prisma.AggregateMedia
   }
 }
   
 
-// Types for FeedbackMediaEdge
+// Types for MediaEdge
 
-type FeedbackMediaEdgeObject =
-  | FeedbackMediaEdgeFields
+type MediaEdgeObject =
+  | MediaEdgeFields
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'cursor', args?: [] | false, alias?: string  } 
 
-type FeedbackMediaEdgeFields =
+type MediaEdgeFields =
   | 'node'
   | 'cursor'
 
@@ -1418,19 +1953,19 @@ type FeedbackMediaEdgeFields =
 
   
 
-export interface FeedbackMediaEdgeFieldDetails {
+export interface MediaEdgeFieldDetails {
   node: {
-    type: 'FeedbackMedia'
+    type: 'Media'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackMediaEdge">,
+      root: core.RootValue<"MediaEdge">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackMedia> | prisma.FeedbackMedia
+    ) => Promise<prisma.Media> | prisma.Media
   }
   cursor: {
     type: 'String'
@@ -1443,20 +1978,20 @@ export interface FeedbackMediaEdgeFieldDetails {
 }
   
 
-// Types for AggregateFeedbackMedia
+// Types for AggregateMedia
 
-type AggregateFeedbackMediaObject =
-  | AggregateFeedbackMediaFields
+type AggregateMediaObject =
+  | AggregateMediaFields
   | { name: 'count', args?: [] | false, alias?: string  } 
 
-type AggregateFeedbackMediaFields =
+type AggregateMediaFields =
   | 'count'
 
 
 
   
 
-export interface AggregateFeedbackMediaFieldDetails {
+export interface AggregateMediaFieldDetails {
   count: {
     type: 'Int'
     args: {}
@@ -1603,24 +2138,33 @@ type MutationObject =
   | { name: 'upsertUser', args?: MutationUpsertUserArgs[] | false, alias?: string  } 
   | { name: 'deleteUser', args?: MutationDeleteUserArgs[] | false, alias?: string  } 
   | { name: 'deleteManyUsers', args?: MutationDeleteManyUsersArgs[] | false, alias?: string  } 
-  | { name: 'createFeedbackProject', args?: MutationCreateFeedbackProjectArgs[] | false, alias?: string  } 
-  | { name: 'updateFeedbackProject', args?: MutationUpdateFeedbackProjectArgs[] | false, alias?: string  } 
-  | { name: 'updateManyFeedbackProjects', args?: MutationUpdateManyFeedbackProjectsArgs[] | false, alias?: string  } 
-  | { name: 'upsertFeedbackProject', args?: MutationUpsertFeedbackProjectArgs[] | false, alias?: string  } 
-  | { name: 'deleteFeedbackProject', args?: MutationDeleteFeedbackProjectArgs[] | false, alias?: string  } 
-  | { name: 'deleteManyFeedbackProjects', args?: MutationDeleteManyFeedbackProjectsArgs[] | false, alias?: string  } 
-  | { name: 'createFeedbackSubject', args?: MutationCreateFeedbackSubjectArgs[] | false, alias?: string  } 
-  | { name: 'updateFeedbackSubject', args?: MutationUpdateFeedbackSubjectArgs[] | false, alias?: string  } 
-  | { name: 'updateManyFeedbackSubjects', args?: MutationUpdateManyFeedbackSubjectsArgs[] | false, alias?: string  } 
-  | { name: 'upsertFeedbackSubject', args?: MutationUpsertFeedbackSubjectArgs[] | false, alias?: string  } 
-  | { name: 'deleteFeedbackSubject', args?: MutationDeleteFeedbackSubjectArgs[] | false, alias?: string  } 
-  | { name: 'deleteManyFeedbackSubjects', args?: MutationDeleteManyFeedbackSubjectsArgs[] | false, alias?: string  } 
-  | { name: 'createFeedbackMedia', args?: MutationCreateFeedbackMediaArgs[] | false, alias?: string  } 
-  | { name: 'updateFeedbackMedia', args?: MutationUpdateFeedbackMediaArgs[] | false, alias?: string  } 
-  | { name: 'updateManyFeedbackMedias', args?: MutationUpdateManyFeedbackMediasArgs[] | false, alias?: string  } 
-  | { name: 'upsertFeedbackMedia', args?: MutationUpsertFeedbackMediaArgs[] | false, alias?: string  } 
-  | { name: 'deleteFeedbackMedia', args?: MutationDeleteFeedbackMediaArgs[] | false, alias?: string  } 
-  | { name: 'deleteManyFeedbackMedias', args?: MutationDeleteManyFeedbackMediasArgs[] | false, alias?: string  } 
+  | { name: 'createScript', args?: MutationCreateScriptArgs[] | false, alias?: string  } 
+  | { name: 'deleteScript', args?: MutationDeleteScriptArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyScripts', args?: MutationDeleteManyScriptsArgs[] | false, alias?: string  } 
+  | { name: 'createProject', args?: MutationCreateProjectArgs[] | false, alias?: string  } 
+  | { name: 'updateProject', args?: MutationUpdateProjectArgs[] | false, alias?: string  } 
+  | { name: 'updateManyProjects', args?: MutationUpdateManyProjectsArgs[] | false, alias?: string  } 
+  | { name: 'upsertProject', args?: MutationUpsertProjectArgs[] | false, alias?: string  } 
+  | { name: 'deleteProject', args?: MutationDeleteProjectArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyProjects', args?: MutationDeleteManyProjectsArgs[] | false, alias?: string  } 
+  | { name: 'createFeedbackTarget', args?: MutationCreateFeedbackTargetArgs[] | false, alias?: string  } 
+  | { name: 'updateFeedbackTarget', args?: MutationUpdateFeedbackTargetArgs[] | false, alias?: string  } 
+  | { name: 'updateManyFeedbackTargets', args?: MutationUpdateManyFeedbackTargetsArgs[] | false, alias?: string  } 
+  | { name: 'upsertFeedbackTarget', args?: MutationUpsertFeedbackTargetArgs[] | false, alias?: string  } 
+  | { name: 'deleteFeedbackTarget', args?: MutationDeleteFeedbackTargetArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyFeedbackTargets', args?: MutationDeleteManyFeedbackTargetsArgs[] | false, alias?: string  } 
+  | { name: 'createDepartment', args?: MutationCreateDepartmentArgs[] | false, alias?: string  } 
+  | { name: 'updateDepartment', args?: MutationUpdateDepartmentArgs[] | false, alias?: string  } 
+  | { name: 'updateManyDepartments', args?: MutationUpdateManyDepartmentsArgs[] | false, alias?: string  } 
+  | { name: 'upsertDepartment', args?: MutationUpsertDepartmentArgs[] | false, alias?: string  } 
+  | { name: 'deleteDepartment', args?: MutationDeleteDepartmentArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyDepartments', args?: MutationDeleteManyDepartmentsArgs[] | false, alias?: string  } 
+  | { name: 'createMedia', args?: MutationCreateMediaArgs[] | false, alias?: string  } 
+  | { name: 'updateMedia', args?: MutationUpdateMediaArgs[] | false, alias?: string  } 
+  | { name: 'updateManyMedias', args?: MutationUpdateManyMediasArgs[] | false, alias?: string  } 
+  | { name: 'upsertMedia', args?: MutationUpsertMediaArgs[] | false, alias?: string  } 
+  | { name: 'deleteMedia', args?: MutationDeleteMediaArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyMedias', args?: MutationDeleteManyMediasArgs[] | false, alias?: string  } 
   | { name: 'createFeedbackRound', args?: MutationCreateFeedbackRoundArgs[] | false, alias?: string  } 
   | { name: 'updateFeedbackRound', args?: MutationUpdateFeedbackRoundArgs[] | false, alias?: string  } 
   | { name: 'updateManyFeedbackRounds', args?: MutationUpdateManyFeedbackRoundsArgs[] | false, alias?: string  } 
@@ -1635,24 +2179,33 @@ type MutationFields =
   | 'upsertUser'
   | 'deleteUser'
   | 'deleteManyUsers'
-  | 'createFeedbackProject'
-  | 'updateFeedbackProject'
-  | 'updateManyFeedbackProjects'
-  | 'upsertFeedbackProject'
-  | 'deleteFeedbackProject'
-  | 'deleteManyFeedbackProjects'
-  | 'createFeedbackSubject'
-  | 'updateFeedbackSubject'
-  | 'updateManyFeedbackSubjects'
-  | 'upsertFeedbackSubject'
-  | 'deleteFeedbackSubject'
-  | 'deleteManyFeedbackSubjects'
-  | 'createFeedbackMedia'
-  | 'updateFeedbackMedia'
-  | 'updateManyFeedbackMedias'
-  | 'upsertFeedbackMedia'
-  | 'deleteFeedbackMedia'
-  | 'deleteManyFeedbackMedias'
+  | 'createScript'
+  | 'deleteScript'
+  | 'deleteManyScripts'
+  | 'createProject'
+  | 'updateProject'
+  | 'updateManyProjects'
+  | 'upsertProject'
+  | 'deleteProject'
+  | 'deleteManyProjects'
+  | 'createFeedbackTarget'
+  | 'updateFeedbackTarget'
+  | 'updateManyFeedbackTargets'
+  | 'upsertFeedbackTarget'
+  | 'deleteFeedbackTarget'
+  | 'deleteManyFeedbackTargets'
+  | 'createDepartment'
+  | 'updateDepartment'
+  | 'updateManyDepartments'
+  | 'upsertDepartment'
+  | 'deleteDepartment'
+  | 'deleteManyDepartments'
+  | 'createMedia'
+  | 'updateMedia'
+  | 'updateManyMedias'
+  | 'upsertMedia'
+  | 'deleteMedia'
+  | 'deleteManyMedias'
   | 'createFeedbackRound'
   | 'updateFeedbackRound'
   | 'updateManyFeedbackRounds'
@@ -1677,53 +2230,75 @@ type MutationDeleteUserArgs =
   | 'where'
 type MutationDeleteManyUsersArgs =
   | 'where'
-type MutationCreateFeedbackProjectArgs =
+type MutationCreateScriptArgs =
   | 'data'
-type MutationUpdateFeedbackProjectArgs =
+type MutationDeleteScriptArgs =
+  | 'where'
+type MutationDeleteManyScriptsArgs =
+  | 'where'
+type MutationCreateProjectArgs =
+  | 'data'
+type MutationUpdateProjectArgs =
   | 'data'
   | 'where'
-type MutationUpdateManyFeedbackProjectsArgs =
+type MutationUpdateManyProjectsArgs =
   | 'data'
   | 'where'
-type MutationUpsertFeedbackProjectArgs =
+type MutationUpsertProjectArgs =
   | 'where'
   | 'create'
   | 'update'
-type MutationDeleteFeedbackProjectArgs =
+type MutationDeleteProjectArgs =
   | 'where'
-type MutationDeleteManyFeedbackProjectsArgs =
+type MutationDeleteManyProjectsArgs =
   | 'where'
-type MutationCreateFeedbackSubjectArgs =
+type MutationCreateFeedbackTargetArgs =
   | 'data'
-type MutationUpdateFeedbackSubjectArgs =
-  | 'data'
-  | 'where'
-type MutationUpdateManyFeedbackSubjectsArgs =
+type MutationUpdateFeedbackTargetArgs =
   | 'data'
   | 'where'
-type MutationUpsertFeedbackSubjectArgs =
+type MutationUpdateManyFeedbackTargetsArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertFeedbackTargetArgs =
   | 'where'
   | 'create'
   | 'update'
-type MutationDeleteFeedbackSubjectArgs =
+type MutationDeleteFeedbackTargetArgs =
   | 'where'
-type MutationDeleteManyFeedbackSubjectsArgs =
+type MutationDeleteManyFeedbackTargetsArgs =
   | 'where'
-type MutationCreateFeedbackMediaArgs =
+type MutationCreateDepartmentArgs =
   | 'data'
-type MutationUpdateFeedbackMediaArgs =
-  | 'data'
-  | 'where'
-type MutationUpdateManyFeedbackMediasArgs =
+type MutationUpdateDepartmentArgs =
   | 'data'
   | 'where'
-type MutationUpsertFeedbackMediaArgs =
+type MutationUpdateManyDepartmentsArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertDepartmentArgs =
   | 'where'
   | 'create'
   | 'update'
-type MutationDeleteFeedbackMediaArgs =
+type MutationDeleteDepartmentArgs =
   | 'where'
-type MutationDeleteManyFeedbackMediasArgs =
+type MutationDeleteManyDepartmentsArgs =
+  | 'where'
+type MutationCreateMediaArgs =
+  | 'data'
+type MutationUpdateMediaArgs =
+  | 'data'
+  | 'where'
+type MutationUpdateManyMediasArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertMediaArgs =
+  | 'where'
+  | 'create'
+  | 'update'
+type MutationDeleteMediaArgs =
+  | 'where'
+type MutationDeleteManyMediasArgs =
   | 'where'
 type MutationCreateFeedbackRoundArgs =
   | 'data'
@@ -1822,236 +2397,353 @@ export interface MutationFieldDetails {
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  createFeedbackProject: {
-    type: 'FeedbackProject'
-    args: Record<MutationCreateFeedbackProjectArgs, core.NexusArgDef<string>>
+  createScript: {
+    type: 'Script'
+    args: Record<MutationCreateScriptArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: FeedbackProjectCreateInput }  ,
+      args: { data: ScriptCreateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackProject> | prisma.FeedbackProject
+    ) => Promise<prisma.Script> | prisma.Script
   }
-  updateFeedbackProject: {
-    type: 'FeedbackProject'
-    args: Record<MutationUpdateFeedbackProjectArgs, core.NexusArgDef<string>>
+  deleteScript: {
+    type: 'Script'
+    args: Record<MutationDeleteScriptArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: FeedbackProjectUpdateInput, where: FeedbackProjectWhereUniqueInput }  ,
+      args: { where: ScriptWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackProject | null> | prisma.FeedbackProject | null
+    ) => Promise<prisma.Script | null> | prisma.Script | null
   }
-  updateManyFeedbackProjects: {
+  deleteManyScripts: {
     type: 'BatchPayload'
-    args: Record<MutationUpdateManyFeedbackProjectsArgs, core.NexusArgDef<string>>
+    args: Record<MutationDeleteManyScriptsArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: FeedbackProjectUpdateManyMutationInput, where?: FeedbackProjectWhereInput | null }  ,
+      args: { where?: ScriptWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  upsertFeedbackProject: {
-    type: 'FeedbackProject'
-    args: Record<MutationUpsertFeedbackProjectArgs, core.NexusArgDef<string>>
+  createProject: {
+    type: 'Project'
+    args: Record<MutationCreateProjectArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: FeedbackProjectWhereUniqueInput, create: FeedbackProjectCreateInput, update: FeedbackProjectUpdateInput }  ,
+      args: { data: ProjectCreateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackProject> | prisma.FeedbackProject
+    ) => Promise<prisma.Project> | prisma.Project
   }
-  deleteFeedbackProject: {
-    type: 'FeedbackProject'
-    args: Record<MutationDeleteFeedbackProjectArgs, core.NexusArgDef<string>>
+  updateProject: {
+    type: 'Project'
+    args: Record<MutationUpdateProjectArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: FeedbackProjectWhereUniqueInput }  ,
+      args: { data: ProjectUpdateInput, where: ProjectWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackProject | null> | prisma.FeedbackProject | null
+    ) => Promise<prisma.Project | null> | prisma.Project | null
   }
-  deleteManyFeedbackProjects: {
+  updateManyProjects: {
     type: 'BatchPayload'
-    args: Record<MutationDeleteManyFeedbackProjectsArgs, core.NexusArgDef<string>>
+    args: Record<MutationUpdateManyProjectsArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where?: FeedbackProjectWhereInput | null }  ,
+      args: { data: ProjectUpdateManyMutationInput, where?: ProjectWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  createFeedbackSubject: {
-    type: 'FeedbackSubject'
-    args: Record<MutationCreateFeedbackSubjectArgs, core.NexusArgDef<string>>
+  upsertProject: {
+    type: 'Project'
+    args: Record<MutationUpsertProjectArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: FeedbackSubjectCreateInput }  ,
+      args: { where: ProjectWhereUniqueInput, create: ProjectCreateInput, update: ProjectUpdateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackSubject> | prisma.FeedbackSubject
+    ) => Promise<prisma.Project> | prisma.Project
   }
-  updateFeedbackSubject: {
-    type: 'FeedbackSubject'
-    args: Record<MutationUpdateFeedbackSubjectArgs, core.NexusArgDef<string>>
+  deleteProject: {
+    type: 'Project'
+    args: Record<MutationDeleteProjectArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: FeedbackSubjectUpdateInput, where: FeedbackSubjectWhereUniqueInput }  ,
+      args: { where: ProjectWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackSubject | null> | prisma.FeedbackSubject | null
+    ) => Promise<prisma.Project | null> | prisma.Project | null
   }
-  updateManyFeedbackSubjects: {
+  deleteManyProjects: {
     type: 'BatchPayload'
-    args: Record<MutationUpdateManyFeedbackSubjectsArgs, core.NexusArgDef<string>>
+    args: Record<MutationDeleteManyProjectsArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: FeedbackSubjectUpdateManyMutationInput, where?: FeedbackSubjectWhereInput | null }  ,
+      args: { where?: ProjectWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  upsertFeedbackSubject: {
-    type: 'FeedbackSubject'
-    args: Record<MutationUpsertFeedbackSubjectArgs, core.NexusArgDef<string>>
+  createFeedbackTarget: {
+    type: 'FeedbackTarget'
+    args: Record<MutationCreateFeedbackTargetArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: FeedbackSubjectWhereUniqueInput, create: FeedbackSubjectCreateInput, update: FeedbackSubjectUpdateInput }  ,
+      args: { data: FeedbackTargetCreateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackSubject> | prisma.FeedbackSubject
+    ) => Promise<prisma.FeedbackTarget> | prisma.FeedbackTarget
   }
-  deleteFeedbackSubject: {
-    type: 'FeedbackSubject'
-    args: Record<MutationDeleteFeedbackSubjectArgs, core.NexusArgDef<string>>
+  updateFeedbackTarget: {
+    type: 'FeedbackTarget'
+    args: Record<MutationUpdateFeedbackTargetArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: FeedbackSubjectWhereUniqueInput }  ,
+      args: { data: FeedbackTargetUpdateInput, where: FeedbackTargetWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackSubject | null> | prisma.FeedbackSubject | null
+    ) => Promise<prisma.FeedbackTarget | null> | prisma.FeedbackTarget | null
   }
-  deleteManyFeedbackSubjects: {
+  updateManyFeedbackTargets: {
     type: 'BatchPayload'
-    args: Record<MutationDeleteManyFeedbackSubjectsArgs, core.NexusArgDef<string>>
+    args: Record<MutationUpdateManyFeedbackTargetsArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where?: FeedbackSubjectWhereInput | null }  ,
+      args: { data: FeedbackTargetUpdateManyMutationInput, where?: FeedbackTargetWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  createFeedbackMedia: {
-    type: 'FeedbackMedia'
-    args: Record<MutationCreateFeedbackMediaArgs, core.NexusArgDef<string>>
+  upsertFeedbackTarget: {
+    type: 'FeedbackTarget'
+    args: Record<MutationUpsertFeedbackTargetArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: FeedbackMediaCreateInput }  ,
+      args: { where: FeedbackTargetWhereUniqueInput, create: FeedbackTargetCreateInput, update: FeedbackTargetUpdateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackMedia> | prisma.FeedbackMedia
+    ) => Promise<prisma.FeedbackTarget> | prisma.FeedbackTarget
   }
-  updateFeedbackMedia: {
-    type: 'FeedbackMedia'
-    args: Record<MutationUpdateFeedbackMediaArgs, core.NexusArgDef<string>>
+  deleteFeedbackTarget: {
+    type: 'FeedbackTarget'
+    args: Record<MutationDeleteFeedbackTargetArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: FeedbackMediaUpdateInput, where: FeedbackMediaWhereUniqueInput }  ,
+      args: { where: FeedbackTargetWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackMedia | null> | prisma.FeedbackMedia | null
+    ) => Promise<prisma.FeedbackTarget | null> | prisma.FeedbackTarget | null
   }
-  updateManyFeedbackMedias: {
+  deleteManyFeedbackTargets: {
     type: 'BatchPayload'
-    args: Record<MutationUpdateManyFeedbackMediasArgs, core.NexusArgDef<string>>
+    args: Record<MutationDeleteManyFeedbackTargetsArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: FeedbackMediaUpdateManyMutationInput, where?: FeedbackMediaWhereInput | null }  ,
+      args: { where?: FeedbackTargetWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  upsertFeedbackMedia: {
-    type: 'FeedbackMedia'
-    args: Record<MutationUpsertFeedbackMediaArgs, core.NexusArgDef<string>>
+  createDepartment: {
+    type: 'Department'
+    args: Record<MutationCreateDepartmentArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: FeedbackMediaWhereUniqueInput, create: FeedbackMediaCreateInput, update: FeedbackMediaUpdateInput }  ,
+      args: { data: DepartmentCreateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackMedia> | prisma.FeedbackMedia
+    ) => Promise<prisma.Department> | prisma.Department
   }
-  deleteFeedbackMedia: {
-    type: 'FeedbackMedia'
-    args: Record<MutationDeleteFeedbackMediaArgs, core.NexusArgDef<string>>
+  updateDepartment: {
+    type: 'Department'
+    args: Record<MutationUpdateDepartmentArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: FeedbackMediaWhereUniqueInput }  ,
+      args: { data: DepartmentUpdateInput, where: DepartmentWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackMedia | null> | prisma.FeedbackMedia | null
+    ) => Promise<prisma.Department | null> | prisma.Department | null
   }
-  deleteManyFeedbackMedias: {
+  updateManyDepartments: {
     type: 'BatchPayload'
-    args: Record<MutationDeleteManyFeedbackMediasArgs, core.NexusArgDef<string>>
+    args: Record<MutationUpdateManyDepartmentsArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where?: FeedbackMediaWhereInput | null }  ,
+      args: { data: DepartmentUpdateManyMutationInput, where?: DepartmentWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  upsertDepartment: {
+    type: 'Department'
+    args: Record<MutationUpsertDepartmentArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: DepartmentWhereUniqueInput, create: DepartmentCreateInput, update: DepartmentUpdateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Department> | prisma.Department
+  }
+  deleteDepartment: {
+    type: 'Department'
+    args: Record<MutationDeleteDepartmentArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: DepartmentWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Department | null> | prisma.Department | null
+  }
+  deleteManyDepartments: {
+    type: 'BatchPayload'
+    args: Record<MutationDeleteManyDepartmentsArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where?: DepartmentWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  createMedia: {
+    type: 'Media'
+    args: Record<MutationCreateMediaArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: MediaCreateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Media> | prisma.Media
+  }
+  updateMedia: {
+    type: 'Media'
+    args: Record<MutationUpdateMediaArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: MediaUpdateInput, where: MediaWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Media | null> | prisma.Media | null
+  }
+  updateManyMedias: {
+    type: 'BatchPayload'
+    args: Record<MutationUpdateManyMediasArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: MediaUpdateManyMutationInput, where?: MediaWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  upsertMedia: {
+    type: 'Media'
+    args: Record<MutationUpsertMediaArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: MediaWhereUniqueInput, create: MediaCreateInput, update: MediaUpdateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Media> | prisma.Media
+  }
+  deleteMedia: {
+    type: 'Media'
+    args: Record<MutationDeleteMediaArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: MediaWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Media | null> | prisma.Media | null
+  }
+  deleteManyMedias: {
+    type: 'BatchPayload'
+    args: Record<MutationDeleteManyMediasArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where?: MediaWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
@@ -2167,26 +2859,34 @@ export interface BatchPayloadFieldDetails {
 type SubscriptionObject =
   | SubscriptionFields
   | { name: 'user', args?: SubscriptionUserArgs[] | false, alias?: string  } 
-  | { name: 'feedbackProject', args?: SubscriptionFeedbackProjectArgs[] | false, alias?: string  } 
-  | { name: 'feedbackSubject', args?: SubscriptionFeedbackSubjectArgs[] | false, alias?: string  } 
-  | { name: 'feedbackMedia', args?: SubscriptionFeedbackMediaArgs[] | false, alias?: string  } 
+  | { name: 'script', args?: SubscriptionScriptArgs[] | false, alias?: string  } 
+  | { name: 'project', args?: SubscriptionProjectArgs[] | false, alias?: string  } 
+  | { name: 'feedbackTarget', args?: SubscriptionFeedbackTargetArgs[] | false, alias?: string  } 
+  | { name: 'department', args?: SubscriptionDepartmentArgs[] | false, alias?: string  } 
+  | { name: 'media', args?: SubscriptionMediaArgs[] | false, alias?: string  } 
   | { name: 'feedbackRound', args?: SubscriptionFeedbackRoundArgs[] | false, alias?: string  } 
 
 type SubscriptionFields =
   | 'user'
-  | 'feedbackProject'
-  | 'feedbackSubject'
-  | 'feedbackMedia'
+  | 'script'
+  | 'project'
+  | 'feedbackTarget'
+  | 'department'
+  | 'media'
   | 'feedbackRound'
 
 
 type SubscriptionUserArgs =
   | 'where'
-type SubscriptionFeedbackProjectArgs =
+type SubscriptionScriptArgs =
   | 'where'
-type SubscriptionFeedbackSubjectArgs =
+type SubscriptionProjectArgs =
   | 'where'
-type SubscriptionFeedbackMediaArgs =
+type SubscriptionFeedbackTargetArgs =
+  | 'where'
+type SubscriptionDepartmentArgs =
+  | 'where'
+type SubscriptionMediaArgs =
   | 'where'
 type SubscriptionFeedbackRoundArgs =
   | 'where'
@@ -2206,44 +2906,70 @@ export interface SubscriptionFieldDetails {
       info?: GraphQLResolveInfo
     ) => Promise<prisma.UserSubscriptionPayload | null> | prisma.UserSubscriptionPayload | null
   }
-  feedbackProject: {
-    type: 'FeedbackProjectSubscriptionPayload'
-    args: Record<SubscriptionFeedbackProjectArgs, core.NexusArgDef<string>>
+  script: {
+    type: 'ScriptSubscriptionPayload'
+    args: Record<SubscriptionScriptArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Subscription">,
-      args: { where?: FeedbackProjectSubscriptionWhereInput | null }  ,
+      args: { where?: ScriptSubscriptionWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackProjectSubscriptionPayload | null> | prisma.FeedbackProjectSubscriptionPayload | null
+    ) => Promise<prisma.ScriptSubscriptionPayload | null> | prisma.ScriptSubscriptionPayload | null
   }
-  feedbackSubject: {
-    type: 'FeedbackSubjectSubscriptionPayload'
-    args: Record<SubscriptionFeedbackSubjectArgs, core.NexusArgDef<string>>
+  project: {
+    type: 'ProjectSubscriptionPayload'
+    args: Record<SubscriptionProjectArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Subscription">,
-      args: { where?: FeedbackSubjectSubscriptionWhereInput | null }  ,
+      args: { where?: ProjectSubscriptionWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackSubjectSubscriptionPayload | null> | prisma.FeedbackSubjectSubscriptionPayload | null
+    ) => Promise<prisma.ProjectSubscriptionPayload | null> | prisma.ProjectSubscriptionPayload | null
   }
-  feedbackMedia: {
-    type: 'FeedbackMediaSubscriptionPayload'
-    args: Record<SubscriptionFeedbackMediaArgs, core.NexusArgDef<string>>
+  feedbackTarget: {
+    type: 'FeedbackTargetSubscriptionPayload'
+    args: Record<SubscriptionFeedbackTargetArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Subscription">,
-      args: { where?: FeedbackMediaSubscriptionWhereInput | null }  ,
+      args: { where?: FeedbackTargetSubscriptionWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackMediaSubscriptionPayload | null> | prisma.FeedbackMediaSubscriptionPayload | null
+    ) => Promise<prisma.FeedbackTargetSubscriptionPayload | null> | prisma.FeedbackTargetSubscriptionPayload | null
+  }
+  department: {
+    type: 'DepartmentSubscriptionPayload'
+    args: Record<SubscriptionDepartmentArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Subscription">,
+      args: { where?: DepartmentSubscriptionWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.DepartmentSubscriptionPayload | null> | prisma.DepartmentSubscriptionPayload | null
+  }
+  media: {
+    type: 'MediaSubscriptionPayload'
+    args: Record<SubscriptionMediaArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Subscription">,
+      args: { where?: MediaSubscriptionWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MediaSubscriptionPayload | null> | prisma.MediaSubscriptionPayload | null
   }
   feedbackRound: {
     type: 'FeedbackRoundSubscriptionPayload'
@@ -2396,16 +3122,16 @@ export interface UserPreviousValuesFieldDetails {
 }
   
 
-// Types for FeedbackProjectSubscriptionPayload
+// Types for ScriptSubscriptionPayload
 
-type FeedbackProjectSubscriptionPayloadObject =
-  | FeedbackProjectSubscriptionPayloadFields
+type ScriptSubscriptionPayloadObject =
+  | ScriptSubscriptionPayloadFields
   | { name: 'mutation', args?: [] | false, alias?: string  } 
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'updatedFields', args?: [] | false, alias?: string  } 
   | { name: 'previousValues', args?: [] | false, alias?: string  } 
 
-type FeedbackProjectSubscriptionPayloadFields =
+type ScriptSubscriptionPayloadFields =
   | 'mutation'
   | 'node'
   | 'updatedFields'
@@ -2415,7 +3141,7 @@ type FeedbackProjectSubscriptionPayloadFields =
 
   
 
-export interface FeedbackProjectSubscriptionPayloadFieldDetails {
+export interface ScriptSubscriptionPayloadFieldDetails {
   mutation: {
     type: 'MutationType'
     args: {}
@@ -2423,24 +3149,24 @@ export interface FeedbackProjectSubscriptionPayloadFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackProjectSubscriptionPayload">,
+      root: core.RootValue<"ScriptSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.MutationType> | prisma.MutationType
   }
   node: {
-    type: 'FeedbackProject'
+    type: 'Script'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"FeedbackProjectSubscriptionPayload">,
+      root: core.RootValue<"ScriptSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackProject | null> | prisma.FeedbackProject | null
+    ) => Promise<prisma.Script | null> | prisma.Script | null
   }
   updatedFields: {
     type: 'String'
@@ -2451,31 +3177,126 @@ export interface FeedbackProjectSubscriptionPayloadFieldDetails {
     resolve: undefined
   }
   previousValues: {
-    type: 'FeedbackProjectPreviousValues'
+    type: 'ScriptPreviousValues'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"FeedbackProjectSubscriptionPayload">,
+      root: core.RootValue<"ScriptSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackProjectPreviousValues | null> | prisma.FeedbackProjectPreviousValues | null
+    ) => Promise<prisma.ScriptPreviousValues | null> | prisma.ScriptPreviousValues | null
   }
 }
   
 
-// Types for FeedbackProjectPreviousValues
+// Types for ScriptPreviousValues
 
-type FeedbackProjectPreviousValuesObject =
-  | FeedbackProjectPreviousValuesFields
+type ScriptPreviousValuesObject =
+  | ScriptPreviousValuesFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+
+type ScriptPreviousValuesFields =
+  | 'id'
+
+
+
+  
+
+export interface ScriptPreviousValuesFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for ProjectSubscriptionPayload
+
+type ProjectSubscriptionPayloadObject =
+  | ProjectSubscriptionPayloadFields
+  | { name: 'mutation', args?: [] | false, alias?: string  } 
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
+  | { name: 'previousValues', args?: [] | false, alias?: string  } 
+
+type ProjectSubscriptionPayloadFields =
+  | 'mutation'
+  | 'node'
+  | 'updatedFields'
+  | 'previousValues'
+
+
+
+  
+
+export interface ProjectSubscriptionPayloadFieldDetails {
+  mutation: {
+    type: 'MutationType'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"ProjectSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MutationType> | prisma.MutationType
+  }
+  node: {
+    type: 'Project'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"ProjectSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Project | null> | prisma.Project | null
+  }
+  updatedFields: {
+    type: 'String'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: undefined
+  }
+  previousValues: {
+    type: 'ProjectPreviousValues'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"ProjectSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.ProjectPreviousValues | null> | prisma.ProjectPreviousValues | null
+  }
+}
+  
+
+// Types for ProjectPreviousValues
+
+type ProjectPreviousValuesObject =
+  | ProjectPreviousValuesFields
   | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'name', args?: [] | false, alias?: string  } 
   | { name: 'createdAt', args?: [] | false, alias?: string  } 
   | { name: 'updatedAt', args?: [] | false, alias?: string  } 
 
-type FeedbackProjectPreviousValuesFields =
+type ProjectPreviousValuesFields =
   | 'id'
   | 'name'
   | 'createdAt'
@@ -2485,7 +3306,7 @@ type FeedbackProjectPreviousValuesFields =
 
   
 
-export interface FeedbackProjectPreviousValuesFieldDetails {
+export interface ProjectPreviousValuesFieldDetails {
   id: {
     type: 'ID'
     args: {}
@@ -2521,16 +3342,16 @@ export interface FeedbackProjectPreviousValuesFieldDetails {
 }
   
 
-// Types for FeedbackSubjectSubscriptionPayload
+// Types for FeedbackTargetSubscriptionPayload
 
-type FeedbackSubjectSubscriptionPayloadObject =
-  | FeedbackSubjectSubscriptionPayloadFields
+type FeedbackTargetSubscriptionPayloadObject =
+  | FeedbackTargetSubscriptionPayloadFields
   | { name: 'mutation', args?: [] | false, alias?: string  } 
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'updatedFields', args?: [] | false, alias?: string  } 
   | { name: 'previousValues', args?: [] | false, alias?: string  } 
 
-type FeedbackSubjectSubscriptionPayloadFields =
+type FeedbackTargetSubscriptionPayloadFields =
   | 'mutation'
   | 'node'
   | 'updatedFields'
@@ -2540,7 +3361,7 @@ type FeedbackSubjectSubscriptionPayloadFields =
 
   
 
-export interface FeedbackSubjectSubscriptionPayloadFieldDetails {
+export interface FeedbackTargetSubscriptionPayloadFieldDetails {
   mutation: {
     type: 'MutationType'
     args: {}
@@ -2548,24 +3369,24 @@ export interface FeedbackSubjectSubscriptionPayloadFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackSubjectSubscriptionPayload">,
+      root: core.RootValue<"FeedbackTargetSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.MutationType> | prisma.MutationType
   }
   node: {
-    type: 'FeedbackSubject'
+    type: 'FeedbackTarget'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"FeedbackSubjectSubscriptionPayload">,
+      root: core.RootValue<"FeedbackTargetSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackSubject | null> | prisma.FeedbackSubject | null
+    ) => Promise<prisma.FeedbackTarget | null> | prisma.FeedbackTarget | null
   }
   updatedFields: {
     type: 'String'
@@ -2576,31 +3397,31 @@ export interface FeedbackSubjectSubscriptionPayloadFieldDetails {
     resolve: undefined
   }
   previousValues: {
-    type: 'FeedbackSubjectPreviousValues'
+    type: 'FeedbackTargetPreviousValues'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"FeedbackSubjectSubscriptionPayload">,
+      root: core.RootValue<"FeedbackTargetSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackSubjectPreviousValues | null> | prisma.FeedbackSubjectPreviousValues | null
+    ) => Promise<prisma.FeedbackTargetPreviousValues | null> | prisma.FeedbackTargetPreviousValues | null
   }
 }
   
 
-// Types for FeedbackSubjectPreviousValues
+// Types for FeedbackTargetPreviousValues
 
-type FeedbackSubjectPreviousValuesObject =
-  | FeedbackSubjectPreviousValuesFields
+type FeedbackTargetPreviousValuesObject =
+  | FeedbackTargetPreviousValuesFields
   | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'name', args?: [] | false, alias?: string  } 
   | { name: 'createdAt', args?: [] | false, alias?: string  } 
   | { name: 'updatedAt', args?: [] | false, alias?: string  } 
 
-type FeedbackSubjectPreviousValuesFields =
+type FeedbackTargetPreviousValuesFields =
   | 'id'
   | 'name'
   | 'createdAt'
@@ -2610,7 +3431,7 @@ type FeedbackSubjectPreviousValuesFields =
 
   
 
-export interface FeedbackSubjectPreviousValuesFieldDetails {
+export interface FeedbackTargetPreviousValuesFieldDetails {
   id: {
     type: 'ID'
     args: {}
@@ -2646,16 +3467,16 @@ export interface FeedbackSubjectPreviousValuesFieldDetails {
 }
   
 
-// Types for FeedbackMediaSubscriptionPayload
+// Types for DepartmentSubscriptionPayload
 
-type FeedbackMediaSubscriptionPayloadObject =
-  | FeedbackMediaSubscriptionPayloadFields
+type DepartmentSubscriptionPayloadObject =
+  | DepartmentSubscriptionPayloadFields
   | { name: 'mutation', args?: [] | false, alias?: string  } 
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'updatedFields', args?: [] | false, alias?: string  } 
   | { name: 'previousValues', args?: [] | false, alias?: string  } 
 
-type FeedbackMediaSubscriptionPayloadFields =
+type DepartmentSubscriptionPayloadFields =
   | 'mutation'
   | 'node'
   | 'updatedFields'
@@ -2665,7 +3486,7 @@ type FeedbackMediaSubscriptionPayloadFields =
 
   
 
-export interface FeedbackMediaSubscriptionPayloadFieldDetails {
+export interface DepartmentSubscriptionPayloadFieldDetails {
   mutation: {
     type: 'MutationType'
     args: {}
@@ -2673,24 +3494,24 @@ export interface FeedbackMediaSubscriptionPayloadFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FeedbackMediaSubscriptionPayload">,
+      root: core.RootValue<"DepartmentSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.MutationType> | prisma.MutationType
   }
   node: {
-    type: 'FeedbackMedia'
+    type: 'Department'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"FeedbackMediaSubscriptionPayload">,
+      root: core.RootValue<"DepartmentSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackMedia | null> | prisma.FeedbackMedia | null
+    ) => Promise<prisma.Department | null> | prisma.Department | null
   }
   updatedFields: {
     type: 'String'
@@ -2701,31 +3522,136 @@ export interface FeedbackMediaSubscriptionPayloadFieldDetails {
     resolve: undefined
   }
   previousValues: {
-    type: 'FeedbackMediaPreviousValues'
+    type: 'DepartmentPreviousValues'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"FeedbackMediaSubscriptionPayload">,
+      root: core.RootValue<"DepartmentSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FeedbackMediaPreviousValues | null> | prisma.FeedbackMediaPreviousValues | null
+    ) => Promise<prisma.DepartmentPreviousValues | null> | prisma.DepartmentPreviousValues | null
   }
 }
   
 
-// Types for FeedbackMediaPreviousValues
+// Types for DepartmentPreviousValues
 
-type FeedbackMediaPreviousValuesObject =
-  | FeedbackMediaPreviousValuesFields
+type DepartmentPreviousValuesObject =
+  | DepartmentPreviousValuesFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'name', args?: [] | false, alias?: string  } 
+
+type DepartmentPreviousValuesFields =
+  | 'id'
+  | 'name'
+
+
+
+  
+
+export interface DepartmentPreviousValuesFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  name: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for MediaSubscriptionPayload
+
+type MediaSubscriptionPayloadObject =
+  | MediaSubscriptionPayloadFields
+  | { name: 'mutation', args?: [] | false, alias?: string  } 
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
+  | { name: 'previousValues', args?: [] | false, alias?: string  } 
+
+type MediaSubscriptionPayloadFields =
+  | 'mutation'
+  | 'node'
+  | 'updatedFields'
+  | 'previousValues'
+
+
+
+  
+
+export interface MediaSubscriptionPayloadFieldDetails {
+  mutation: {
+    type: 'MutationType'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"MediaSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MutationType> | prisma.MutationType
+  }
+  node: {
+    type: 'Media'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"MediaSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Media | null> | prisma.Media | null
+  }
+  updatedFields: {
+    type: 'String'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: undefined
+  }
+  previousValues: {
+    type: 'MediaPreviousValues'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"MediaSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MediaPreviousValues | null> | prisma.MediaPreviousValues | null
+  }
+}
+  
+
+// Types for MediaPreviousValues
+
+type MediaPreviousValuesObject =
+  | MediaPreviousValuesFields
   | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'name', args?: [] | false, alias?: string  } 
   | { name: 'createdAt', args?: [] | false, alias?: string  } 
   | { name: 'updatedAt', args?: [] | false, alias?: string  } 
 
-type FeedbackMediaPreviousValuesFields =
+type MediaPreviousValuesFields =
   | 'id'
   | 'name'
   | 'createdAt'
@@ -2735,7 +3661,7 @@ type FeedbackMediaPreviousValuesFields =
 
   
 
-export interface FeedbackMediaPreviousValuesFieldDetails {
+export interface MediaPreviousValuesFieldDetails {
   id: {
     type: 'ID'
     args: {}
@@ -2906,7 +3832,7 @@ export type UserWhereUniqueInputInputObject =
   | { name: 'id', alias?: string  } 
   | { name: 'email', alias?: string  } 
   
-export interface FeedbackProjectWhereInput {
+export interface ProjectWhereInput {
   id?: string | null
   id_not?: string | null
   id_in?: string[]
@@ -2952,12 +3878,15 @@ export interface FeedbackProjectWhereInput {
   updatedAt_gt?: string | null
   updatedAt_gte?: string | null
   createdBy?: UserWhereInput | null
-  AND?: FeedbackProjectWhereInput[]
-  OR?: FeedbackProjectWhereInput[]
-  NOT?: FeedbackProjectWhereInput[]
+  departments_every?: DepartmentWhereInput | null
+  departments_some?: DepartmentWhereInput | null
+  departments_none?: DepartmentWhereInput | null
+  AND?: ProjectWhereInput[]
+  OR?: ProjectWhereInput[]
+  NOT?: ProjectWhereInput[]
 }
-export type FeedbackProjectWhereInputInputObject =
-  | Extract<keyof FeedbackProjectWhereInput, string>
+export type ProjectWhereInputInputObject =
+  | Extract<keyof ProjectWhereInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'id_not', alias?: string  } 
   | { name: 'id_in', alias?: string  } 
@@ -3003,6 +3932,9 @@ export type FeedbackProjectWhereInputInputObject =
   | { name: 'updatedAt_gt', alias?: string  } 
   | { name: 'updatedAt_gte', alias?: string  } 
   | { name: 'createdBy', alias?: string  } 
+  | { name: 'departments_every', alias?: string  } 
+  | { name: 'departments_some', alias?: string  } 
+  | { name: 'departments_none', alias?: string  } 
   | { name: 'AND', alias?: string  } 
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
@@ -3066,9 +3998,9 @@ export interface UserWhereInput {
   updatedAt_lte?: string | null
   updatedAt_gt?: string | null
   updatedAt_gte?: string | null
-  feedbackProjects_every?: FeedbackProjectWhereInput | null
-  feedbackProjects_some?: FeedbackProjectWhereInput | null
-  feedbackProjects_none?: FeedbackProjectWhereInput | null
+  projects_every?: ProjectWhereInput | null
+  projects_some?: ProjectWhereInput | null
+  projects_none?: ProjectWhereInput | null
   feedbackRounds_every?: FeedbackRoundWhereInput | null
   feedbackRounds_some?: FeedbackRoundWhereInput | null
   feedbackRounds_none?: FeedbackRoundWhereInput | null
@@ -3136,9 +4068,9 @@ export type UserWhereInputInputObject =
   | { name: 'updatedAt_lte', alias?: string  } 
   | { name: 'updatedAt_gt', alias?: string  } 
   | { name: 'updatedAt_gte', alias?: string  } 
-  | { name: 'feedbackProjects_every', alias?: string  } 
-  | { name: 'feedbackProjects_some', alias?: string  } 
-  | { name: 'feedbackProjects_none', alias?: string  } 
+  | { name: 'projects_every', alias?: string  } 
+  | { name: 'projects_some', alias?: string  } 
+  | { name: 'projects_none', alias?: string  } 
   | { name: 'feedbackRounds_every', alias?: string  } 
   | { name: 'feedbackRounds_some', alias?: string  } 
   | { name: 'feedbackRounds_none', alias?: string  } 
@@ -3239,21 +4171,140 @@ export type FeedbackRoundWhereInputInputObject =
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface FeedbackProjectWhereUniqueInput {
+export interface DepartmentWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
+  name?: string | null
+  name_not?: string | null
+  name_in?: string[]
+  name_not_in?: string[]
+  name_lt?: string | null
+  name_lte?: string | null
+  name_gt?: string | null
+  name_gte?: string | null
+  name_contains?: string | null
+  name_not_contains?: string | null
+  name_starts_with?: string | null
+  name_not_starts_with?: string | null
+  name_ends_with?: string | null
+  name_not_ends_with?: string | null
+  projects_every?: ProjectWhereInput | null
+  projects_some?: ProjectWhereInput | null
+  projects_none?: ProjectWhereInput | null
+  AND?: DepartmentWhereInput[]
+  OR?: DepartmentWhereInput[]
+  NOT?: DepartmentWhereInput[]
+}
+export type DepartmentWhereInputInputObject =
+  | Extract<keyof DepartmentWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
+  | { name: 'name', alias?: string  } 
+  | { name: 'name_not', alias?: string  } 
+  | { name: 'name_in', alias?: string  } 
+  | { name: 'name_not_in', alias?: string  } 
+  | { name: 'name_lt', alias?: string  } 
+  | { name: 'name_lte', alias?: string  } 
+  | { name: 'name_gt', alias?: string  } 
+  | { name: 'name_gte', alias?: string  } 
+  | { name: 'name_contains', alias?: string  } 
+  | { name: 'name_not_contains', alias?: string  } 
+  | { name: 'name_starts_with', alias?: string  } 
+  | { name: 'name_not_starts_with', alias?: string  } 
+  | { name: 'name_ends_with', alias?: string  } 
+  | { name: 'name_not_ends_with', alias?: string  } 
+  | { name: 'projects_every', alias?: string  } 
+  | { name: 'projects_some', alias?: string  } 
+  | { name: 'projects_none', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface ScriptWhereUniqueInput {
   id?: string | null
 }
-export type FeedbackProjectWhereUniqueInputInputObject =
-  | Extract<keyof FeedbackProjectWhereUniqueInput, string>
+export type ScriptWhereUniqueInputInputObject =
+  | Extract<keyof ScriptWhereUniqueInput, string>
   | { name: 'id', alias?: string  } 
   
-export interface FeedbackSubjectWhereUniqueInput {
+export interface ScriptWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
+  AND?: ScriptWhereInput[]
+  OR?: ScriptWhereInput[]
+  NOT?: ScriptWhereInput[]
+}
+export type ScriptWhereInputInputObject =
+  | Extract<keyof ScriptWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface ProjectWhereUniqueInput {
   id?: string | null
 }
-export type FeedbackSubjectWhereUniqueInputInputObject =
-  | Extract<keyof FeedbackSubjectWhereUniqueInput, string>
+export type ProjectWhereUniqueInputInputObject =
+  | Extract<keyof ProjectWhereUniqueInput, string>
   | { name: 'id', alias?: string  } 
   
-export interface FeedbackSubjectWhereInput {
+export interface FeedbackTargetWhereUniqueInput {
+  id?: string | null
+}
+export type FeedbackTargetWhereUniqueInputInputObject =
+  | Extract<keyof FeedbackTargetWhereUniqueInput, string>
+  | { name: 'id', alias?: string  } 
+  
+export interface FeedbackTargetWhereInput {
   id?: string | null
   id_not?: string | null
   id_in?: string[]
@@ -3298,14 +4349,14 @@ export interface FeedbackSubjectWhereInput {
   updatedAt_lte?: string | null
   updatedAt_gt?: string | null
   updatedAt_gte?: string | null
-  project?: FeedbackProjectWhereInput | null
+  project?: ProjectWhereInput | null
   createdBy?: UserWhereInput | null
-  AND?: FeedbackSubjectWhereInput[]
-  OR?: FeedbackSubjectWhereInput[]
-  NOT?: FeedbackSubjectWhereInput[]
+  AND?: FeedbackTargetWhereInput[]
+  OR?: FeedbackTargetWhereInput[]
+  NOT?: FeedbackTargetWhereInput[]
 }
-export type FeedbackSubjectWhereInputInputObject =
-  | Extract<keyof FeedbackSubjectWhereInput, string>
+export type FeedbackTargetWhereInputInputObject =
+  | Extract<keyof FeedbackTargetWhereInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'id_not', alias?: string  } 
   | { name: 'id_in', alias?: string  } 
@@ -3356,14 +4407,21 @@ export type FeedbackSubjectWhereInputInputObject =
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface FeedbackMediaWhereUniqueInput {
+export interface DepartmentWhereUniqueInput {
   id?: string | null
 }
-export type FeedbackMediaWhereUniqueInputInputObject =
-  | Extract<keyof FeedbackMediaWhereUniqueInput, string>
+export type DepartmentWhereUniqueInputInputObject =
+  | Extract<keyof DepartmentWhereUniqueInput, string>
   | { name: 'id', alias?: string  } 
   
-export interface FeedbackMediaWhereInput {
+export interface MediaWhereUniqueInput {
+  id?: string | null
+}
+export type MediaWhereUniqueInputInputObject =
+  | Extract<keyof MediaWhereUniqueInput, string>
+  | { name: 'id', alias?: string  } 
+  
+export interface MediaWhereInput {
   id?: string | null
   id_not?: string | null
   id_in?: string[]
@@ -3408,13 +4466,13 @@ export interface FeedbackMediaWhereInput {
   updatedAt_lte?: string | null
   updatedAt_gt?: string | null
   updatedAt_gte?: string | null
-  subject?: FeedbackProjectWhereInput | null
-  AND?: FeedbackMediaWhereInput[]
-  OR?: FeedbackMediaWhereInput[]
-  NOT?: FeedbackMediaWhereInput[]
+  target?: FeedbackTargetWhereInput | null
+  AND?: MediaWhereInput[]
+  OR?: MediaWhereInput[]
+  NOT?: MediaWhereInput[]
 }
-export type FeedbackMediaWhereInputInputObject =
-  | Extract<keyof FeedbackMediaWhereInput, string>
+export type MediaWhereInputInputObject =
+  | Extract<keyof MediaWhereInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'id_not', alias?: string  } 
   | { name: 'id_in', alias?: string  } 
@@ -3459,7 +4517,7 @@ export type FeedbackMediaWhereInputInputObject =
   | { name: 'updatedAt_lte', alias?: string  } 
   | { name: 'updatedAt_gt', alias?: string  } 
   | { name: 'updatedAt_gte', alias?: string  } 
-  | { name: 'subject', alias?: string  } 
+  | { name: 'target', alias?: string  } 
   | { name: 'AND', alias?: string  } 
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
@@ -3475,7 +4533,7 @@ export interface UserCreateInput {
   id?: string | null
   name?: string
   email?: string
-  feedbackProjects?: FeedbackProjectCreateManyWithoutCreatedByInput | null
+  projects?: ProjectCreateManyWithoutCreatedByInput | null
   feedbackRounds?: FeedbackRoundCreateManyWithoutUsersInput | null
 }
 export type UserCreateInputInputObject =
@@ -3483,24 +4541,44 @@ export type UserCreateInputInputObject =
   | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
-  | { name: 'feedbackProjects', alias?: string  } 
+  | { name: 'projects', alias?: string  } 
   | { name: 'feedbackRounds', alias?: string  } 
   
-export interface FeedbackProjectCreateManyWithoutCreatedByInput {
-  create?: FeedbackProjectCreateWithoutCreatedByInput[]
-  connect?: FeedbackProjectWhereUniqueInput[]
+export interface ProjectCreateManyWithoutCreatedByInput {
+  create?: ProjectCreateWithoutCreatedByInput[]
+  connect?: ProjectWhereUniqueInput[]
 }
-export type FeedbackProjectCreateManyWithoutCreatedByInputInputObject =
-  | Extract<keyof FeedbackProjectCreateManyWithoutCreatedByInput, string>
+export type ProjectCreateManyWithoutCreatedByInputInputObject =
+  | Extract<keyof ProjectCreateManyWithoutCreatedByInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface FeedbackProjectCreateWithoutCreatedByInput {
+export interface ProjectCreateWithoutCreatedByInput {
+  id?: string | null
+  name?: string
+  departments?: DepartmentCreateManyWithoutProjectsInput | null
+}
+export type ProjectCreateWithoutCreatedByInputInputObject =
+  | Extract<keyof ProjectCreateWithoutCreatedByInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'name', alias?: string  } 
+  | { name: 'departments', alias?: string  } 
+  
+export interface DepartmentCreateManyWithoutProjectsInput {
+  create?: DepartmentCreateWithoutProjectsInput[]
+  connect?: DepartmentWhereUniqueInput[]
+}
+export type DepartmentCreateManyWithoutProjectsInputInputObject =
+  | Extract<keyof DepartmentCreateManyWithoutProjectsInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface DepartmentCreateWithoutProjectsInput {
   id?: string | null
   name?: string
 }
-export type FeedbackProjectCreateWithoutCreatedByInputInputObject =
-  | Extract<keyof FeedbackProjectCreateWithoutCreatedByInput, string>
+export type DepartmentCreateWithoutProjectsInputInputObject =
+  | Extract<keyof DepartmentCreateWithoutProjectsInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
   
@@ -3525,29 +4603,29 @@ export type FeedbackRoundCreateWithoutUsersInputInputObject =
 export interface UserUpdateInput {
   name?: string | null
   email?: string | null
-  feedbackProjects?: FeedbackProjectUpdateManyWithoutCreatedByInput | null
+  projects?: ProjectUpdateManyWithoutCreatedByInput | null
   feedbackRounds?: FeedbackRoundUpdateManyWithoutUsersInput | null
 }
 export type UserUpdateInputInputObject =
   | Extract<keyof UserUpdateInput, string>
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
-  | { name: 'feedbackProjects', alias?: string  } 
+  | { name: 'projects', alias?: string  } 
   | { name: 'feedbackRounds', alias?: string  } 
   
-export interface FeedbackProjectUpdateManyWithoutCreatedByInput {
-  create?: FeedbackProjectCreateWithoutCreatedByInput[]
-  delete?: FeedbackProjectWhereUniqueInput[]
-  connect?: FeedbackProjectWhereUniqueInput[]
-  set?: FeedbackProjectWhereUniqueInput[]
-  disconnect?: FeedbackProjectWhereUniqueInput[]
-  update?: FeedbackProjectUpdateWithWhereUniqueWithoutCreatedByInput[]
-  upsert?: FeedbackProjectUpsertWithWhereUniqueWithoutCreatedByInput[]
-  deleteMany?: FeedbackProjectScalarWhereInput[]
-  updateMany?: FeedbackProjectUpdateManyWithWhereNestedInput[]
+export interface ProjectUpdateManyWithoutCreatedByInput {
+  create?: ProjectCreateWithoutCreatedByInput[]
+  delete?: ProjectWhereUniqueInput[]
+  connect?: ProjectWhereUniqueInput[]
+  set?: ProjectWhereUniqueInput[]
+  disconnect?: ProjectWhereUniqueInput[]
+  update?: ProjectUpdateWithWhereUniqueWithoutCreatedByInput[]
+  upsert?: ProjectUpsertWithWhereUniqueWithoutCreatedByInput[]
+  deleteMany?: ProjectScalarWhereInput[]
+  updateMany?: ProjectUpdateManyWithWhereNestedInput[]
 }
-export type FeedbackProjectUpdateManyWithoutCreatedByInputInputObject =
-  | Extract<keyof FeedbackProjectUpdateManyWithoutCreatedByInput, string>
+export type ProjectUpdateManyWithoutCreatedByInputInputObject =
+  | Extract<keyof ProjectUpdateManyWithoutCreatedByInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'delete', alias?: string  } 
   | { name: 'connect', alias?: string  } 
@@ -3558,34 +4636,169 @@ export type FeedbackProjectUpdateManyWithoutCreatedByInputInputObject =
   | { name: 'deleteMany', alias?: string  } 
   | { name: 'updateMany', alias?: string  } 
   
-export interface FeedbackProjectUpdateWithWhereUniqueWithoutCreatedByInput {
-  where?: FeedbackProjectWhereUniqueInput
-  data?: FeedbackProjectUpdateWithoutCreatedByDataInput
+export interface ProjectUpdateWithWhereUniqueWithoutCreatedByInput {
+  where?: ProjectWhereUniqueInput
+  data?: ProjectUpdateWithoutCreatedByDataInput
 }
-export type FeedbackProjectUpdateWithWhereUniqueWithoutCreatedByInputInputObject =
-  | Extract<keyof FeedbackProjectUpdateWithWhereUniqueWithoutCreatedByInput, string>
+export type ProjectUpdateWithWhereUniqueWithoutCreatedByInputInputObject =
+  | Extract<keyof ProjectUpdateWithWhereUniqueWithoutCreatedByInput, string>
   | { name: 'where', alias?: string  } 
   | { name: 'data', alias?: string  } 
   
-export interface FeedbackProjectUpdateWithoutCreatedByDataInput {
+export interface ProjectUpdateWithoutCreatedByDataInput {
+  name?: string | null
+  departments?: DepartmentUpdateManyWithoutProjectsInput | null
+}
+export type ProjectUpdateWithoutCreatedByDataInputInputObject =
+  | Extract<keyof ProjectUpdateWithoutCreatedByDataInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'departments', alias?: string  } 
+  
+export interface DepartmentUpdateManyWithoutProjectsInput {
+  create?: DepartmentCreateWithoutProjectsInput[]
+  delete?: DepartmentWhereUniqueInput[]
+  connect?: DepartmentWhereUniqueInput[]
+  set?: DepartmentWhereUniqueInput[]
+  disconnect?: DepartmentWhereUniqueInput[]
+  update?: DepartmentUpdateWithWhereUniqueWithoutProjectsInput[]
+  upsert?: DepartmentUpsertWithWhereUniqueWithoutProjectsInput[]
+  deleteMany?: DepartmentScalarWhereInput[]
+  updateMany?: DepartmentUpdateManyWithWhereNestedInput[]
+}
+export type DepartmentUpdateManyWithoutProjectsInputInputObject =
+  | Extract<keyof DepartmentUpdateManyWithoutProjectsInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'delete', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  | { name: 'set', alias?: string  } 
+  | { name: 'disconnect', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'upsert', alias?: string  } 
+  | { name: 'deleteMany', alias?: string  } 
+  | { name: 'updateMany', alias?: string  } 
+  
+export interface DepartmentUpdateWithWhereUniqueWithoutProjectsInput {
+  where?: DepartmentWhereUniqueInput
+  data?: DepartmentUpdateWithoutProjectsDataInput
+}
+export type DepartmentUpdateWithWhereUniqueWithoutProjectsInputInputObject =
+  | Extract<keyof DepartmentUpdateWithWhereUniqueWithoutProjectsInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
+  
+export interface DepartmentUpdateWithoutProjectsDataInput {
   name?: string | null
 }
-export type FeedbackProjectUpdateWithoutCreatedByDataInputInputObject =
-  | Extract<keyof FeedbackProjectUpdateWithoutCreatedByDataInput, string>
+export type DepartmentUpdateWithoutProjectsDataInputInputObject =
+  | Extract<keyof DepartmentUpdateWithoutProjectsDataInput, string>
   | { name: 'name', alias?: string  } 
   
-export interface FeedbackProjectUpsertWithWhereUniqueWithoutCreatedByInput {
-  where?: FeedbackProjectWhereUniqueInput
-  update?: FeedbackProjectUpdateWithoutCreatedByDataInput
-  create?: FeedbackProjectCreateWithoutCreatedByInput
+export interface DepartmentUpsertWithWhereUniqueWithoutProjectsInput {
+  where?: DepartmentWhereUniqueInput
+  update?: DepartmentUpdateWithoutProjectsDataInput
+  create?: DepartmentCreateWithoutProjectsInput
 }
-export type FeedbackProjectUpsertWithWhereUniqueWithoutCreatedByInputInputObject =
-  | Extract<keyof FeedbackProjectUpsertWithWhereUniqueWithoutCreatedByInput, string>
+export type DepartmentUpsertWithWhereUniqueWithoutProjectsInputInputObject =
+  | Extract<keyof DepartmentUpsertWithWhereUniqueWithoutProjectsInput, string>
   | { name: 'where', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
   
-export interface FeedbackProjectScalarWhereInput {
+export interface DepartmentScalarWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
+  name?: string | null
+  name_not?: string | null
+  name_in?: string[]
+  name_not_in?: string[]
+  name_lt?: string | null
+  name_lte?: string | null
+  name_gt?: string | null
+  name_gte?: string | null
+  name_contains?: string | null
+  name_not_contains?: string | null
+  name_starts_with?: string | null
+  name_not_starts_with?: string | null
+  name_ends_with?: string | null
+  name_not_ends_with?: string | null
+  AND?: DepartmentScalarWhereInput[]
+  OR?: DepartmentScalarWhereInput[]
+  NOT?: DepartmentScalarWhereInput[]
+}
+export type DepartmentScalarWhereInputInputObject =
+  | Extract<keyof DepartmentScalarWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
+  | { name: 'name', alias?: string  } 
+  | { name: 'name_not', alias?: string  } 
+  | { name: 'name_in', alias?: string  } 
+  | { name: 'name_not_in', alias?: string  } 
+  | { name: 'name_lt', alias?: string  } 
+  | { name: 'name_lte', alias?: string  } 
+  | { name: 'name_gt', alias?: string  } 
+  | { name: 'name_gte', alias?: string  } 
+  | { name: 'name_contains', alias?: string  } 
+  | { name: 'name_not_contains', alias?: string  } 
+  | { name: 'name_starts_with', alias?: string  } 
+  | { name: 'name_not_starts_with', alias?: string  } 
+  | { name: 'name_ends_with', alias?: string  } 
+  | { name: 'name_not_ends_with', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface DepartmentUpdateManyWithWhereNestedInput {
+  where?: DepartmentScalarWhereInput
+  data?: DepartmentUpdateManyDataInput
+}
+export type DepartmentUpdateManyWithWhereNestedInputInputObject =
+  | Extract<keyof DepartmentUpdateManyWithWhereNestedInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
+  
+export interface DepartmentUpdateManyDataInput {
+  name?: string | null
+}
+export type DepartmentUpdateManyDataInputInputObject =
+  | Extract<keyof DepartmentUpdateManyDataInput, string>
+  | { name: 'name', alias?: string  } 
+  
+export interface ProjectUpsertWithWhereUniqueWithoutCreatedByInput {
+  where?: ProjectWhereUniqueInput
+  update?: ProjectUpdateWithoutCreatedByDataInput
+  create?: ProjectCreateWithoutCreatedByInput
+}
+export type ProjectUpsertWithWhereUniqueWithoutCreatedByInputInputObject =
+  | Extract<keyof ProjectUpsertWithWhereUniqueWithoutCreatedByInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'create', alias?: string  } 
+  
+export interface ProjectScalarWhereInput {
   id?: string | null
   id_not?: string | null
   id_in?: string[]
@@ -3630,12 +4843,12 @@ export interface FeedbackProjectScalarWhereInput {
   updatedAt_lte?: string | null
   updatedAt_gt?: string | null
   updatedAt_gte?: string | null
-  AND?: FeedbackProjectScalarWhereInput[]
-  OR?: FeedbackProjectScalarWhereInput[]
-  NOT?: FeedbackProjectScalarWhereInput[]
+  AND?: ProjectScalarWhereInput[]
+  OR?: ProjectScalarWhereInput[]
+  NOT?: ProjectScalarWhereInput[]
 }
-export type FeedbackProjectScalarWhereInputInputObject =
-  | Extract<keyof FeedbackProjectScalarWhereInput, string>
+export type ProjectScalarWhereInputInputObject =
+  | Extract<keyof ProjectScalarWhereInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'id_not', alias?: string  } 
   | { name: 'id_in', alias?: string  } 
@@ -3684,20 +4897,20 @@ export type FeedbackProjectScalarWhereInputInputObject =
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface FeedbackProjectUpdateManyWithWhereNestedInput {
-  where?: FeedbackProjectScalarWhereInput
-  data?: FeedbackProjectUpdateManyDataInput
+export interface ProjectUpdateManyWithWhereNestedInput {
+  where?: ProjectScalarWhereInput
+  data?: ProjectUpdateManyDataInput
 }
-export type FeedbackProjectUpdateManyWithWhereNestedInputInputObject =
-  | Extract<keyof FeedbackProjectUpdateManyWithWhereNestedInput, string>
+export type ProjectUpdateManyWithWhereNestedInputInputObject =
+  | Extract<keyof ProjectUpdateManyWithWhereNestedInput, string>
   | { name: 'where', alias?: string  } 
   | { name: 'data', alias?: string  } 
   
-export interface FeedbackProjectUpdateManyDataInput {
+export interface ProjectUpdateManyDataInput {
   name?: string | null
 }
-export type FeedbackProjectUpdateManyDataInputInputObject =
-  | Extract<keyof FeedbackProjectUpdateManyDataInput, string>
+export type ProjectUpdateManyDataInputInputObject =
+  | Extract<keyof ProjectUpdateManyDataInput, string>
   | { name: 'name', alias?: string  } 
   
 export interface FeedbackRoundUpdateManyWithoutUsersInput {
@@ -3862,58 +5075,69 @@ export type UserUpdateManyMutationInputInputObject =
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
   
-export interface FeedbackProjectCreateInput {
+export interface ScriptCreateInput {
+  id?: string | null
+}
+export type ScriptCreateInputInputObject =
+  | Extract<keyof ScriptCreateInput, string>
+  | { name: 'id', alias?: string  } 
+  
+export interface ProjectCreateInput {
   id?: string | null
   name?: string
-  createdBy?: UserCreateOneWithoutFeedbackProjectsInput | null
+  createdBy?: UserCreateOneWithoutProjectsInput | null
+  departments?: DepartmentCreateManyWithoutProjectsInput | null
 }
-export type FeedbackProjectCreateInputInputObject =
-  | Extract<keyof FeedbackProjectCreateInput, string>
+export type ProjectCreateInputInputObject =
+  | Extract<keyof ProjectCreateInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'createdBy', alias?: string  } 
+  | { name: 'departments', alias?: string  } 
   
-export interface UserCreateOneWithoutFeedbackProjectsInput {
-  create?: UserCreateWithoutFeedbackProjectsInput | null
+export interface UserCreateOneWithoutProjectsInput {
+  create?: UserCreateWithoutProjectsInput | null
   connect?: UserWhereUniqueInput | null
 }
-export type UserCreateOneWithoutFeedbackProjectsInputInputObject =
-  | Extract<keyof UserCreateOneWithoutFeedbackProjectsInput, string>
+export type UserCreateOneWithoutProjectsInputInputObject =
+  | Extract<keyof UserCreateOneWithoutProjectsInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface UserCreateWithoutFeedbackProjectsInput {
+export interface UserCreateWithoutProjectsInput {
   id?: string | null
   name?: string
   email?: string
   feedbackRounds?: FeedbackRoundCreateManyWithoutUsersInput | null
 }
-export type UserCreateWithoutFeedbackProjectsInputInputObject =
-  | Extract<keyof UserCreateWithoutFeedbackProjectsInput, string>
+export type UserCreateWithoutProjectsInputInputObject =
+  | Extract<keyof UserCreateWithoutProjectsInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
   | { name: 'feedbackRounds', alias?: string  } 
   
-export interface FeedbackProjectUpdateInput {
+export interface ProjectUpdateInput {
   name?: string | null
-  createdBy?: UserUpdateOneWithoutFeedbackProjectsInput | null
+  createdBy?: UserUpdateOneWithoutProjectsInput | null
+  departments?: DepartmentUpdateManyWithoutProjectsInput | null
 }
-export type FeedbackProjectUpdateInputInputObject =
-  | Extract<keyof FeedbackProjectUpdateInput, string>
+export type ProjectUpdateInputInputObject =
+  | Extract<keyof ProjectUpdateInput, string>
   | { name: 'name', alias?: string  } 
   | { name: 'createdBy', alias?: string  } 
+  | { name: 'departments', alias?: string  } 
   
-export interface UserUpdateOneWithoutFeedbackProjectsInput {
-  create?: UserCreateWithoutFeedbackProjectsInput | null
-  update?: UserUpdateWithoutFeedbackProjectsDataInput | null
-  upsert?: UserUpsertWithoutFeedbackProjectsInput | null
+export interface UserUpdateOneWithoutProjectsInput {
+  create?: UserCreateWithoutProjectsInput | null
+  update?: UserUpdateWithoutProjectsDataInput | null
+  upsert?: UserUpsertWithoutProjectsInput | null
   delete?: boolean | null
   disconnect?: boolean | null
   connect?: UserWhereUniqueInput | null
 }
-export type UserUpdateOneWithoutFeedbackProjectsInputInputObject =
-  | Extract<keyof UserUpdateOneWithoutFeedbackProjectsInput, string>
+export type UserUpdateOneWithoutProjectsInputInputObject =
+  | Extract<keyof UserUpdateOneWithoutProjectsInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'upsert', alias?: string  } 
@@ -3921,52 +5145,52 @@ export type UserUpdateOneWithoutFeedbackProjectsInputInputObject =
   | { name: 'disconnect', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface UserUpdateWithoutFeedbackProjectsDataInput {
+export interface UserUpdateWithoutProjectsDataInput {
   name?: string | null
   email?: string | null
   feedbackRounds?: FeedbackRoundUpdateManyWithoutUsersInput | null
 }
-export type UserUpdateWithoutFeedbackProjectsDataInputInputObject =
-  | Extract<keyof UserUpdateWithoutFeedbackProjectsDataInput, string>
+export type UserUpdateWithoutProjectsDataInputInputObject =
+  | Extract<keyof UserUpdateWithoutProjectsDataInput, string>
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
   | { name: 'feedbackRounds', alias?: string  } 
   
-export interface UserUpsertWithoutFeedbackProjectsInput {
-  update?: UserUpdateWithoutFeedbackProjectsDataInput
-  create?: UserCreateWithoutFeedbackProjectsInput
+export interface UserUpsertWithoutProjectsInput {
+  update?: UserUpdateWithoutProjectsDataInput
+  create?: UserCreateWithoutProjectsInput
 }
-export type UserUpsertWithoutFeedbackProjectsInputInputObject =
-  | Extract<keyof UserUpsertWithoutFeedbackProjectsInput, string>
+export type UserUpsertWithoutProjectsInputInputObject =
+  | Extract<keyof UserUpsertWithoutProjectsInput, string>
   | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
   
-export interface FeedbackProjectUpdateManyMutationInput {
+export interface ProjectUpdateManyMutationInput {
   name?: string | null
 }
-export type FeedbackProjectUpdateManyMutationInputInputObject =
-  | Extract<keyof FeedbackProjectUpdateManyMutationInput, string>
+export type ProjectUpdateManyMutationInputInputObject =
+  | Extract<keyof ProjectUpdateManyMutationInput, string>
   | { name: 'name', alias?: string  } 
   
-export interface FeedbackSubjectCreateInput {
+export interface FeedbackTargetCreateInput {
   id?: string | null
   name?: string
-  project?: FeedbackProjectCreateOneInput
+  project?: ProjectCreateOneInput
   createdBy?: UserCreateOneInput | null
 }
-export type FeedbackSubjectCreateInputInputObject =
-  | Extract<keyof FeedbackSubjectCreateInput, string>
+export type FeedbackTargetCreateInputInputObject =
+  | Extract<keyof FeedbackTargetCreateInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'project', alias?: string  } 
   | { name: 'createdBy', alias?: string  } 
   
-export interface FeedbackProjectCreateOneInput {
-  create?: FeedbackProjectCreateInput | null
-  connect?: FeedbackProjectWhereUniqueInput | null
+export interface ProjectCreateOneInput {
+  create?: ProjectCreateInput | null
+  connect?: ProjectWhereUniqueInput | null
 }
-export type FeedbackProjectCreateOneInputInputObject =
-  | Extract<keyof FeedbackProjectCreateOneInput, string>
+export type ProjectCreateOneInputInputObject =
+  | Extract<keyof ProjectCreateOneInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
@@ -3979,45 +5203,47 @@ export type UserCreateOneInputInputObject =
   | { name: 'create', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface FeedbackSubjectUpdateInput {
+export interface FeedbackTargetUpdateInput {
   name?: string | null
-  project?: FeedbackProjectUpdateOneRequiredInput | null
+  project?: ProjectUpdateOneRequiredInput | null
   createdBy?: UserUpdateOneInput | null
 }
-export type FeedbackSubjectUpdateInputInputObject =
-  | Extract<keyof FeedbackSubjectUpdateInput, string>
+export type FeedbackTargetUpdateInputInputObject =
+  | Extract<keyof FeedbackTargetUpdateInput, string>
   | { name: 'name', alias?: string  } 
   | { name: 'project', alias?: string  } 
   | { name: 'createdBy', alias?: string  } 
   
-export interface FeedbackProjectUpdateOneRequiredInput {
-  create?: FeedbackProjectCreateInput | null
-  update?: FeedbackProjectUpdateDataInput | null
-  upsert?: FeedbackProjectUpsertNestedInput | null
-  connect?: FeedbackProjectWhereUniqueInput | null
+export interface ProjectUpdateOneRequiredInput {
+  create?: ProjectCreateInput | null
+  update?: ProjectUpdateDataInput | null
+  upsert?: ProjectUpsertNestedInput | null
+  connect?: ProjectWhereUniqueInput | null
 }
-export type FeedbackProjectUpdateOneRequiredInputInputObject =
-  | Extract<keyof FeedbackProjectUpdateOneRequiredInput, string>
+export type ProjectUpdateOneRequiredInputInputObject =
+  | Extract<keyof ProjectUpdateOneRequiredInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'upsert', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface FeedbackProjectUpdateDataInput {
+export interface ProjectUpdateDataInput {
   name?: string | null
-  createdBy?: UserUpdateOneWithoutFeedbackProjectsInput | null
+  createdBy?: UserUpdateOneWithoutProjectsInput | null
+  departments?: DepartmentUpdateManyWithoutProjectsInput | null
 }
-export type FeedbackProjectUpdateDataInputInputObject =
-  | Extract<keyof FeedbackProjectUpdateDataInput, string>
+export type ProjectUpdateDataInputInputObject =
+  | Extract<keyof ProjectUpdateDataInput, string>
   | { name: 'name', alias?: string  } 
   | { name: 'createdBy', alias?: string  } 
+  | { name: 'departments', alias?: string  } 
   
-export interface FeedbackProjectUpsertNestedInput {
-  update?: FeedbackProjectUpdateDataInput
-  create?: FeedbackProjectCreateInput
+export interface ProjectUpsertNestedInput {
+  update?: ProjectUpdateDataInput
+  create?: ProjectCreateInput
 }
-export type FeedbackProjectUpsertNestedInputInputObject =
-  | Extract<keyof FeedbackProjectUpsertNestedInput, string>
+export type ProjectUpsertNestedInputInputObject =
+  | Extract<keyof ProjectUpsertNestedInput, string>
   | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
   
@@ -4041,14 +5267,14 @@ export type UserUpdateOneInputInputObject =
 export interface UserUpdateDataInput {
   name?: string | null
   email?: string | null
-  feedbackProjects?: FeedbackProjectUpdateManyWithoutCreatedByInput | null
+  projects?: ProjectUpdateManyWithoutCreatedByInput | null
   feedbackRounds?: FeedbackRoundUpdateManyWithoutUsersInput | null
 }
 export type UserUpdateDataInputInputObject =
   | Extract<keyof UserUpdateDataInput, string>
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
-  | { name: 'feedbackProjects', alias?: string  } 
+  | { name: 'projects', alias?: string  } 
   | { name: 'feedbackRounds', alias?: string  } 
   
 export interface UserUpsertNestedInput {
@@ -4060,38 +5286,179 @@ export type UserUpsertNestedInputInputObject =
   | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
   
-export interface FeedbackSubjectUpdateManyMutationInput {
+export interface FeedbackTargetUpdateManyMutationInput {
   name?: string | null
 }
-export type FeedbackSubjectUpdateManyMutationInputInputObject =
-  | Extract<keyof FeedbackSubjectUpdateManyMutationInput, string>
+export type FeedbackTargetUpdateManyMutationInputInputObject =
+  | Extract<keyof FeedbackTargetUpdateManyMutationInput, string>
   | { name: 'name', alias?: string  } 
   
-export interface FeedbackMediaCreateInput {
+export interface DepartmentCreateInput {
   id?: string | null
   name?: string
-  subject?: FeedbackProjectCreateOneInput
+  projects?: ProjectCreateManyWithoutDepartmentsInput | null
 }
-export type FeedbackMediaCreateInputInputObject =
-  | Extract<keyof FeedbackMediaCreateInput, string>
+export type DepartmentCreateInputInputObject =
+  | Extract<keyof DepartmentCreateInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
-  | { name: 'subject', alias?: string  } 
+  | { name: 'projects', alias?: string  } 
   
-export interface FeedbackMediaUpdateInput {
-  name?: string | null
-  subject?: FeedbackProjectUpdateOneRequiredInput | null
+export interface ProjectCreateManyWithoutDepartmentsInput {
+  create?: ProjectCreateWithoutDepartmentsInput[]
+  connect?: ProjectWhereUniqueInput[]
 }
-export type FeedbackMediaUpdateInputInputObject =
-  | Extract<keyof FeedbackMediaUpdateInput, string>
+export type ProjectCreateManyWithoutDepartmentsInputInputObject =
+  | Extract<keyof ProjectCreateManyWithoutDepartmentsInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface ProjectCreateWithoutDepartmentsInput {
+  id?: string | null
+  name?: string
+  createdBy?: UserCreateOneWithoutProjectsInput | null
+}
+export type ProjectCreateWithoutDepartmentsInputInputObject =
+  | Extract<keyof ProjectCreateWithoutDepartmentsInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
-  | { name: 'subject', alias?: string  } 
+  | { name: 'createdBy', alias?: string  } 
   
-export interface FeedbackMediaUpdateManyMutationInput {
+export interface DepartmentUpdateInput {
+  name?: string | null
+  projects?: ProjectUpdateManyWithoutDepartmentsInput | null
+}
+export type DepartmentUpdateInputInputObject =
+  | Extract<keyof DepartmentUpdateInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'projects', alias?: string  } 
+  
+export interface ProjectUpdateManyWithoutDepartmentsInput {
+  create?: ProjectCreateWithoutDepartmentsInput[]
+  delete?: ProjectWhereUniqueInput[]
+  connect?: ProjectWhereUniqueInput[]
+  set?: ProjectWhereUniqueInput[]
+  disconnect?: ProjectWhereUniqueInput[]
+  update?: ProjectUpdateWithWhereUniqueWithoutDepartmentsInput[]
+  upsert?: ProjectUpsertWithWhereUniqueWithoutDepartmentsInput[]
+  deleteMany?: ProjectScalarWhereInput[]
+  updateMany?: ProjectUpdateManyWithWhereNestedInput[]
+}
+export type ProjectUpdateManyWithoutDepartmentsInputInputObject =
+  | Extract<keyof ProjectUpdateManyWithoutDepartmentsInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'delete', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  | { name: 'set', alias?: string  } 
+  | { name: 'disconnect', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'upsert', alias?: string  } 
+  | { name: 'deleteMany', alias?: string  } 
+  | { name: 'updateMany', alias?: string  } 
+  
+export interface ProjectUpdateWithWhereUniqueWithoutDepartmentsInput {
+  where?: ProjectWhereUniqueInput
+  data?: ProjectUpdateWithoutDepartmentsDataInput
+}
+export type ProjectUpdateWithWhereUniqueWithoutDepartmentsInputInputObject =
+  | Extract<keyof ProjectUpdateWithWhereUniqueWithoutDepartmentsInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
+  
+export interface ProjectUpdateWithoutDepartmentsDataInput {
+  name?: string | null
+  createdBy?: UserUpdateOneWithoutProjectsInput | null
+}
+export type ProjectUpdateWithoutDepartmentsDataInputInputObject =
+  | Extract<keyof ProjectUpdateWithoutDepartmentsDataInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'createdBy', alias?: string  } 
+  
+export interface ProjectUpsertWithWhereUniqueWithoutDepartmentsInput {
+  where?: ProjectWhereUniqueInput
+  update?: ProjectUpdateWithoutDepartmentsDataInput
+  create?: ProjectCreateWithoutDepartmentsInput
+}
+export type ProjectUpsertWithWhereUniqueWithoutDepartmentsInputInputObject =
+  | Extract<keyof ProjectUpsertWithWhereUniqueWithoutDepartmentsInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'create', alias?: string  } 
+  
+export interface DepartmentUpdateManyMutationInput {
   name?: string | null
 }
-export type FeedbackMediaUpdateManyMutationInputInputObject =
-  | Extract<keyof FeedbackMediaUpdateManyMutationInput, string>
+export type DepartmentUpdateManyMutationInputInputObject =
+  | Extract<keyof DepartmentUpdateManyMutationInput, string>
+  | { name: 'name', alias?: string  } 
+  
+export interface MediaCreateInput {
+  id?: string | null
+  name?: string
+  target?: FeedbackTargetCreateOneInput
+}
+export type MediaCreateInputInputObject =
+  | Extract<keyof MediaCreateInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'name', alias?: string  } 
+  | { name: 'target', alias?: string  } 
+  
+export interface FeedbackTargetCreateOneInput {
+  create?: FeedbackTargetCreateInput | null
+  connect?: FeedbackTargetWhereUniqueInput | null
+}
+export type FeedbackTargetCreateOneInputInputObject =
+  | Extract<keyof FeedbackTargetCreateOneInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface MediaUpdateInput {
+  name?: string | null
+  target?: FeedbackTargetUpdateOneRequiredInput | null
+}
+export type MediaUpdateInputInputObject =
+  | Extract<keyof MediaUpdateInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'target', alias?: string  } 
+  
+export interface FeedbackTargetUpdateOneRequiredInput {
+  create?: FeedbackTargetCreateInput | null
+  update?: FeedbackTargetUpdateDataInput | null
+  upsert?: FeedbackTargetUpsertNestedInput | null
+  connect?: FeedbackTargetWhereUniqueInput | null
+}
+export type FeedbackTargetUpdateOneRequiredInputInputObject =
+  | Extract<keyof FeedbackTargetUpdateOneRequiredInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'upsert', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface FeedbackTargetUpdateDataInput {
+  name?: string | null
+  project?: ProjectUpdateOneRequiredInput | null
+  createdBy?: UserUpdateOneInput | null
+}
+export type FeedbackTargetUpdateDataInputInputObject =
+  | Extract<keyof FeedbackTargetUpdateDataInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'project', alias?: string  } 
+  | { name: 'createdBy', alias?: string  } 
+  
+export interface FeedbackTargetUpsertNestedInput {
+  update?: FeedbackTargetUpdateDataInput
+  create?: FeedbackTargetCreateInput
+}
+export type FeedbackTargetUpsertNestedInputInputObject =
+  | Extract<keyof FeedbackTargetUpsertNestedInput, string>
+  | { name: 'update', alias?: string  } 
+  | { name: 'create', alias?: string  } 
+  
+export interface MediaUpdateManyMutationInput {
+  name?: string | null
+}
+export type MediaUpdateManyMutationInputInputObject =
+  | Extract<keyof MediaUpdateManyMutationInput, string>
   | { name: 'name', alias?: string  } 
   
 export interface FeedbackRoundCreateInput {
@@ -4118,14 +5485,14 @@ export interface UserCreateWithoutFeedbackRoundsInput {
   id?: string | null
   name?: string
   email?: string
-  feedbackProjects?: FeedbackProjectCreateManyWithoutCreatedByInput | null
+  projects?: ProjectCreateManyWithoutCreatedByInput | null
 }
 export type UserCreateWithoutFeedbackRoundsInputInputObject =
   | Extract<keyof UserCreateWithoutFeedbackRoundsInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
-  | { name: 'feedbackProjects', alias?: string  } 
+  | { name: 'projects', alias?: string  } 
   
 export interface FeedbackRoundUpdateInput {
   roundEnd?: string | null
@@ -4171,13 +5538,13 @@ export type UserUpdateWithWhereUniqueWithoutFeedbackRoundsInputInputObject =
 export interface UserUpdateWithoutFeedbackRoundsDataInput {
   name?: string | null
   email?: string | null
-  feedbackProjects?: FeedbackProjectUpdateManyWithoutCreatedByInput | null
+  projects?: ProjectUpdateManyWithoutCreatedByInput | null
 }
 export type UserUpdateWithoutFeedbackRoundsDataInputInputObject =
   | Extract<keyof UserUpdateWithoutFeedbackRoundsDataInput, string>
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
-  | { name: 'feedbackProjects', alias?: string  } 
+  | { name: 'projects', alias?: string  } 
   
 export interface UserUpsertWithWhereUniqueWithoutFeedbackRoundsInput {
   where?: UserWhereUniqueInput
@@ -4363,18 +5730,18 @@ export type UserSubscriptionWhereInputInputObject =
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface FeedbackProjectSubscriptionWhereInput {
+export interface ScriptSubscriptionWhereInput {
   mutation_in?: prisma.MutationType[]
   updatedFields_contains?: string | null
   updatedFields_contains_every?: string[]
   updatedFields_contains_some?: string[]
-  node?: FeedbackProjectWhereInput | null
-  AND?: FeedbackProjectSubscriptionWhereInput[]
-  OR?: FeedbackProjectSubscriptionWhereInput[]
-  NOT?: FeedbackProjectSubscriptionWhereInput[]
+  node?: ScriptWhereInput | null
+  AND?: ScriptSubscriptionWhereInput[]
+  OR?: ScriptSubscriptionWhereInput[]
+  NOT?: ScriptSubscriptionWhereInput[]
 }
-export type FeedbackProjectSubscriptionWhereInputInputObject =
-  | Extract<keyof FeedbackProjectSubscriptionWhereInput, string>
+export type ScriptSubscriptionWhereInputInputObject =
+  | Extract<keyof ScriptSubscriptionWhereInput, string>
   | { name: 'mutation_in', alias?: string  } 
   | { name: 'updatedFields_contains', alias?: string  } 
   | { name: 'updatedFields_contains_every', alias?: string  } 
@@ -4384,18 +5751,18 @@ export type FeedbackProjectSubscriptionWhereInputInputObject =
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface FeedbackSubjectSubscriptionWhereInput {
+export interface ProjectSubscriptionWhereInput {
   mutation_in?: prisma.MutationType[]
   updatedFields_contains?: string | null
   updatedFields_contains_every?: string[]
   updatedFields_contains_some?: string[]
-  node?: FeedbackSubjectWhereInput | null
-  AND?: FeedbackSubjectSubscriptionWhereInput[]
-  OR?: FeedbackSubjectSubscriptionWhereInput[]
-  NOT?: FeedbackSubjectSubscriptionWhereInput[]
+  node?: ProjectWhereInput | null
+  AND?: ProjectSubscriptionWhereInput[]
+  OR?: ProjectSubscriptionWhereInput[]
+  NOT?: ProjectSubscriptionWhereInput[]
 }
-export type FeedbackSubjectSubscriptionWhereInputInputObject =
-  | Extract<keyof FeedbackSubjectSubscriptionWhereInput, string>
+export type ProjectSubscriptionWhereInputInputObject =
+  | Extract<keyof ProjectSubscriptionWhereInput, string>
   | { name: 'mutation_in', alias?: string  } 
   | { name: 'updatedFields_contains', alias?: string  } 
   | { name: 'updatedFields_contains_every', alias?: string  } 
@@ -4405,18 +5772,60 @@ export type FeedbackSubjectSubscriptionWhereInputInputObject =
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface FeedbackMediaSubscriptionWhereInput {
+export interface FeedbackTargetSubscriptionWhereInput {
   mutation_in?: prisma.MutationType[]
   updatedFields_contains?: string | null
   updatedFields_contains_every?: string[]
   updatedFields_contains_some?: string[]
-  node?: FeedbackMediaWhereInput | null
-  AND?: FeedbackMediaSubscriptionWhereInput[]
-  OR?: FeedbackMediaSubscriptionWhereInput[]
-  NOT?: FeedbackMediaSubscriptionWhereInput[]
+  node?: FeedbackTargetWhereInput | null
+  AND?: FeedbackTargetSubscriptionWhereInput[]
+  OR?: FeedbackTargetSubscriptionWhereInput[]
+  NOT?: FeedbackTargetSubscriptionWhereInput[]
 }
-export type FeedbackMediaSubscriptionWhereInputInputObject =
-  | Extract<keyof FeedbackMediaSubscriptionWhereInput, string>
+export type FeedbackTargetSubscriptionWhereInputInputObject =
+  | Extract<keyof FeedbackTargetSubscriptionWhereInput, string>
+  | { name: 'mutation_in', alias?: string  } 
+  | { name: 'updatedFields_contains', alias?: string  } 
+  | { name: 'updatedFields_contains_every', alias?: string  } 
+  | { name: 'updatedFields_contains_some', alias?: string  } 
+  | { name: 'node', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface DepartmentSubscriptionWhereInput {
+  mutation_in?: prisma.MutationType[]
+  updatedFields_contains?: string | null
+  updatedFields_contains_every?: string[]
+  updatedFields_contains_some?: string[]
+  node?: DepartmentWhereInput | null
+  AND?: DepartmentSubscriptionWhereInput[]
+  OR?: DepartmentSubscriptionWhereInput[]
+  NOT?: DepartmentSubscriptionWhereInput[]
+}
+export type DepartmentSubscriptionWhereInputInputObject =
+  | Extract<keyof DepartmentSubscriptionWhereInput, string>
+  | { name: 'mutation_in', alias?: string  } 
+  | { name: 'updatedFields_contains', alias?: string  } 
+  | { name: 'updatedFields_contains_every', alias?: string  } 
+  | { name: 'updatedFields_contains_some', alias?: string  } 
+  | { name: 'node', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface MediaSubscriptionWhereInput {
+  mutation_in?: prisma.MutationType[]
+  updatedFields_contains?: string | null
+  updatedFields_contains_every?: string[]
+  updatedFields_contains_some?: string[]
+  node?: MediaWhereInput | null
+  AND?: MediaSubscriptionWhereInput[]
+  OR?: MediaSubscriptionWhereInput[]
+  NOT?: MediaSubscriptionWhereInput[]
+}
+export type MediaSubscriptionWhereInputInputObject =
+  | Extract<keyof MediaSubscriptionWhereInput, string>
   | { name: 'mutation_in', alias?: string  } 
   | { name: 'updatedFields_contains', alias?: string  } 
   | { name: 'updatedFields_contains_every', alias?: string  } 
@@ -4448,7 +5857,17 @@ export type FeedbackRoundSubscriptionWhereInputInputObject =
   | { name: 'NOT', alias?: string  } 
   
 
-export type FeedbackProjectOrderByInputValues =
+export type ProjectOrderByInputValues =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'name_ASC'
+  | 'name_DESC'
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC'
+  
+export type DepartmentOrderByInputValues =
   | 'id_ASC'
   | 'id_DESC'
   | 'name_ASC'
@@ -4480,7 +5899,15 @@ export type UserOrderByInputValues =
   | 'updatedAt_ASC'
   | 'updatedAt_DESC'
   
-export type FeedbackSubjectOrderByInputValues =
+export type ScriptOrderByInputValues =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC'
+  
+export type FeedbackTargetOrderByInputValues =
   | 'id_ASC'
   | 'id_DESC'
   | 'name_ASC'
@@ -4490,7 +5917,7 @@ export type FeedbackSubjectOrderByInputValues =
   | 'updatedAt_ASC'
   | 'updatedAt_DESC'
   
-export type FeedbackMediaOrderByInputValues =
+export type MediaOrderByInputValues =
   | 'id_ASC'
   | 'id_DESC'
   | 'name_ASC'

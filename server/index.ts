@@ -12,10 +12,20 @@ const Query = prismaObjectType({
   name: "Query",
   definition(t) {
     t.prismaFields([
+      "user",
       "users",
-      "feedbackProjects",
-      "feedbackSubjects",
-      "feedbackMedias"
+      "script",
+      "scripts",
+      "project",
+      "projects",
+      "feedbackTarget",
+      "feedbackTargets",
+      "department",
+      "departments",
+      "media",
+      "medias",
+      "feedbackRound",
+      "feedbackRounds"
     ]);
   }
 });
@@ -25,8 +35,15 @@ const Mutation = prismaObjectType({
   definition(t) {
     t.prismaFields([
       "createUser",
-      "createFeedbackProject",
-      "createFeedbackSubject"
+      "createScript",
+      "createProject",
+      "createFeedbackTarget",
+      "createDepartment",
+      "createFeedbackTarget",
+      "createMedia",
+      "createFeedbackRound",
+      "deleteDepartment",
+      "deleteProject"
     ]);
   }
 });

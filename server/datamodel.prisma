@@ -4,33 +4,44 @@ type User {
   email: String! @unique
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
-  feedbackProjects: [FeedbackProject!]!
+  projects: [Project!]!
   feedbackRounds: [FeedbackRound!]!
 }
 
-type FeedbackProject {
+type Script {
+  id: ID! @id
+}
+
+type Project {
   id: ID! @id
   name: String!
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
   createdBy: User @relation(link: INLINE)
+  departments: [Department]!
 }
 
-type FeedbackSubject {
+type FeedbackTarget {
   id: ID! @id
   name: String!
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
-  project: FeedbackProject! @relation(link: TABLE)
+  project: Project! @relation(link: TABLE)
   createdBy: User @relation(link: INLINE)
 }
 
-type FeedbackMedia {
+type Department {
+  id: ID! @id
+  name: String!
+  projects: [Project]! @relation(link: TABLE)
+}
+
+type Media {
   id: ID! @id
   name: String!
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
-  subject: FeedbackProject! @relation(link: INLINE)
+  target: FeedbackTarget! @relation(link: INLINE)
 }
 
 type FeedbackRound {

@@ -16,10 +16,12 @@ export type AtLeastOne<T, U = { [K in keyof T]: Pick<T, K> }> = Partial<T> &
 export type Maybe<T> = T | undefined | null;
 
 export interface Exists {
-  feedbackMedia: (where?: FeedbackMediaWhereInput) => Promise<boolean>;
-  feedbackProject: (where?: FeedbackProjectWhereInput) => Promise<boolean>;
+  department: (where?: DepartmentWhereInput) => Promise<boolean>;
   feedbackRound: (where?: FeedbackRoundWhereInput) => Promise<boolean>;
-  feedbackSubject: (where?: FeedbackSubjectWhereInput) => Promise<boolean>;
+  feedbackTarget: (where?: FeedbackTargetWhereInput) => Promise<boolean>;
+  media: (where?: MediaWhereInput) => Promise<boolean>;
+  project: (where?: ProjectWhereInput) => Promise<boolean>;
+  script: (where?: ScriptWhereInput) => Promise<boolean>;
   user: (where?: UserWhereInput) => Promise<boolean>;
 }
 
@@ -42,48 +44,25 @@ export interface Prisma {
    * Queries
    */
 
-  feedbackMedia: (
-    where: FeedbackMediaWhereUniqueInput
-  ) => FeedbackMediaNullablePromise;
-  feedbackMedias: (args?: {
-    where?: FeedbackMediaWhereInput;
-    orderBy?: FeedbackMediaOrderByInput;
+  department: (where: DepartmentWhereUniqueInput) => DepartmentNullablePromise;
+  departments: (args?: {
+    where?: DepartmentWhereInput;
+    orderBy?: DepartmentOrderByInput;
     skip?: Int;
     after?: String;
     before?: String;
     first?: Int;
     last?: Int;
-  }) => FragmentableArray<FeedbackMedia>;
-  feedbackMediasConnection: (args?: {
-    where?: FeedbackMediaWhereInput;
-    orderBy?: FeedbackMediaOrderByInput;
+  }) => FragmentableArray<Department>;
+  departmentsConnection: (args?: {
+    where?: DepartmentWhereInput;
+    orderBy?: DepartmentOrderByInput;
     skip?: Int;
     after?: String;
     before?: String;
     first?: Int;
     last?: Int;
-  }) => FeedbackMediaConnectionPromise;
-  feedbackProject: (
-    where: FeedbackProjectWhereUniqueInput
-  ) => FeedbackProjectNullablePromise;
-  feedbackProjects: (args?: {
-    where?: FeedbackProjectWhereInput;
-    orderBy?: FeedbackProjectOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => FragmentableArray<FeedbackProject>;
-  feedbackProjectsConnection: (args?: {
-    where?: FeedbackProjectWhereInput;
-    orderBy?: FeedbackProjectOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => FeedbackProjectConnectionPromise;
+  }) => DepartmentConnectionPromise;
   feedbackRound: (
     where: FeedbackRoundWhereUniqueInput
   ) => FeedbackRoundNullablePromise;
@@ -105,27 +84,84 @@ export interface Prisma {
     first?: Int;
     last?: Int;
   }) => FeedbackRoundConnectionPromise;
-  feedbackSubject: (
-    where: FeedbackSubjectWhereUniqueInput
-  ) => FeedbackSubjectNullablePromise;
-  feedbackSubjects: (args?: {
-    where?: FeedbackSubjectWhereInput;
-    orderBy?: FeedbackSubjectOrderByInput;
+  feedbackTarget: (
+    where: FeedbackTargetWhereUniqueInput
+  ) => FeedbackTargetNullablePromise;
+  feedbackTargets: (args?: {
+    where?: FeedbackTargetWhereInput;
+    orderBy?: FeedbackTargetOrderByInput;
     skip?: Int;
     after?: String;
     before?: String;
     first?: Int;
     last?: Int;
-  }) => FragmentableArray<FeedbackSubject>;
-  feedbackSubjectsConnection: (args?: {
-    where?: FeedbackSubjectWhereInput;
-    orderBy?: FeedbackSubjectOrderByInput;
+  }) => FragmentableArray<FeedbackTarget>;
+  feedbackTargetsConnection: (args?: {
+    where?: FeedbackTargetWhereInput;
+    orderBy?: FeedbackTargetOrderByInput;
     skip?: Int;
     after?: String;
     before?: String;
     first?: Int;
     last?: Int;
-  }) => FeedbackSubjectConnectionPromise;
+  }) => FeedbackTargetConnectionPromise;
+  media: (where: MediaWhereUniqueInput) => MediaNullablePromise;
+  medias: (args?: {
+    where?: MediaWhereInput;
+    orderBy?: MediaOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<Media>;
+  mediasConnection: (args?: {
+    where?: MediaWhereInput;
+    orderBy?: MediaOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => MediaConnectionPromise;
+  project: (where: ProjectWhereUniqueInput) => ProjectNullablePromise;
+  projects: (args?: {
+    where?: ProjectWhereInput;
+    orderBy?: ProjectOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<Project>;
+  projectsConnection: (args?: {
+    where?: ProjectWhereInput;
+    orderBy?: ProjectOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => ProjectConnectionPromise;
+  script: (where: ScriptWhereUniqueInput) => ScriptNullablePromise;
+  scripts: (args?: {
+    where?: ScriptWhereInput;
+    orderBy?: ScriptOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<Script>;
+  scriptsConnection: (args?: {
+    where?: ScriptWhereInput;
+    orderBy?: ScriptOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => ScriptConnectionPromise;
   user: (where: UserWhereUniqueInput) => UserNullablePromise;
   users: (args?: {
     where?: UserWhereInput;
@@ -151,48 +187,22 @@ export interface Prisma {
    * Mutations
    */
 
-  createFeedbackMedia: (data: FeedbackMediaCreateInput) => FeedbackMediaPromise;
-  updateFeedbackMedia: (args: {
-    data: FeedbackMediaUpdateInput;
-    where: FeedbackMediaWhereUniqueInput;
-  }) => FeedbackMediaPromise;
-  updateManyFeedbackMedias: (args: {
-    data: FeedbackMediaUpdateManyMutationInput;
-    where?: FeedbackMediaWhereInput;
+  createDepartment: (data: DepartmentCreateInput) => DepartmentPromise;
+  updateDepartment: (args: {
+    data: DepartmentUpdateInput;
+    where: DepartmentWhereUniqueInput;
+  }) => DepartmentPromise;
+  updateManyDepartments: (args: {
+    data: DepartmentUpdateManyMutationInput;
+    where?: DepartmentWhereInput;
   }) => BatchPayloadPromise;
-  upsertFeedbackMedia: (args: {
-    where: FeedbackMediaWhereUniqueInput;
-    create: FeedbackMediaCreateInput;
-    update: FeedbackMediaUpdateInput;
-  }) => FeedbackMediaPromise;
-  deleteFeedbackMedia: (
-    where: FeedbackMediaWhereUniqueInput
-  ) => FeedbackMediaPromise;
-  deleteManyFeedbackMedias: (
-    where?: FeedbackMediaWhereInput
-  ) => BatchPayloadPromise;
-  createFeedbackProject: (
-    data: FeedbackProjectCreateInput
-  ) => FeedbackProjectPromise;
-  updateFeedbackProject: (args: {
-    data: FeedbackProjectUpdateInput;
-    where: FeedbackProjectWhereUniqueInput;
-  }) => FeedbackProjectPromise;
-  updateManyFeedbackProjects: (args: {
-    data: FeedbackProjectUpdateManyMutationInput;
-    where?: FeedbackProjectWhereInput;
-  }) => BatchPayloadPromise;
-  upsertFeedbackProject: (args: {
-    where: FeedbackProjectWhereUniqueInput;
-    create: FeedbackProjectCreateInput;
-    update: FeedbackProjectUpdateInput;
-  }) => FeedbackProjectPromise;
-  deleteFeedbackProject: (
-    where: FeedbackProjectWhereUniqueInput
-  ) => FeedbackProjectPromise;
-  deleteManyFeedbackProjects: (
-    where?: FeedbackProjectWhereInput
-  ) => BatchPayloadPromise;
+  upsertDepartment: (args: {
+    where: DepartmentWhereUniqueInput;
+    create: DepartmentCreateInput;
+    update: DepartmentUpdateInput;
+  }) => DepartmentPromise;
+  deleteDepartment: (where: DepartmentWhereUniqueInput) => DepartmentPromise;
+  deleteManyDepartments: (where?: DepartmentWhereInput) => BatchPayloadPromise;
   createFeedbackRound: (data: FeedbackRoundCreateInput) => FeedbackRoundPromise;
   updateFeedbackRound: (args: {
     data: FeedbackRoundUpdateInput;
@@ -213,28 +223,63 @@ export interface Prisma {
   deleteManyFeedbackRounds: (
     where?: FeedbackRoundWhereInput
   ) => BatchPayloadPromise;
-  createFeedbackSubject: (
-    data: FeedbackSubjectCreateInput
-  ) => FeedbackSubjectPromise;
-  updateFeedbackSubject: (args: {
-    data: FeedbackSubjectUpdateInput;
-    where: FeedbackSubjectWhereUniqueInput;
-  }) => FeedbackSubjectPromise;
-  updateManyFeedbackSubjects: (args: {
-    data: FeedbackSubjectUpdateManyMutationInput;
-    where?: FeedbackSubjectWhereInput;
+  createFeedbackTarget: (
+    data: FeedbackTargetCreateInput
+  ) => FeedbackTargetPromise;
+  updateFeedbackTarget: (args: {
+    data: FeedbackTargetUpdateInput;
+    where: FeedbackTargetWhereUniqueInput;
+  }) => FeedbackTargetPromise;
+  updateManyFeedbackTargets: (args: {
+    data: FeedbackTargetUpdateManyMutationInput;
+    where?: FeedbackTargetWhereInput;
   }) => BatchPayloadPromise;
-  upsertFeedbackSubject: (args: {
-    where: FeedbackSubjectWhereUniqueInput;
-    create: FeedbackSubjectCreateInput;
-    update: FeedbackSubjectUpdateInput;
-  }) => FeedbackSubjectPromise;
-  deleteFeedbackSubject: (
-    where: FeedbackSubjectWhereUniqueInput
-  ) => FeedbackSubjectPromise;
-  deleteManyFeedbackSubjects: (
-    where?: FeedbackSubjectWhereInput
+  upsertFeedbackTarget: (args: {
+    where: FeedbackTargetWhereUniqueInput;
+    create: FeedbackTargetCreateInput;
+    update: FeedbackTargetUpdateInput;
+  }) => FeedbackTargetPromise;
+  deleteFeedbackTarget: (
+    where: FeedbackTargetWhereUniqueInput
+  ) => FeedbackTargetPromise;
+  deleteManyFeedbackTargets: (
+    where?: FeedbackTargetWhereInput
   ) => BatchPayloadPromise;
+  createMedia: (data: MediaCreateInput) => MediaPromise;
+  updateMedia: (args: {
+    data: MediaUpdateInput;
+    where: MediaWhereUniqueInput;
+  }) => MediaPromise;
+  updateManyMedias: (args: {
+    data: MediaUpdateManyMutationInput;
+    where?: MediaWhereInput;
+  }) => BatchPayloadPromise;
+  upsertMedia: (args: {
+    where: MediaWhereUniqueInput;
+    create: MediaCreateInput;
+    update: MediaUpdateInput;
+  }) => MediaPromise;
+  deleteMedia: (where: MediaWhereUniqueInput) => MediaPromise;
+  deleteManyMedias: (where?: MediaWhereInput) => BatchPayloadPromise;
+  createProject: (data: ProjectCreateInput) => ProjectPromise;
+  updateProject: (args: {
+    data: ProjectUpdateInput;
+    where: ProjectWhereUniqueInput;
+  }) => ProjectPromise;
+  updateManyProjects: (args: {
+    data: ProjectUpdateManyMutationInput;
+    where?: ProjectWhereInput;
+  }) => BatchPayloadPromise;
+  upsertProject: (args: {
+    where: ProjectWhereUniqueInput;
+    create: ProjectCreateInput;
+    update: ProjectUpdateInput;
+  }) => ProjectPromise;
+  deleteProject: (where: ProjectWhereUniqueInput) => ProjectPromise;
+  deleteManyProjects: (where?: ProjectWhereInput) => BatchPayloadPromise;
+  createScript: (data: ScriptCreateInput) => ScriptPromise;
+  deleteScript: (where: ScriptWhereUniqueInput) => ScriptPromise;
+  deleteManyScripts: (where?: ScriptWhereInput) => BatchPayloadPromise;
   createUser: (data: UserCreateInput) => UserPromise;
   updateUser: (args: {
     data: UserUpdateInput;
@@ -260,18 +305,24 @@ export interface Prisma {
 }
 
 export interface Subscription {
-  feedbackMedia: (
-    where?: FeedbackMediaSubscriptionWhereInput
-  ) => FeedbackMediaSubscriptionPayloadSubscription;
-  feedbackProject: (
-    where?: FeedbackProjectSubscriptionWhereInput
-  ) => FeedbackProjectSubscriptionPayloadSubscription;
+  department: (
+    where?: DepartmentSubscriptionWhereInput
+  ) => DepartmentSubscriptionPayloadSubscription;
   feedbackRound: (
     where?: FeedbackRoundSubscriptionWhereInput
   ) => FeedbackRoundSubscriptionPayloadSubscription;
-  feedbackSubject: (
-    where?: FeedbackSubjectSubscriptionWhereInput
-  ) => FeedbackSubjectSubscriptionPayloadSubscription;
+  feedbackTarget: (
+    where?: FeedbackTargetSubscriptionWhereInput
+  ) => FeedbackTargetSubscriptionPayloadSubscription;
+  media: (
+    where?: MediaSubscriptionWhereInput
+  ) => MediaSubscriptionPayloadSubscription;
+  project: (
+    where?: ProjectSubscriptionWhereInput
+  ) => ProjectSubscriptionPayloadSubscription;
+  script: (
+    where?: ScriptSubscriptionWhereInput
+  ) => ScriptSubscriptionPayloadSubscription;
   user: (
     where?: UserSubscriptionWhereInput
   ) => UserSubscriptionPayloadSubscription;
@@ -285,7 +336,7 @@ export interface ClientConstructor<T> {
  * Types
  */
 
-export type FeedbackProjectOrderByInput =
+export type ProjectOrderByInput =
   | "id_ASC"
   | "id_DESC"
   | "name_ASC"
@@ -317,7 +368,13 @@ export type UserOrderByInput =
   | "updatedAt_ASC"
   | "updatedAt_DESC";
 
-export type FeedbackMediaOrderByInput =
+export type DepartmentOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "name_ASC"
+  | "name_DESC";
+
+export type FeedbackTargetOrderByInput =
   | "id_ASC"
   | "id_DESC"
   | "name_ASC"
@@ -327,7 +384,7 @@ export type FeedbackMediaOrderByInput =
   | "updatedAt_ASC"
   | "updatedAt_DESC";
 
-export type FeedbackSubjectOrderByInput =
+export type MediaOrderByInput =
   | "id_ASC"
   | "id_DESC"
   | "name_ASC"
@@ -336,14 +393,16 @@ export type FeedbackSubjectOrderByInput =
   | "createdAt_DESC"
   | "updatedAt_ASC"
   | "updatedAt_DESC";
+
+export type ScriptOrderByInput = "id_ASC" | "id_DESC";
 
 export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 
-export type FeedbackMediaWhereUniqueInput = AtLeastOne<{
+export type DepartmentWhereUniqueInput = AtLeastOne<{
   id: Maybe<ID_Input>;
 }>;
 
-export interface FeedbackProjectWhereInput {
+export interface ProjectWhereInput {
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
   id_in?: Maybe<ID_Input[] | ID_Input>;
@@ -389,9 +448,12 @@ export interface FeedbackProjectWhereInput {
   updatedAt_gt?: Maybe<DateTimeInput>;
   updatedAt_gte?: Maybe<DateTimeInput>;
   createdBy?: Maybe<UserWhereInput>;
-  AND?: Maybe<FeedbackProjectWhereInput[] | FeedbackProjectWhereInput>;
-  OR?: Maybe<FeedbackProjectWhereInput[] | FeedbackProjectWhereInput>;
-  NOT?: Maybe<FeedbackProjectWhereInput[] | FeedbackProjectWhereInput>;
+  departments_every?: Maybe<DepartmentWhereInput>;
+  departments_some?: Maybe<DepartmentWhereInput>;
+  departments_none?: Maybe<DepartmentWhereInput>;
+  AND?: Maybe<ProjectWhereInput[] | ProjectWhereInput>;
+  OR?: Maybe<ProjectWhereInput[] | ProjectWhereInput>;
+  NOT?: Maybe<ProjectWhereInput[] | ProjectWhereInput>;
 }
 
 export interface UserWhereInput {
@@ -453,9 +515,9 @@ export interface UserWhereInput {
   updatedAt_lte?: Maybe<DateTimeInput>;
   updatedAt_gt?: Maybe<DateTimeInput>;
   updatedAt_gte?: Maybe<DateTimeInput>;
-  feedbackProjects_every?: Maybe<FeedbackProjectWhereInput>;
-  feedbackProjects_some?: Maybe<FeedbackProjectWhereInput>;
-  feedbackProjects_none?: Maybe<FeedbackProjectWhereInput>;
+  projects_every?: Maybe<ProjectWhereInput>;
+  projects_some?: Maybe<ProjectWhereInput>;
+  projects_none?: Maybe<ProjectWhereInput>;
   feedbackRounds_every?: Maybe<FeedbackRoundWhereInput>;
   feedbackRounds_some?: Maybe<FeedbackRoundWhereInput>;
   feedbackRounds_none?: Maybe<FeedbackRoundWhereInput>;
@@ -511,7 +573,7 @@ export interface FeedbackRoundWhereInput {
   NOT?: Maybe<FeedbackRoundWhereInput[] | FeedbackRoundWhereInput>;
 }
 
-export interface FeedbackMediaWhereInput {
+export interface DepartmentWhereInput {
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
   id_in?: Maybe<ID_Input[] | ID_Input>;
@@ -540,41 +602,23 @@ export interface FeedbackMediaWhereInput {
   name_not_starts_with?: Maybe<String>;
   name_ends_with?: Maybe<String>;
   name_not_ends_with?: Maybe<String>;
-  createdAt?: Maybe<DateTimeInput>;
-  createdAt_not?: Maybe<DateTimeInput>;
-  createdAt_in?: Maybe<DateTimeInput[] | DateTimeInput>;
-  createdAt_not_in?: Maybe<DateTimeInput[] | DateTimeInput>;
-  createdAt_lt?: Maybe<DateTimeInput>;
-  createdAt_lte?: Maybe<DateTimeInput>;
-  createdAt_gt?: Maybe<DateTimeInput>;
-  createdAt_gte?: Maybe<DateTimeInput>;
-  updatedAt?: Maybe<DateTimeInput>;
-  updatedAt_not?: Maybe<DateTimeInput>;
-  updatedAt_in?: Maybe<DateTimeInput[] | DateTimeInput>;
-  updatedAt_not_in?: Maybe<DateTimeInput[] | DateTimeInput>;
-  updatedAt_lt?: Maybe<DateTimeInput>;
-  updatedAt_lte?: Maybe<DateTimeInput>;
-  updatedAt_gt?: Maybe<DateTimeInput>;
-  updatedAt_gte?: Maybe<DateTimeInput>;
-  subject?: Maybe<FeedbackProjectWhereInput>;
-  AND?: Maybe<FeedbackMediaWhereInput[] | FeedbackMediaWhereInput>;
-  OR?: Maybe<FeedbackMediaWhereInput[] | FeedbackMediaWhereInput>;
-  NOT?: Maybe<FeedbackMediaWhereInput[] | FeedbackMediaWhereInput>;
+  projects_every?: Maybe<ProjectWhereInput>;
+  projects_some?: Maybe<ProjectWhereInput>;
+  projects_none?: Maybe<ProjectWhereInput>;
+  AND?: Maybe<DepartmentWhereInput[] | DepartmentWhereInput>;
+  OR?: Maybe<DepartmentWhereInput[] | DepartmentWhereInput>;
+  NOT?: Maybe<DepartmentWhereInput[] | DepartmentWhereInput>;
 }
-
-export type FeedbackProjectWhereUniqueInput = AtLeastOne<{
-  id: Maybe<ID_Input>;
-}>;
 
 export type FeedbackRoundWhereUniqueInput = AtLeastOne<{
   id: Maybe<ID_Input>;
 }>;
 
-export type FeedbackSubjectWhereUniqueInput = AtLeastOne<{
+export type FeedbackTargetWhereUniqueInput = AtLeastOne<{
   id: Maybe<ID_Input>;
 }>;
 
-export interface FeedbackSubjectWhereInput {
+export interface FeedbackTargetWhereInput {
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
   id_in?: Maybe<ID_Input[] | ID_Input>;
@@ -619,11 +663,94 @@ export interface FeedbackSubjectWhereInput {
   updatedAt_lte?: Maybe<DateTimeInput>;
   updatedAt_gt?: Maybe<DateTimeInput>;
   updatedAt_gte?: Maybe<DateTimeInput>;
-  project?: Maybe<FeedbackProjectWhereInput>;
+  project?: Maybe<ProjectWhereInput>;
   createdBy?: Maybe<UserWhereInput>;
-  AND?: Maybe<FeedbackSubjectWhereInput[] | FeedbackSubjectWhereInput>;
-  OR?: Maybe<FeedbackSubjectWhereInput[] | FeedbackSubjectWhereInput>;
-  NOT?: Maybe<FeedbackSubjectWhereInput[] | FeedbackSubjectWhereInput>;
+  AND?: Maybe<FeedbackTargetWhereInput[] | FeedbackTargetWhereInput>;
+  OR?: Maybe<FeedbackTargetWhereInput[] | FeedbackTargetWhereInput>;
+  NOT?: Maybe<FeedbackTargetWhereInput[] | FeedbackTargetWhereInput>;
+}
+
+export type MediaWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+}>;
+
+export interface MediaWhereInput {
+  id?: Maybe<ID_Input>;
+  id_not?: Maybe<ID_Input>;
+  id_in?: Maybe<ID_Input[] | ID_Input>;
+  id_not_in?: Maybe<ID_Input[] | ID_Input>;
+  id_lt?: Maybe<ID_Input>;
+  id_lte?: Maybe<ID_Input>;
+  id_gt?: Maybe<ID_Input>;
+  id_gte?: Maybe<ID_Input>;
+  id_contains?: Maybe<ID_Input>;
+  id_not_contains?: Maybe<ID_Input>;
+  id_starts_with?: Maybe<ID_Input>;
+  id_not_starts_with?: Maybe<ID_Input>;
+  id_ends_with?: Maybe<ID_Input>;
+  id_not_ends_with?: Maybe<ID_Input>;
+  name?: Maybe<String>;
+  name_not?: Maybe<String>;
+  name_in?: Maybe<String[] | String>;
+  name_not_in?: Maybe<String[] | String>;
+  name_lt?: Maybe<String>;
+  name_lte?: Maybe<String>;
+  name_gt?: Maybe<String>;
+  name_gte?: Maybe<String>;
+  name_contains?: Maybe<String>;
+  name_not_contains?: Maybe<String>;
+  name_starts_with?: Maybe<String>;
+  name_not_starts_with?: Maybe<String>;
+  name_ends_with?: Maybe<String>;
+  name_not_ends_with?: Maybe<String>;
+  createdAt?: Maybe<DateTimeInput>;
+  createdAt_not?: Maybe<DateTimeInput>;
+  createdAt_in?: Maybe<DateTimeInput[] | DateTimeInput>;
+  createdAt_not_in?: Maybe<DateTimeInput[] | DateTimeInput>;
+  createdAt_lt?: Maybe<DateTimeInput>;
+  createdAt_lte?: Maybe<DateTimeInput>;
+  createdAt_gt?: Maybe<DateTimeInput>;
+  createdAt_gte?: Maybe<DateTimeInput>;
+  updatedAt?: Maybe<DateTimeInput>;
+  updatedAt_not?: Maybe<DateTimeInput>;
+  updatedAt_in?: Maybe<DateTimeInput[] | DateTimeInput>;
+  updatedAt_not_in?: Maybe<DateTimeInput[] | DateTimeInput>;
+  updatedAt_lt?: Maybe<DateTimeInput>;
+  updatedAt_lte?: Maybe<DateTimeInput>;
+  updatedAt_gt?: Maybe<DateTimeInput>;
+  updatedAt_gte?: Maybe<DateTimeInput>;
+  target?: Maybe<FeedbackTargetWhereInput>;
+  AND?: Maybe<MediaWhereInput[] | MediaWhereInput>;
+  OR?: Maybe<MediaWhereInput[] | MediaWhereInput>;
+  NOT?: Maybe<MediaWhereInput[] | MediaWhereInput>;
+}
+
+export type ProjectWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+}>;
+
+export type ScriptWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+}>;
+
+export interface ScriptWhereInput {
+  id?: Maybe<ID_Input>;
+  id_not?: Maybe<ID_Input>;
+  id_in?: Maybe<ID_Input[] | ID_Input>;
+  id_not_in?: Maybe<ID_Input[] | ID_Input>;
+  id_lt?: Maybe<ID_Input>;
+  id_lte?: Maybe<ID_Input>;
+  id_gt?: Maybe<ID_Input>;
+  id_gte?: Maybe<ID_Input>;
+  id_contains?: Maybe<ID_Input>;
+  id_not_contains?: Maybe<ID_Input>;
+  id_starts_with?: Maybe<ID_Input>;
+  id_not_starts_with?: Maybe<ID_Input>;
+  id_ends_with?: Maybe<ID_Input>;
+  id_not_ends_with?: Maybe<ID_Input>;
+  AND?: Maybe<ScriptWhereInput[] | ScriptWhereInput>;
+  OR?: Maybe<ScriptWhereInput[] | ScriptWhereInput>;
+  NOT?: Maybe<ScriptWhereInput[] | ScriptWhereInput>;
 }
 
 export type UserWhereUniqueInput = AtLeastOne<{
@@ -631,29 +758,32 @@ export type UserWhereUniqueInput = AtLeastOne<{
   email?: Maybe<String>;
 }>;
 
-export interface FeedbackMediaCreateInput {
+export interface DepartmentCreateInput {
   id?: Maybe<ID_Input>;
   name: String;
-  subject: FeedbackProjectCreateOneInput;
+  projects?: Maybe<ProjectCreateManyWithoutDepartmentsInput>;
 }
 
-export interface FeedbackProjectCreateOneInput {
-  create?: Maybe<FeedbackProjectCreateInput>;
-  connect?: Maybe<FeedbackProjectWhereUniqueInput>;
+export interface ProjectCreateManyWithoutDepartmentsInput {
+  create?: Maybe<
+    | ProjectCreateWithoutDepartmentsInput[]
+    | ProjectCreateWithoutDepartmentsInput
+  >;
+  connect?: Maybe<ProjectWhereUniqueInput[] | ProjectWhereUniqueInput>;
 }
 
-export interface FeedbackProjectCreateInput {
+export interface ProjectCreateWithoutDepartmentsInput {
   id?: Maybe<ID_Input>;
   name: String;
-  createdBy?: Maybe<UserCreateOneWithoutFeedbackProjectsInput>;
+  createdBy?: Maybe<UserCreateOneWithoutProjectsInput>;
 }
 
-export interface UserCreateOneWithoutFeedbackProjectsInput {
-  create?: Maybe<UserCreateWithoutFeedbackProjectsInput>;
+export interface UserCreateOneWithoutProjectsInput {
+  create?: Maybe<UserCreateWithoutProjectsInput>;
   connect?: Maybe<UserWhereUniqueInput>;
 }
 
-export interface UserCreateWithoutFeedbackProjectsInput {
+export interface UserCreateWithoutProjectsInput {
   id?: Maybe<ID_Input>;
   name: String;
   email: String;
@@ -675,33 +805,55 @@ export interface FeedbackRoundCreateWithoutUsersInput {
   roundEnd?: Maybe<DateTimeInput>;
 }
 
-export interface FeedbackMediaUpdateInput {
+export interface DepartmentUpdateInput {
   name?: Maybe<String>;
-  subject?: Maybe<FeedbackProjectUpdateOneRequiredInput>;
+  projects?: Maybe<ProjectUpdateManyWithoutDepartmentsInput>;
 }
 
-export interface FeedbackProjectUpdateOneRequiredInput {
-  create?: Maybe<FeedbackProjectCreateInput>;
-  update?: Maybe<FeedbackProjectUpdateDataInput>;
-  upsert?: Maybe<FeedbackProjectUpsertNestedInput>;
-  connect?: Maybe<FeedbackProjectWhereUniqueInput>;
+export interface ProjectUpdateManyWithoutDepartmentsInput {
+  create?: Maybe<
+    | ProjectCreateWithoutDepartmentsInput[]
+    | ProjectCreateWithoutDepartmentsInput
+  >;
+  delete?: Maybe<ProjectWhereUniqueInput[] | ProjectWhereUniqueInput>;
+  connect?: Maybe<ProjectWhereUniqueInput[] | ProjectWhereUniqueInput>;
+  set?: Maybe<ProjectWhereUniqueInput[] | ProjectWhereUniqueInput>;
+  disconnect?: Maybe<ProjectWhereUniqueInput[] | ProjectWhereUniqueInput>;
+  update?: Maybe<
+    | ProjectUpdateWithWhereUniqueWithoutDepartmentsInput[]
+    | ProjectUpdateWithWhereUniqueWithoutDepartmentsInput
+  >;
+  upsert?: Maybe<
+    | ProjectUpsertWithWhereUniqueWithoutDepartmentsInput[]
+    | ProjectUpsertWithWhereUniqueWithoutDepartmentsInput
+  >;
+  deleteMany?: Maybe<ProjectScalarWhereInput[] | ProjectScalarWhereInput>;
+  updateMany?: Maybe<
+    | ProjectUpdateManyWithWhereNestedInput[]
+    | ProjectUpdateManyWithWhereNestedInput
+  >;
 }
 
-export interface FeedbackProjectUpdateDataInput {
+export interface ProjectUpdateWithWhereUniqueWithoutDepartmentsInput {
+  where: ProjectWhereUniqueInput;
+  data: ProjectUpdateWithoutDepartmentsDataInput;
+}
+
+export interface ProjectUpdateWithoutDepartmentsDataInput {
   name?: Maybe<String>;
-  createdBy?: Maybe<UserUpdateOneWithoutFeedbackProjectsInput>;
+  createdBy?: Maybe<UserUpdateOneWithoutProjectsInput>;
 }
 
-export interface UserUpdateOneWithoutFeedbackProjectsInput {
-  create?: Maybe<UserCreateWithoutFeedbackProjectsInput>;
-  update?: Maybe<UserUpdateWithoutFeedbackProjectsDataInput>;
-  upsert?: Maybe<UserUpsertWithoutFeedbackProjectsInput>;
+export interface UserUpdateOneWithoutProjectsInput {
+  create?: Maybe<UserCreateWithoutProjectsInput>;
+  update?: Maybe<UserUpdateWithoutProjectsDataInput>;
+  upsert?: Maybe<UserUpsertWithoutProjectsInput>;
   delete?: Maybe<Boolean>;
   disconnect?: Maybe<Boolean>;
   connect?: Maybe<UserWhereUniqueInput>;
 }
 
-export interface UserUpdateWithoutFeedbackProjectsDataInput {
+export interface UserUpdateWithoutProjectsDataInput {
   name?: Maybe<String>;
   email?: Maybe<String>;
   feedbackRounds?: Maybe<FeedbackRoundUpdateManyWithoutUsersInput>;
@@ -807,154 +959,18 @@ export interface FeedbackRoundUpdateManyDataInput {
   roundEnd?: Maybe<DateTimeInput>;
 }
 
-export interface UserUpsertWithoutFeedbackProjectsInput {
-  update: UserUpdateWithoutFeedbackProjectsDataInput;
-  create: UserCreateWithoutFeedbackProjectsInput;
+export interface UserUpsertWithoutProjectsInput {
+  update: UserUpdateWithoutProjectsDataInput;
+  create: UserCreateWithoutProjectsInput;
 }
 
-export interface FeedbackProjectUpsertNestedInput {
-  update: FeedbackProjectUpdateDataInput;
-  create: FeedbackProjectCreateInput;
+export interface ProjectUpsertWithWhereUniqueWithoutDepartmentsInput {
+  where: ProjectWhereUniqueInput;
+  update: ProjectUpdateWithoutDepartmentsDataInput;
+  create: ProjectCreateWithoutDepartmentsInput;
 }
 
-export interface FeedbackMediaUpdateManyMutationInput {
-  name?: Maybe<String>;
-}
-
-export interface FeedbackProjectUpdateInput {
-  name?: Maybe<String>;
-  createdBy?: Maybe<UserUpdateOneWithoutFeedbackProjectsInput>;
-}
-
-export interface FeedbackProjectUpdateManyMutationInput {
-  name?: Maybe<String>;
-}
-
-export interface FeedbackRoundCreateInput {
-  id?: Maybe<ID_Input>;
-  roundEnd?: Maybe<DateTimeInput>;
-  users?: Maybe<UserCreateManyWithoutFeedbackRoundsInput>;
-}
-
-export interface UserCreateManyWithoutFeedbackRoundsInput {
-  create?: Maybe<
-    | UserCreateWithoutFeedbackRoundsInput[]
-    | UserCreateWithoutFeedbackRoundsInput
-  >;
-  connect?: Maybe<UserWhereUniqueInput[] | UserWhereUniqueInput>;
-}
-
-export interface UserCreateWithoutFeedbackRoundsInput {
-  id?: Maybe<ID_Input>;
-  name: String;
-  email: String;
-  feedbackProjects?: Maybe<FeedbackProjectCreateManyWithoutCreatedByInput>;
-}
-
-export interface FeedbackProjectCreateManyWithoutCreatedByInput {
-  create?: Maybe<
-    | FeedbackProjectCreateWithoutCreatedByInput[]
-    | FeedbackProjectCreateWithoutCreatedByInput
-  >;
-  connect?: Maybe<
-    FeedbackProjectWhereUniqueInput[] | FeedbackProjectWhereUniqueInput
-  >;
-}
-
-export interface FeedbackProjectCreateWithoutCreatedByInput {
-  id?: Maybe<ID_Input>;
-  name: String;
-}
-
-export interface FeedbackRoundUpdateInput {
-  roundEnd?: Maybe<DateTimeInput>;
-  users?: Maybe<UserUpdateManyWithoutFeedbackRoundsInput>;
-}
-
-export interface UserUpdateManyWithoutFeedbackRoundsInput {
-  create?: Maybe<
-    | UserCreateWithoutFeedbackRoundsInput[]
-    | UserCreateWithoutFeedbackRoundsInput
-  >;
-  delete?: Maybe<UserWhereUniqueInput[] | UserWhereUniqueInput>;
-  connect?: Maybe<UserWhereUniqueInput[] | UserWhereUniqueInput>;
-  set?: Maybe<UserWhereUniqueInput[] | UserWhereUniqueInput>;
-  disconnect?: Maybe<UserWhereUniqueInput[] | UserWhereUniqueInput>;
-  update?: Maybe<
-    | UserUpdateWithWhereUniqueWithoutFeedbackRoundsInput[]
-    | UserUpdateWithWhereUniqueWithoutFeedbackRoundsInput
-  >;
-  upsert?: Maybe<
-    | UserUpsertWithWhereUniqueWithoutFeedbackRoundsInput[]
-    | UserUpsertWithWhereUniqueWithoutFeedbackRoundsInput
-  >;
-  deleteMany?: Maybe<UserScalarWhereInput[] | UserScalarWhereInput>;
-  updateMany?: Maybe<
-    UserUpdateManyWithWhereNestedInput[] | UserUpdateManyWithWhereNestedInput
-  >;
-}
-
-export interface UserUpdateWithWhereUniqueWithoutFeedbackRoundsInput {
-  where: UserWhereUniqueInput;
-  data: UserUpdateWithoutFeedbackRoundsDataInput;
-}
-
-export interface UserUpdateWithoutFeedbackRoundsDataInput {
-  name?: Maybe<String>;
-  email?: Maybe<String>;
-  feedbackProjects?: Maybe<FeedbackProjectUpdateManyWithoutCreatedByInput>;
-}
-
-export interface FeedbackProjectUpdateManyWithoutCreatedByInput {
-  create?: Maybe<
-    | FeedbackProjectCreateWithoutCreatedByInput[]
-    | FeedbackProjectCreateWithoutCreatedByInput
-  >;
-  delete?: Maybe<
-    FeedbackProjectWhereUniqueInput[] | FeedbackProjectWhereUniqueInput
-  >;
-  connect?: Maybe<
-    FeedbackProjectWhereUniqueInput[] | FeedbackProjectWhereUniqueInput
-  >;
-  set?: Maybe<
-    FeedbackProjectWhereUniqueInput[] | FeedbackProjectWhereUniqueInput
-  >;
-  disconnect?: Maybe<
-    FeedbackProjectWhereUniqueInput[] | FeedbackProjectWhereUniqueInput
-  >;
-  update?: Maybe<
-    | FeedbackProjectUpdateWithWhereUniqueWithoutCreatedByInput[]
-    | FeedbackProjectUpdateWithWhereUniqueWithoutCreatedByInput
-  >;
-  upsert?: Maybe<
-    | FeedbackProjectUpsertWithWhereUniqueWithoutCreatedByInput[]
-    | FeedbackProjectUpsertWithWhereUniqueWithoutCreatedByInput
-  >;
-  deleteMany?: Maybe<
-    FeedbackProjectScalarWhereInput[] | FeedbackProjectScalarWhereInput
-  >;
-  updateMany?: Maybe<
-    | FeedbackProjectUpdateManyWithWhereNestedInput[]
-    | FeedbackProjectUpdateManyWithWhereNestedInput
-  >;
-}
-
-export interface FeedbackProjectUpdateWithWhereUniqueWithoutCreatedByInput {
-  where: FeedbackProjectWhereUniqueInput;
-  data: FeedbackProjectUpdateWithoutCreatedByDataInput;
-}
-
-export interface FeedbackProjectUpdateWithoutCreatedByDataInput {
-  name?: Maybe<String>;
-}
-
-export interface FeedbackProjectUpsertWithWhereUniqueWithoutCreatedByInput {
-  where: FeedbackProjectWhereUniqueInput;
-  update: FeedbackProjectUpdateWithoutCreatedByDataInput;
-  create: FeedbackProjectCreateWithoutCreatedByInput;
-}
-
-export interface FeedbackProjectScalarWhereInput {
+export interface ProjectScalarWhereInput {
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
   id_in?: Maybe<ID_Input[] | ID_Input>;
@@ -999,24 +1015,229 @@ export interface FeedbackProjectScalarWhereInput {
   updatedAt_lte?: Maybe<DateTimeInput>;
   updatedAt_gt?: Maybe<DateTimeInput>;
   updatedAt_gte?: Maybe<DateTimeInput>;
-  AND?: Maybe<
-    FeedbackProjectScalarWhereInput[] | FeedbackProjectScalarWhereInput
-  >;
-  OR?: Maybe<
-    FeedbackProjectScalarWhereInput[] | FeedbackProjectScalarWhereInput
-  >;
-  NOT?: Maybe<
-    FeedbackProjectScalarWhereInput[] | FeedbackProjectScalarWhereInput
-  >;
+  AND?: Maybe<ProjectScalarWhereInput[] | ProjectScalarWhereInput>;
+  OR?: Maybe<ProjectScalarWhereInput[] | ProjectScalarWhereInput>;
+  NOT?: Maybe<ProjectScalarWhereInput[] | ProjectScalarWhereInput>;
 }
 
-export interface FeedbackProjectUpdateManyWithWhereNestedInput {
-  where: FeedbackProjectScalarWhereInput;
-  data: FeedbackProjectUpdateManyDataInput;
+export interface ProjectUpdateManyWithWhereNestedInput {
+  where: ProjectScalarWhereInput;
+  data: ProjectUpdateManyDataInput;
 }
 
-export interface FeedbackProjectUpdateManyDataInput {
+export interface ProjectUpdateManyDataInput {
   name?: Maybe<String>;
+}
+
+export interface DepartmentUpdateManyMutationInput {
+  name?: Maybe<String>;
+}
+
+export interface FeedbackRoundCreateInput {
+  id?: Maybe<ID_Input>;
+  roundEnd?: Maybe<DateTimeInput>;
+  users?: Maybe<UserCreateManyWithoutFeedbackRoundsInput>;
+}
+
+export interface UserCreateManyWithoutFeedbackRoundsInput {
+  create?: Maybe<
+    | UserCreateWithoutFeedbackRoundsInput[]
+    | UserCreateWithoutFeedbackRoundsInput
+  >;
+  connect?: Maybe<UserWhereUniqueInput[] | UserWhereUniqueInput>;
+}
+
+export interface UserCreateWithoutFeedbackRoundsInput {
+  id?: Maybe<ID_Input>;
+  name: String;
+  email: String;
+  projects?: Maybe<ProjectCreateManyWithoutCreatedByInput>;
+}
+
+export interface ProjectCreateManyWithoutCreatedByInput {
+  create?: Maybe<
+    ProjectCreateWithoutCreatedByInput[] | ProjectCreateWithoutCreatedByInput
+  >;
+  connect?: Maybe<ProjectWhereUniqueInput[] | ProjectWhereUniqueInput>;
+}
+
+export interface ProjectCreateWithoutCreatedByInput {
+  id?: Maybe<ID_Input>;
+  name: String;
+  departments?: Maybe<DepartmentCreateManyWithoutProjectsInput>;
+}
+
+export interface DepartmentCreateManyWithoutProjectsInput {
+  create?: Maybe<
+    | DepartmentCreateWithoutProjectsInput[]
+    | DepartmentCreateWithoutProjectsInput
+  >;
+  connect?: Maybe<DepartmentWhereUniqueInput[] | DepartmentWhereUniqueInput>;
+}
+
+export interface DepartmentCreateWithoutProjectsInput {
+  id?: Maybe<ID_Input>;
+  name: String;
+}
+
+export interface FeedbackRoundUpdateInput {
+  roundEnd?: Maybe<DateTimeInput>;
+  users?: Maybe<UserUpdateManyWithoutFeedbackRoundsInput>;
+}
+
+export interface UserUpdateManyWithoutFeedbackRoundsInput {
+  create?: Maybe<
+    | UserCreateWithoutFeedbackRoundsInput[]
+    | UserCreateWithoutFeedbackRoundsInput
+  >;
+  delete?: Maybe<UserWhereUniqueInput[] | UserWhereUniqueInput>;
+  connect?: Maybe<UserWhereUniqueInput[] | UserWhereUniqueInput>;
+  set?: Maybe<UserWhereUniqueInput[] | UserWhereUniqueInput>;
+  disconnect?: Maybe<UserWhereUniqueInput[] | UserWhereUniqueInput>;
+  update?: Maybe<
+    | UserUpdateWithWhereUniqueWithoutFeedbackRoundsInput[]
+    | UserUpdateWithWhereUniqueWithoutFeedbackRoundsInput
+  >;
+  upsert?: Maybe<
+    | UserUpsertWithWhereUniqueWithoutFeedbackRoundsInput[]
+    | UserUpsertWithWhereUniqueWithoutFeedbackRoundsInput
+  >;
+  deleteMany?: Maybe<UserScalarWhereInput[] | UserScalarWhereInput>;
+  updateMany?: Maybe<
+    UserUpdateManyWithWhereNestedInput[] | UserUpdateManyWithWhereNestedInput
+  >;
+}
+
+export interface UserUpdateWithWhereUniqueWithoutFeedbackRoundsInput {
+  where: UserWhereUniqueInput;
+  data: UserUpdateWithoutFeedbackRoundsDataInput;
+}
+
+export interface UserUpdateWithoutFeedbackRoundsDataInput {
+  name?: Maybe<String>;
+  email?: Maybe<String>;
+  projects?: Maybe<ProjectUpdateManyWithoutCreatedByInput>;
+}
+
+export interface ProjectUpdateManyWithoutCreatedByInput {
+  create?: Maybe<
+    ProjectCreateWithoutCreatedByInput[] | ProjectCreateWithoutCreatedByInput
+  >;
+  delete?: Maybe<ProjectWhereUniqueInput[] | ProjectWhereUniqueInput>;
+  connect?: Maybe<ProjectWhereUniqueInput[] | ProjectWhereUniqueInput>;
+  set?: Maybe<ProjectWhereUniqueInput[] | ProjectWhereUniqueInput>;
+  disconnect?: Maybe<ProjectWhereUniqueInput[] | ProjectWhereUniqueInput>;
+  update?: Maybe<
+    | ProjectUpdateWithWhereUniqueWithoutCreatedByInput[]
+    | ProjectUpdateWithWhereUniqueWithoutCreatedByInput
+  >;
+  upsert?: Maybe<
+    | ProjectUpsertWithWhereUniqueWithoutCreatedByInput[]
+    | ProjectUpsertWithWhereUniqueWithoutCreatedByInput
+  >;
+  deleteMany?: Maybe<ProjectScalarWhereInput[] | ProjectScalarWhereInput>;
+  updateMany?: Maybe<
+    | ProjectUpdateManyWithWhereNestedInput[]
+    | ProjectUpdateManyWithWhereNestedInput
+  >;
+}
+
+export interface ProjectUpdateWithWhereUniqueWithoutCreatedByInput {
+  where: ProjectWhereUniqueInput;
+  data: ProjectUpdateWithoutCreatedByDataInput;
+}
+
+export interface ProjectUpdateWithoutCreatedByDataInput {
+  name?: Maybe<String>;
+  departments?: Maybe<DepartmentUpdateManyWithoutProjectsInput>;
+}
+
+export interface DepartmentUpdateManyWithoutProjectsInput {
+  create?: Maybe<
+    | DepartmentCreateWithoutProjectsInput[]
+    | DepartmentCreateWithoutProjectsInput
+  >;
+  delete?: Maybe<DepartmentWhereUniqueInput[] | DepartmentWhereUniqueInput>;
+  connect?: Maybe<DepartmentWhereUniqueInput[] | DepartmentWhereUniqueInput>;
+  set?: Maybe<DepartmentWhereUniqueInput[] | DepartmentWhereUniqueInput>;
+  disconnect?: Maybe<DepartmentWhereUniqueInput[] | DepartmentWhereUniqueInput>;
+  update?: Maybe<
+    | DepartmentUpdateWithWhereUniqueWithoutProjectsInput[]
+    | DepartmentUpdateWithWhereUniqueWithoutProjectsInput
+  >;
+  upsert?: Maybe<
+    | DepartmentUpsertWithWhereUniqueWithoutProjectsInput[]
+    | DepartmentUpsertWithWhereUniqueWithoutProjectsInput
+  >;
+  deleteMany?: Maybe<DepartmentScalarWhereInput[] | DepartmentScalarWhereInput>;
+  updateMany?: Maybe<
+    | DepartmentUpdateManyWithWhereNestedInput[]
+    | DepartmentUpdateManyWithWhereNestedInput
+  >;
+}
+
+export interface DepartmentUpdateWithWhereUniqueWithoutProjectsInput {
+  where: DepartmentWhereUniqueInput;
+  data: DepartmentUpdateWithoutProjectsDataInput;
+}
+
+export interface DepartmentUpdateWithoutProjectsDataInput {
+  name?: Maybe<String>;
+}
+
+export interface DepartmentUpsertWithWhereUniqueWithoutProjectsInput {
+  where: DepartmentWhereUniqueInput;
+  update: DepartmentUpdateWithoutProjectsDataInput;
+  create: DepartmentCreateWithoutProjectsInput;
+}
+
+export interface DepartmentScalarWhereInput {
+  id?: Maybe<ID_Input>;
+  id_not?: Maybe<ID_Input>;
+  id_in?: Maybe<ID_Input[] | ID_Input>;
+  id_not_in?: Maybe<ID_Input[] | ID_Input>;
+  id_lt?: Maybe<ID_Input>;
+  id_lte?: Maybe<ID_Input>;
+  id_gt?: Maybe<ID_Input>;
+  id_gte?: Maybe<ID_Input>;
+  id_contains?: Maybe<ID_Input>;
+  id_not_contains?: Maybe<ID_Input>;
+  id_starts_with?: Maybe<ID_Input>;
+  id_not_starts_with?: Maybe<ID_Input>;
+  id_ends_with?: Maybe<ID_Input>;
+  id_not_ends_with?: Maybe<ID_Input>;
+  name?: Maybe<String>;
+  name_not?: Maybe<String>;
+  name_in?: Maybe<String[] | String>;
+  name_not_in?: Maybe<String[] | String>;
+  name_lt?: Maybe<String>;
+  name_lte?: Maybe<String>;
+  name_gt?: Maybe<String>;
+  name_gte?: Maybe<String>;
+  name_contains?: Maybe<String>;
+  name_not_contains?: Maybe<String>;
+  name_starts_with?: Maybe<String>;
+  name_not_starts_with?: Maybe<String>;
+  name_ends_with?: Maybe<String>;
+  name_not_ends_with?: Maybe<String>;
+  AND?: Maybe<DepartmentScalarWhereInput[] | DepartmentScalarWhereInput>;
+  OR?: Maybe<DepartmentScalarWhereInput[] | DepartmentScalarWhereInput>;
+  NOT?: Maybe<DepartmentScalarWhereInput[] | DepartmentScalarWhereInput>;
+}
+
+export interface DepartmentUpdateManyWithWhereNestedInput {
+  where: DepartmentScalarWhereInput;
+  data: DepartmentUpdateManyDataInput;
+}
+
+export interface DepartmentUpdateManyDataInput {
+  name?: Maybe<String>;
+}
+
+export interface ProjectUpsertWithWhereUniqueWithoutCreatedByInput {
+  where: ProjectWhereUniqueInput;
+  update: ProjectUpdateWithoutCreatedByDataInput;
+  create: ProjectCreateWithoutCreatedByInput;
 }
 
 export interface UserUpsertWithWhereUniqueWithoutFeedbackRoundsInput {
@@ -1103,11 +1324,23 @@ export interface FeedbackRoundUpdateManyMutationInput {
   roundEnd?: Maybe<DateTimeInput>;
 }
 
-export interface FeedbackSubjectCreateInput {
+export interface FeedbackTargetCreateInput {
   id?: Maybe<ID_Input>;
   name: String;
-  project: FeedbackProjectCreateOneInput;
+  project: ProjectCreateOneInput;
   createdBy?: Maybe<UserCreateOneInput>;
+}
+
+export interface ProjectCreateOneInput {
+  create?: Maybe<ProjectCreateInput>;
+  connect?: Maybe<ProjectWhereUniqueInput>;
+}
+
+export interface ProjectCreateInput {
+  id?: Maybe<ID_Input>;
+  name: String;
+  createdBy?: Maybe<UserCreateOneWithoutProjectsInput>;
+  departments?: Maybe<DepartmentCreateManyWithoutProjectsInput>;
 }
 
 export interface UserCreateOneInput {
@@ -1119,14 +1352,32 @@ export interface UserCreateInput {
   id?: Maybe<ID_Input>;
   name: String;
   email: String;
-  feedbackProjects?: Maybe<FeedbackProjectCreateManyWithoutCreatedByInput>;
+  projects?: Maybe<ProjectCreateManyWithoutCreatedByInput>;
   feedbackRounds?: Maybe<FeedbackRoundCreateManyWithoutUsersInput>;
 }
 
-export interface FeedbackSubjectUpdateInput {
+export interface FeedbackTargetUpdateInput {
   name?: Maybe<String>;
-  project?: Maybe<FeedbackProjectUpdateOneRequiredInput>;
+  project?: Maybe<ProjectUpdateOneRequiredInput>;
   createdBy?: Maybe<UserUpdateOneInput>;
+}
+
+export interface ProjectUpdateOneRequiredInput {
+  create?: Maybe<ProjectCreateInput>;
+  update?: Maybe<ProjectUpdateDataInput>;
+  upsert?: Maybe<ProjectUpsertNestedInput>;
+  connect?: Maybe<ProjectWhereUniqueInput>;
+}
+
+export interface ProjectUpdateDataInput {
+  name?: Maybe<String>;
+  createdBy?: Maybe<UserUpdateOneWithoutProjectsInput>;
+  departments?: Maybe<DepartmentUpdateManyWithoutProjectsInput>;
+}
+
+export interface ProjectUpsertNestedInput {
+  update: ProjectUpdateDataInput;
+  create: ProjectCreateInput;
 }
 
 export interface UserUpdateOneInput {
@@ -1141,7 +1392,7 @@ export interface UserUpdateOneInput {
 export interface UserUpdateDataInput {
   name?: Maybe<String>;
   email?: Maybe<String>;
-  feedbackProjects?: Maybe<FeedbackProjectUpdateManyWithoutCreatedByInput>;
+  projects?: Maybe<ProjectUpdateManyWithoutCreatedByInput>;
   feedbackRounds?: Maybe<FeedbackRoundUpdateManyWithoutUsersInput>;
 }
 
@@ -1150,14 +1401,66 @@ export interface UserUpsertNestedInput {
   create: UserCreateInput;
 }
 
-export interface FeedbackSubjectUpdateManyMutationInput {
+export interface FeedbackTargetUpdateManyMutationInput {
   name?: Maybe<String>;
+}
+
+export interface MediaCreateInput {
+  id?: Maybe<ID_Input>;
+  name: String;
+  target: FeedbackTargetCreateOneInput;
+}
+
+export interface FeedbackTargetCreateOneInput {
+  create?: Maybe<FeedbackTargetCreateInput>;
+  connect?: Maybe<FeedbackTargetWhereUniqueInput>;
+}
+
+export interface MediaUpdateInput {
+  name?: Maybe<String>;
+  target?: Maybe<FeedbackTargetUpdateOneRequiredInput>;
+}
+
+export interface FeedbackTargetUpdateOneRequiredInput {
+  create?: Maybe<FeedbackTargetCreateInput>;
+  update?: Maybe<FeedbackTargetUpdateDataInput>;
+  upsert?: Maybe<FeedbackTargetUpsertNestedInput>;
+  connect?: Maybe<FeedbackTargetWhereUniqueInput>;
+}
+
+export interface FeedbackTargetUpdateDataInput {
+  name?: Maybe<String>;
+  project?: Maybe<ProjectUpdateOneRequiredInput>;
+  createdBy?: Maybe<UserUpdateOneInput>;
+}
+
+export interface FeedbackTargetUpsertNestedInput {
+  update: FeedbackTargetUpdateDataInput;
+  create: FeedbackTargetCreateInput;
+}
+
+export interface MediaUpdateManyMutationInput {
+  name?: Maybe<String>;
+}
+
+export interface ProjectUpdateInput {
+  name?: Maybe<String>;
+  createdBy?: Maybe<UserUpdateOneWithoutProjectsInput>;
+  departments?: Maybe<DepartmentUpdateManyWithoutProjectsInput>;
+}
+
+export interface ProjectUpdateManyMutationInput {
+  name?: Maybe<String>;
+}
+
+export interface ScriptCreateInput {
+  id?: Maybe<ID_Input>;
 }
 
 export interface UserUpdateInput {
   name?: Maybe<String>;
   email?: Maybe<String>;
-  feedbackProjects?: Maybe<FeedbackProjectUpdateManyWithoutCreatedByInput>;
+  projects?: Maybe<ProjectUpdateManyWithoutCreatedByInput>;
   feedbackRounds?: Maybe<FeedbackRoundUpdateManyWithoutUsersInput>;
 }
 
@@ -1166,40 +1469,20 @@ export interface UserUpdateManyMutationInput {
   email?: Maybe<String>;
 }
 
-export interface FeedbackMediaSubscriptionWhereInput {
+export interface DepartmentSubscriptionWhereInput {
   mutation_in?: Maybe<MutationType[] | MutationType>;
   updatedFields_contains?: Maybe<String>;
   updatedFields_contains_every?: Maybe<String[] | String>;
   updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<FeedbackMediaWhereInput>;
+  node?: Maybe<DepartmentWhereInput>;
   AND?: Maybe<
-    FeedbackMediaSubscriptionWhereInput[] | FeedbackMediaSubscriptionWhereInput
+    DepartmentSubscriptionWhereInput[] | DepartmentSubscriptionWhereInput
   >;
   OR?: Maybe<
-    FeedbackMediaSubscriptionWhereInput[] | FeedbackMediaSubscriptionWhereInput
+    DepartmentSubscriptionWhereInput[] | DepartmentSubscriptionWhereInput
   >;
   NOT?: Maybe<
-    FeedbackMediaSubscriptionWhereInput[] | FeedbackMediaSubscriptionWhereInput
-  >;
-}
-
-export interface FeedbackProjectSubscriptionWhereInput {
-  mutation_in?: Maybe<MutationType[] | MutationType>;
-  updatedFields_contains?: Maybe<String>;
-  updatedFields_contains_every?: Maybe<String[] | String>;
-  updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<FeedbackProjectWhereInput>;
-  AND?: Maybe<
-    | FeedbackProjectSubscriptionWhereInput[]
-    | FeedbackProjectSubscriptionWhereInput
-  >;
-  OR?: Maybe<
-    | FeedbackProjectSubscriptionWhereInput[]
-    | FeedbackProjectSubscriptionWhereInput
-  >;
-  NOT?: Maybe<
-    | FeedbackProjectSubscriptionWhereInput[]
-    | FeedbackProjectSubscriptionWhereInput
+    DepartmentSubscriptionWhereInput[] | DepartmentSubscriptionWhereInput
   >;
 }
 
@@ -1220,24 +1503,57 @@ export interface FeedbackRoundSubscriptionWhereInput {
   >;
 }
 
-export interface FeedbackSubjectSubscriptionWhereInput {
+export interface FeedbackTargetSubscriptionWhereInput {
   mutation_in?: Maybe<MutationType[] | MutationType>;
   updatedFields_contains?: Maybe<String>;
   updatedFields_contains_every?: Maybe<String[] | String>;
   updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<FeedbackSubjectWhereInput>;
+  node?: Maybe<FeedbackTargetWhereInput>;
   AND?: Maybe<
-    | FeedbackSubjectSubscriptionWhereInput[]
-    | FeedbackSubjectSubscriptionWhereInput
+    | FeedbackTargetSubscriptionWhereInput[]
+    | FeedbackTargetSubscriptionWhereInput
   >;
   OR?: Maybe<
-    | FeedbackSubjectSubscriptionWhereInput[]
-    | FeedbackSubjectSubscriptionWhereInput
+    | FeedbackTargetSubscriptionWhereInput[]
+    | FeedbackTargetSubscriptionWhereInput
   >;
   NOT?: Maybe<
-    | FeedbackSubjectSubscriptionWhereInput[]
-    | FeedbackSubjectSubscriptionWhereInput
+    | FeedbackTargetSubscriptionWhereInput[]
+    | FeedbackTargetSubscriptionWhereInput
   >;
+}
+
+export interface MediaSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<MediaWhereInput>;
+  AND?: Maybe<MediaSubscriptionWhereInput[] | MediaSubscriptionWhereInput>;
+  OR?: Maybe<MediaSubscriptionWhereInput[] | MediaSubscriptionWhereInput>;
+  NOT?: Maybe<MediaSubscriptionWhereInput[] | MediaSubscriptionWhereInput>;
+}
+
+export interface ProjectSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<ProjectWhereInput>;
+  AND?: Maybe<ProjectSubscriptionWhereInput[] | ProjectSubscriptionWhereInput>;
+  OR?: Maybe<ProjectSubscriptionWhereInput[] | ProjectSubscriptionWhereInput>;
+  NOT?: Maybe<ProjectSubscriptionWhereInput[] | ProjectSubscriptionWhereInput>;
+}
+
+export interface ScriptSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<ScriptWhereInput>;
+  AND?: Maybe<ScriptSubscriptionWhereInput[] | ScriptSubscriptionWhereInput>;
+  OR?: Maybe<ScriptSubscriptionWhereInput[] | ScriptSubscriptionWhereInput>;
+  NOT?: Maybe<ScriptSubscriptionWhereInput[] | ScriptSubscriptionWhereInput>;
 }
 
 export interface UserSubscriptionWhereInput {
@@ -1255,78 +1571,117 @@ export interface NodeNode {
   id: ID_Output;
 }
 
-export interface FeedbackMedia {
+export interface Department {
   id: ID_Output;
   name: String;
-  createdAt: DateTimeOutput;
-  updatedAt: DateTimeOutput;
 }
 
-export interface FeedbackMediaPromise
-  extends Promise<FeedbackMedia>,
-    Fragmentable {
+export interface DepartmentPromise extends Promise<Department>, Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
-  createdAt: () => Promise<DateTimeOutput>;
-  updatedAt: () => Promise<DateTimeOutput>;
-  subject: <T = FeedbackProjectPromise>() => T;
+  projects: <T = FragmentableArray<Project>>(args?: {
+    where?: ProjectWhereInput;
+    orderBy?: ProjectOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
 }
 
-export interface FeedbackMediaSubscription
-  extends Promise<AsyncIterator<FeedbackMedia>>,
+export interface DepartmentSubscription
+  extends Promise<AsyncIterator<Department>>,
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
   name: () => Promise<AsyncIterator<String>>;
-  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  subject: <T = FeedbackProjectSubscription>() => T;
+  projects: <T = Promise<AsyncIterator<ProjectSubscription>>>(args?: {
+    where?: ProjectWhereInput;
+    orderBy?: ProjectOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
 }
 
-export interface FeedbackMediaNullablePromise
-  extends Promise<FeedbackMedia | null>,
+export interface DepartmentNullablePromise
+  extends Promise<Department | null>,
     Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
-  createdAt: () => Promise<DateTimeOutput>;
-  updatedAt: () => Promise<DateTimeOutput>;
-  subject: <T = FeedbackProjectPromise>() => T;
+  projects: <T = FragmentableArray<Project>>(args?: {
+    where?: ProjectWhereInput;
+    orderBy?: ProjectOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
 }
 
-export interface FeedbackProject {
+export interface Project {
   id: ID_Output;
   name: String;
   createdAt: DateTimeOutput;
   updatedAt: DateTimeOutput;
 }
 
-export interface FeedbackProjectPromise
-  extends Promise<FeedbackProject>,
-    Fragmentable {
+export interface ProjectPromise extends Promise<Project>, Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
   createdBy: <T = UserPromise>() => T;
+  departments: <T = FragmentableArray<Department>>(args?: {
+    where?: DepartmentWhereInput;
+    orderBy?: DepartmentOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
 }
 
-export interface FeedbackProjectSubscription
-  extends Promise<AsyncIterator<FeedbackProject>>,
+export interface ProjectSubscription
+  extends Promise<AsyncIterator<Project>>,
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
   name: () => Promise<AsyncIterator<String>>;
   createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   createdBy: <T = UserSubscription>() => T;
+  departments: <T = Promise<AsyncIterator<DepartmentSubscription>>>(args?: {
+    where?: DepartmentWhereInput;
+    orderBy?: DepartmentOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
 }
 
-export interface FeedbackProjectNullablePromise
-  extends Promise<FeedbackProject | null>,
+export interface ProjectNullablePromise
+  extends Promise<Project | null>,
     Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
   createdBy: <T = UserPromise>() => T;
+  departments: <T = FragmentableArray<Department>>(args?: {
+    where?: DepartmentWhereInput;
+    orderBy?: DepartmentOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
 }
 
 export interface User {
@@ -1343,9 +1698,9 @@ export interface UserPromise extends Promise<User>, Fragmentable {
   email: () => Promise<String>;
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
-  feedbackProjects: <T = FragmentableArray<FeedbackProject>>(args?: {
-    where?: FeedbackProjectWhereInput;
-    orderBy?: FeedbackProjectOrderByInput;
+  projects: <T = FragmentableArray<Project>>(args?: {
+    where?: ProjectWhereInput;
+    orderBy?: ProjectOrderByInput;
     skip?: Int;
     after?: String;
     before?: String;
@@ -1371,11 +1726,9 @@ export interface UserSubscription
   email: () => Promise<AsyncIterator<String>>;
   createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  feedbackProjects: <
-    T = Promise<AsyncIterator<FeedbackProjectSubscription>>
-  >(args?: {
-    where?: FeedbackProjectWhereInput;
-    orderBy?: FeedbackProjectOrderByInput;
+  projects: <T = Promise<AsyncIterator<ProjectSubscription>>>(args?: {
+    where?: ProjectWhereInput;
+    orderBy?: ProjectOrderByInput;
     skip?: Int;
     after?: String;
     before?: String;
@@ -1403,9 +1756,9 @@ export interface UserNullablePromise
   email: () => Promise<String>;
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
-  feedbackProjects: <T = FragmentableArray<FeedbackProject>>(args?: {
-    where?: FeedbackProjectWhereInput;
-    orderBy?: FeedbackProjectOrderByInput;
+  projects: <T = FragmentableArray<Project>>(args?: {
+    where?: ProjectWhereInput;
+    orderBy?: ProjectOrderByInput;
     skip?: Int;
     after?: String;
     before?: String;
@@ -1484,25 +1837,25 @@ export interface FeedbackRoundNullablePromise
   }) => T;
 }
 
-export interface FeedbackMediaConnection {
+export interface DepartmentConnection {
   pageInfo: PageInfo;
-  edges: FeedbackMediaEdge[];
+  edges: DepartmentEdge[];
 }
 
-export interface FeedbackMediaConnectionPromise
-  extends Promise<FeedbackMediaConnection>,
+export interface DepartmentConnectionPromise
+  extends Promise<DepartmentConnection>,
     Fragmentable {
   pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<FeedbackMediaEdge>>() => T;
-  aggregate: <T = AggregateFeedbackMediaPromise>() => T;
+  edges: <T = FragmentableArray<DepartmentEdge>>() => T;
+  aggregate: <T = AggregateDepartmentPromise>() => T;
 }
 
-export interface FeedbackMediaConnectionSubscription
-  extends Promise<AsyncIterator<FeedbackMediaConnection>>,
+export interface DepartmentConnectionSubscription
+  extends Promise<AsyncIterator<DepartmentConnection>>,
     Fragmentable {
   pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<FeedbackMediaEdgeSubscription>>>() => T;
-  aggregate: <T = AggregateFeedbackMediaSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<DepartmentEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateDepartmentSubscription>() => T;
 }
 
 export interface PageInfo {
@@ -1528,93 +1881,37 @@ export interface PageInfoSubscription
   endCursor: () => Promise<AsyncIterator<String>>;
 }
 
-export interface FeedbackMediaEdge {
-  node: FeedbackMedia;
+export interface DepartmentEdge {
+  node: Department;
   cursor: String;
 }
 
-export interface FeedbackMediaEdgePromise
-  extends Promise<FeedbackMediaEdge>,
+export interface DepartmentEdgePromise
+  extends Promise<DepartmentEdge>,
     Fragmentable {
-  node: <T = FeedbackMediaPromise>() => T;
+  node: <T = DepartmentPromise>() => T;
   cursor: () => Promise<String>;
 }
 
-export interface FeedbackMediaEdgeSubscription
-  extends Promise<AsyncIterator<FeedbackMediaEdge>>,
+export interface DepartmentEdgeSubscription
+  extends Promise<AsyncIterator<DepartmentEdge>>,
     Fragmentable {
-  node: <T = FeedbackMediaSubscription>() => T;
+  node: <T = DepartmentSubscription>() => T;
   cursor: () => Promise<AsyncIterator<String>>;
 }
 
-export interface AggregateFeedbackMedia {
+export interface AggregateDepartment {
   count: Int;
 }
 
-export interface AggregateFeedbackMediaPromise
-  extends Promise<AggregateFeedbackMedia>,
+export interface AggregateDepartmentPromise
+  extends Promise<AggregateDepartment>,
     Fragmentable {
   count: () => Promise<Int>;
 }
 
-export interface AggregateFeedbackMediaSubscription
-  extends Promise<AsyncIterator<AggregateFeedbackMedia>>,
-    Fragmentable {
-  count: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface FeedbackProjectConnection {
-  pageInfo: PageInfo;
-  edges: FeedbackProjectEdge[];
-}
-
-export interface FeedbackProjectConnectionPromise
-  extends Promise<FeedbackProjectConnection>,
-    Fragmentable {
-  pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<FeedbackProjectEdge>>() => T;
-  aggregate: <T = AggregateFeedbackProjectPromise>() => T;
-}
-
-export interface FeedbackProjectConnectionSubscription
-  extends Promise<AsyncIterator<FeedbackProjectConnection>>,
-    Fragmentable {
-  pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<FeedbackProjectEdgeSubscription>>>() => T;
-  aggregate: <T = AggregateFeedbackProjectSubscription>() => T;
-}
-
-export interface FeedbackProjectEdge {
-  node: FeedbackProject;
-  cursor: String;
-}
-
-export interface FeedbackProjectEdgePromise
-  extends Promise<FeedbackProjectEdge>,
-    Fragmentable {
-  node: <T = FeedbackProjectPromise>() => T;
-  cursor: () => Promise<String>;
-}
-
-export interface FeedbackProjectEdgeSubscription
-  extends Promise<AsyncIterator<FeedbackProjectEdge>>,
-    Fragmentable {
-  node: <T = FeedbackProjectSubscription>() => T;
-  cursor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface AggregateFeedbackProject {
-  count: Int;
-}
-
-export interface AggregateFeedbackProjectPromise
-  extends Promise<AggregateFeedbackProject>,
-    Fragmentable {
-  count: () => Promise<Int>;
-}
-
-export interface AggregateFeedbackProjectSubscription
-  extends Promise<AsyncIterator<AggregateFeedbackProject>>,
+export interface AggregateDepartmentSubscription
+  extends Promise<AsyncIterator<AggregateDepartment>>,
     Fragmentable {
   count: () => Promise<AsyncIterator<Int>>;
 }
@@ -1675,98 +1972,315 @@ export interface AggregateFeedbackRoundSubscription
   count: () => Promise<AsyncIterator<Int>>;
 }
 
-export interface FeedbackSubject {
+export interface FeedbackTarget {
   id: ID_Output;
   name: String;
   createdAt: DateTimeOutput;
   updatedAt: DateTimeOutput;
 }
 
-export interface FeedbackSubjectPromise
-  extends Promise<FeedbackSubject>,
+export interface FeedbackTargetPromise
+  extends Promise<FeedbackTarget>,
     Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
-  project: <T = FeedbackProjectPromise>() => T;
+  project: <T = ProjectPromise>() => T;
   createdBy: <T = UserPromise>() => T;
 }
 
-export interface FeedbackSubjectSubscription
-  extends Promise<AsyncIterator<FeedbackSubject>>,
+export interface FeedbackTargetSubscription
+  extends Promise<AsyncIterator<FeedbackTarget>>,
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
   name: () => Promise<AsyncIterator<String>>;
   createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  project: <T = FeedbackProjectSubscription>() => T;
+  project: <T = ProjectSubscription>() => T;
   createdBy: <T = UserSubscription>() => T;
 }
 
-export interface FeedbackSubjectNullablePromise
-  extends Promise<FeedbackSubject | null>,
+export interface FeedbackTargetNullablePromise
+  extends Promise<FeedbackTarget | null>,
     Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
-  project: <T = FeedbackProjectPromise>() => T;
+  project: <T = ProjectPromise>() => T;
   createdBy: <T = UserPromise>() => T;
 }
 
-export interface FeedbackSubjectConnection {
+export interface FeedbackTargetConnection {
   pageInfo: PageInfo;
-  edges: FeedbackSubjectEdge[];
+  edges: FeedbackTargetEdge[];
 }
 
-export interface FeedbackSubjectConnectionPromise
-  extends Promise<FeedbackSubjectConnection>,
+export interface FeedbackTargetConnectionPromise
+  extends Promise<FeedbackTargetConnection>,
     Fragmentable {
   pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<FeedbackSubjectEdge>>() => T;
-  aggregate: <T = AggregateFeedbackSubjectPromise>() => T;
+  edges: <T = FragmentableArray<FeedbackTargetEdge>>() => T;
+  aggregate: <T = AggregateFeedbackTargetPromise>() => T;
 }
 
-export interface FeedbackSubjectConnectionSubscription
-  extends Promise<AsyncIterator<FeedbackSubjectConnection>>,
+export interface FeedbackTargetConnectionSubscription
+  extends Promise<AsyncIterator<FeedbackTargetConnection>>,
     Fragmentable {
   pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<FeedbackSubjectEdgeSubscription>>>() => T;
-  aggregate: <T = AggregateFeedbackSubjectSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<FeedbackTargetEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateFeedbackTargetSubscription>() => T;
 }
 
-export interface FeedbackSubjectEdge {
-  node: FeedbackSubject;
+export interface FeedbackTargetEdge {
+  node: FeedbackTarget;
   cursor: String;
 }
 
-export interface FeedbackSubjectEdgePromise
-  extends Promise<FeedbackSubjectEdge>,
+export interface FeedbackTargetEdgePromise
+  extends Promise<FeedbackTargetEdge>,
     Fragmentable {
-  node: <T = FeedbackSubjectPromise>() => T;
+  node: <T = FeedbackTargetPromise>() => T;
   cursor: () => Promise<String>;
 }
 
-export interface FeedbackSubjectEdgeSubscription
-  extends Promise<AsyncIterator<FeedbackSubjectEdge>>,
+export interface FeedbackTargetEdgeSubscription
+  extends Promise<AsyncIterator<FeedbackTargetEdge>>,
     Fragmentable {
-  node: <T = FeedbackSubjectSubscription>() => T;
+  node: <T = FeedbackTargetSubscription>() => T;
   cursor: () => Promise<AsyncIterator<String>>;
 }
 
-export interface AggregateFeedbackSubject {
+export interface AggregateFeedbackTarget {
   count: Int;
 }
 
-export interface AggregateFeedbackSubjectPromise
-  extends Promise<AggregateFeedbackSubject>,
+export interface AggregateFeedbackTargetPromise
+  extends Promise<AggregateFeedbackTarget>,
     Fragmentable {
   count: () => Promise<Int>;
 }
 
-export interface AggregateFeedbackSubjectSubscription
-  extends Promise<AsyncIterator<AggregateFeedbackSubject>>,
+export interface AggregateFeedbackTargetSubscription
+  extends Promise<AsyncIterator<AggregateFeedbackTarget>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Media {
+  id: ID_Output;
+  name: String;
+  createdAt: DateTimeOutput;
+  updatedAt: DateTimeOutput;
+}
+
+export interface MediaPromise extends Promise<Media>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  createdAt: () => Promise<DateTimeOutput>;
+  updatedAt: () => Promise<DateTimeOutput>;
+  target: <T = FeedbackTargetPromise>() => T;
+}
+
+export interface MediaSubscription
+  extends Promise<AsyncIterator<Media>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  target: <T = FeedbackTargetSubscription>() => T;
+}
+
+export interface MediaNullablePromise
+  extends Promise<Media | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  createdAt: () => Promise<DateTimeOutput>;
+  updatedAt: () => Promise<DateTimeOutput>;
+  target: <T = FeedbackTargetPromise>() => T;
+}
+
+export interface MediaConnection {
+  pageInfo: PageInfo;
+  edges: MediaEdge[];
+}
+
+export interface MediaConnectionPromise
+  extends Promise<MediaConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<MediaEdge>>() => T;
+  aggregate: <T = AggregateMediaPromise>() => T;
+}
+
+export interface MediaConnectionSubscription
+  extends Promise<AsyncIterator<MediaConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<MediaEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateMediaSubscription>() => T;
+}
+
+export interface MediaEdge {
+  node: Media;
+  cursor: String;
+}
+
+export interface MediaEdgePromise extends Promise<MediaEdge>, Fragmentable {
+  node: <T = MediaPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface MediaEdgeSubscription
+  extends Promise<AsyncIterator<MediaEdge>>,
+    Fragmentable {
+  node: <T = MediaSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateMedia {
+  count: Int;
+}
+
+export interface AggregateMediaPromise
+  extends Promise<AggregateMedia>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateMediaSubscription
+  extends Promise<AsyncIterator<AggregateMedia>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface ProjectConnection {
+  pageInfo: PageInfo;
+  edges: ProjectEdge[];
+}
+
+export interface ProjectConnectionPromise
+  extends Promise<ProjectConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<ProjectEdge>>() => T;
+  aggregate: <T = AggregateProjectPromise>() => T;
+}
+
+export interface ProjectConnectionSubscription
+  extends Promise<AsyncIterator<ProjectConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<ProjectEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateProjectSubscription>() => T;
+}
+
+export interface ProjectEdge {
+  node: Project;
+  cursor: String;
+}
+
+export interface ProjectEdgePromise extends Promise<ProjectEdge>, Fragmentable {
+  node: <T = ProjectPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface ProjectEdgeSubscription
+  extends Promise<AsyncIterator<ProjectEdge>>,
+    Fragmentable {
+  node: <T = ProjectSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateProject {
+  count: Int;
+}
+
+export interface AggregateProjectPromise
+  extends Promise<AggregateProject>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateProjectSubscription
+  extends Promise<AsyncIterator<AggregateProject>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Script {
+  id: ID_Output;
+}
+
+export interface ScriptPromise extends Promise<Script>, Fragmentable {
+  id: () => Promise<ID_Output>;
+}
+
+export interface ScriptSubscription
+  extends Promise<AsyncIterator<Script>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+}
+
+export interface ScriptNullablePromise
+  extends Promise<Script | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+}
+
+export interface ScriptConnection {
+  pageInfo: PageInfo;
+  edges: ScriptEdge[];
+}
+
+export interface ScriptConnectionPromise
+  extends Promise<ScriptConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<ScriptEdge>>() => T;
+  aggregate: <T = AggregateScriptPromise>() => T;
+}
+
+export interface ScriptConnectionSubscription
+  extends Promise<AsyncIterator<ScriptConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<ScriptEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateScriptSubscription>() => T;
+}
+
+export interface ScriptEdge {
+  node: Script;
+  cursor: String;
+}
+
+export interface ScriptEdgePromise extends Promise<ScriptEdge>, Fragmentable {
+  node: <T = ScriptPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface ScriptEdgeSubscription
+  extends Promise<AsyncIterator<ScriptEdge>>,
+    Fragmentable {
+  node: <T = ScriptSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateScript {
+  count: Int;
+}
+
+export interface AggregateScriptPromise
+  extends Promise<AggregateScript>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateScriptSubscription
+  extends Promise<AsyncIterator<AggregateScript>>,
     Fragmentable {
   count: () => Promise<AsyncIterator<Int>>;
 }
@@ -1841,104 +2355,48 @@ export interface BatchPayloadSubscription
   count: () => Promise<AsyncIterator<Long>>;
 }
 
-export interface FeedbackMediaSubscriptionPayload {
+export interface DepartmentSubscriptionPayload {
   mutation: MutationType;
-  node: FeedbackMedia;
+  node: Department;
   updatedFields: String[];
-  previousValues: FeedbackMediaPreviousValues;
+  previousValues: DepartmentPreviousValues;
 }
 
-export interface FeedbackMediaSubscriptionPayloadPromise
-  extends Promise<FeedbackMediaSubscriptionPayload>,
+export interface DepartmentSubscriptionPayloadPromise
+  extends Promise<DepartmentSubscriptionPayload>,
     Fragmentable {
   mutation: () => Promise<MutationType>;
-  node: <T = FeedbackMediaPromise>() => T;
+  node: <T = DepartmentPromise>() => T;
   updatedFields: () => Promise<String[]>;
-  previousValues: <T = FeedbackMediaPreviousValuesPromise>() => T;
+  previousValues: <T = DepartmentPreviousValuesPromise>() => T;
 }
 
-export interface FeedbackMediaSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<FeedbackMediaSubscriptionPayload>>,
+export interface DepartmentSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<DepartmentSubscriptionPayload>>,
     Fragmentable {
   mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = FeedbackMediaSubscription>() => T;
+  node: <T = DepartmentSubscription>() => T;
   updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = FeedbackMediaPreviousValuesSubscription>() => T;
+  previousValues: <T = DepartmentPreviousValuesSubscription>() => T;
 }
 
-export interface FeedbackMediaPreviousValues {
+export interface DepartmentPreviousValues {
   id: ID_Output;
   name: String;
-  createdAt: DateTimeOutput;
-  updatedAt: DateTimeOutput;
 }
 
-export interface FeedbackMediaPreviousValuesPromise
-  extends Promise<FeedbackMediaPreviousValues>,
+export interface DepartmentPreviousValuesPromise
+  extends Promise<DepartmentPreviousValues>,
     Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
-  createdAt: () => Promise<DateTimeOutput>;
-  updatedAt: () => Promise<DateTimeOutput>;
 }
 
-export interface FeedbackMediaPreviousValuesSubscription
-  extends Promise<AsyncIterator<FeedbackMediaPreviousValues>>,
+export interface DepartmentPreviousValuesSubscription
+  extends Promise<AsyncIterator<DepartmentPreviousValues>>,
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
   name: () => Promise<AsyncIterator<String>>;
-  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-}
-
-export interface FeedbackProjectSubscriptionPayload {
-  mutation: MutationType;
-  node: FeedbackProject;
-  updatedFields: String[];
-  previousValues: FeedbackProjectPreviousValues;
-}
-
-export interface FeedbackProjectSubscriptionPayloadPromise
-  extends Promise<FeedbackProjectSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = FeedbackProjectPromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = FeedbackProjectPreviousValuesPromise>() => T;
-}
-
-export interface FeedbackProjectSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<FeedbackProjectSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = FeedbackProjectSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = FeedbackProjectPreviousValuesSubscription>() => T;
-}
-
-export interface FeedbackProjectPreviousValues {
-  id: ID_Output;
-  name: String;
-  createdAt: DateTimeOutput;
-  updatedAt: DateTimeOutput;
-}
-
-export interface FeedbackProjectPreviousValuesPromise
-  extends Promise<FeedbackProjectPreviousValues>,
-    Fragmentable {
-  id: () => Promise<ID_Output>;
-  name: () => Promise<String>;
-  createdAt: () => Promise<DateTimeOutput>;
-  updatedAt: () => Promise<DateTimeOutput>;
-}
-
-export interface FeedbackProjectPreviousValuesSubscription
-  extends Promise<AsyncIterator<FeedbackProjectPreviousValues>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
-  name: () => Promise<AsyncIterator<String>>;
-  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
 }
 
 export interface FeedbackRoundSubscriptionPayload {
@@ -1991,40 +2449,40 @@ export interface FeedbackRoundPreviousValuesSubscription
   roundEnd: () => Promise<AsyncIterator<DateTimeOutput>>;
 }
 
-export interface FeedbackSubjectSubscriptionPayload {
+export interface FeedbackTargetSubscriptionPayload {
   mutation: MutationType;
-  node: FeedbackSubject;
+  node: FeedbackTarget;
   updatedFields: String[];
-  previousValues: FeedbackSubjectPreviousValues;
+  previousValues: FeedbackTargetPreviousValues;
 }
 
-export interface FeedbackSubjectSubscriptionPayloadPromise
-  extends Promise<FeedbackSubjectSubscriptionPayload>,
+export interface FeedbackTargetSubscriptionPayloadPromise
+  extends Promise<FeedbackTargetSubscriptionPayload>,
     Fragmentable {
   mutation: () => Promise<MutationType>;
-  node: <T = FeedbackSubjectPromise>() => T;
+  node: <T = FeedbackTargetPromise>() => T;
   updatedFields: () => Promise<String[]>;
-  previousValues: <T = FeedbackSubjectPreviousValuesPromise>() => T;
+  previousValues: <T = FeedbackTargetPreviousValuesPromise>() => T;
 }
 
-export interface FeedbackSubjectSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<FeedbackSubjectSubscriptionPayload>>,
+export interface FeedbackTargetSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<FeedbackTargetSubscriptionPayload>>,
     Fragmentable {
   mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = FeedbackSubjectSubscription>() => T;
+  node: <T = FeedbackTargetSubscription>() => T;
   updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = FeedbackSubjectPreviousValuesSubscription>() => T;
+  previousValues: <T = FeedbackTargetPreviousValuesSubscription>() => T;
 }
 
-export interface FeedbackSubjectPreviousValues {
+export interface FeedbackTargetPreviousValues {
   id: ID_Output;
   name: String;
   createdAt: DateTimeOutput;
   updatedAt: DateTimeOutput;
 }
 
-export interface FeedbackSubjectPreviousValuesPromise
-  extends Promise<FeedbackSubjectPreviousValues>,
+export interface FeedbackTargetPreviousValuesPromise
+  extends Promise<FeedbackTargetPreviousValues>,
     Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
@@ -2032,13 +2490,154 @@ export interface FeedbackSubjectPreviousValuesPromise
   updatedAt: () => Promise<DateTimeOutput>;
 }
 
-export interface FeedbackSubjectPreviousValuesSubscription
-  extends Promise<AsyncIterator<FeedbackSubjectPreviousValues>>,
+export interface FeedbackTargetPreviousValuesSubscription
+  extends Promise<AsyncIterator<FeedbackTargetPreviousValues>>,
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
   name: () => Promise<AsyncIterator<String>>;
   createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+}
+
+export interface MediaSubscriptionPayload {
+  mutation: MutationType;
+  node: Media;
+  updatedFields: String[];
+  previousValues: MediaPreviousValues;
+}
+
+export interface MediaSubscriptionPayloadPromise
+  extends Promise<MediaSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = MediaPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = MediaPreviousValuesPromise>() => T;
+}
+
+export interface MediaSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<MediaSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = MediaSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = MediaPreviousValuesSubscription>() => T;
+}
+
+export interface MediaPreviousValues {
+  id: ID_Output;
+  name: String;
+  createdAt: DateTimeOutput;
+  updatedAt: DateTimeOutput;
+}
+
+export interface MediaPreviousValuesPromise
+  extends Promise<MediaPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  createdAt: () => Promise<DateTimeOutput>;
+  updatedAt: () => Promise<DateTimeOutput>;
+}
+
+export interface MediaPreviousValuesSubscription
+  extends Promise<AsyncIterator<MediaPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+}
+
+export interface ProjectSubscriptionPayload {
+  mutation: MutationType;
+  node: Project;
+  updatedFields: String[];
+  previousValues: ProjectPreviousValues;
+}
+
+export interface ProjectSubscriptionPayloadPromise
+  extends Promise<ProjectSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = ProjectPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = ProjectPreviousValuesPromise>() => T;
+}
+
+export interface ProjectSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<ProjectSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = ProjectSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = ProjectPreviousValuesSubscription>() => T;
+}
+
+export interface ProjectPreviousValues {
+  id: ID_Output;
+  name: String;
+  createdAt: DateTimeOutput;
+  updatedAt: DateTimeOutput;
+}
+
+export interface ProjectPreviousValuesPromise
+  extends Promise<ProjectPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  createdAt: () => Promise<DateTimeOutput>;
+  updatedAt: () => Promise<DateTimeOutput>;
+}
+
+export interface ProjectPreviousValuesSubscription
+  extends Promise<AsyncIterator<ProjectPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+}
+
+export interface ScriptSubscriptionPayload {
+  mutation: MutationType;
+  node: Script;
+  updatedFields: String[];
+  previousValues: ScriptPreviousValues;
+}
+
+export interface ScriptSubscriptionPayloadPromise
+  extends Promise<ScriptSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = ScriptPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = ScriptPreviousValuesPromise>() => T;
+}
+
+export interface ScriptSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<ScriptSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = ScriptSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = ScriptPreviousValuesSubscription>() => T;
+}
+
+export interface ScriptPreviousValues {
+  id: ID_Output;
+}
+
+export interface ScriptPreviousValuesPromise
+  extends Promise<ScriptPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+}
+
+export interface ScriptPreviousValuesSubscription
+  extends Promise<AsyncIterator<ScriptPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
 }
 
 export interface UserSubscriptionPayload {
@@ -2137,15 +2736,23 @@ export const models: Model[] = [
     embedded: false
   },
   {
-    name: "FeedbackProject",
+    name: "Script",
     embedded: false
   },
   {
-    name: "FeedbackSubject",
+    name: "Project",
     embedded: false
   },
   {
-    name: "FeedbackMedia",
+    name: "FeedbackTarget",
+    embedded: false
+  },
+  {
+    name: "Department",
+    embedded: false
+  },
+  {
+    name: "Media",
     embedded: false
   },
   {

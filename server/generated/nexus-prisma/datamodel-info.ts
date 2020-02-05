@@ -6,9 +6,11 @@
 export default {
   uniqueFieldsByModel: {
     User: ['id', 'email'],
-    FeedbackProject: ['id'],
-    FeedbackSubject: ['id'],
-    FeedbackMedia: ['id'],
+    Script: ['id'],
+    Project: ['id'],
+    FeedbackTarget: ['id'],
+    Department: ['id'],
+    Media: ['id'],
     FeedbackRound: ['id']
   },
   embeddedTypes: [],
@@ -236,7 +238,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "feedbackProject",
+            "name": "script",
             "description": null,
             "args": [
               {
@@ -247,7 +249,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackProjectWhereUniqueInput",
+                    "name": "ScriptWhereUniqueInput",
                     "ofType": null
                   }
                 },
@@ -256,14 +258,14 @@ export default {
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackProject",
+              "name": "Script",
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "feedbackProjects",
+            "name": "scripts",
             "description": null,
             "args": [
               {
@@ -271,7 +273,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectWhereInput",
+                  "name": "ScriptWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -281,7 +283,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "ENUM",
-                  "name": "FeedbackProjectOrderByInput",
+                  "name": "ScriptOrderByInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -345,7 +347,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "FeedbackProject",
+                  "name": "Script",
                   "ofType": null
                 }
               }
@@ -354,7 +356,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "feedbackProjectsConnection",
+            "name": "scriptsConnection",
             "description": null,
             "args": [
               {
@@ -362,7 +364,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectWhereInput",
+                  "name": "ScriptWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -372,7 +374,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "ENUM",
-                  "name": "FeedbackProjectOrderByInput",
+                  "name": "ScriptOrderByInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -433,7 +435,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "FeedbackProjectConnection",
+                "name": "ScriptConnection",
                 "ofType": null
               }
             },
@@ -441,7 +443,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "feedbackSubject",
+            "name": "project",
             "description": null,
             "args": [
               {
@@ -452,7 +454,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackSubjectWhereUniqueInput",
+                    "name": "ProjectWhereUniqueInput",
                     "ofType": null
                   }
                 },
@@ -461,14 +463,14 @@ export default {
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackSubject",
+              "name": "Project",
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "feedbackSubjects",
+            "name": "projects",
             "description": null,
             "args": [
               {
@@ -476,7 +478,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackSubjectWhereInput",
+                  "name": "ProjectWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -486,7 +488,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "ENUM",
-                  "name": "FeedbackSubjectOrderByInput",
+                  "name": "ProjectOrderByInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -550,7 +552,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "FeedbackSubject",
+                  "name": "Project",
                   "ofType": null
                 }
               }
@@ -559,7 +561,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "feedbackSubjectsConnection",
+            "name": "projectsConnection",
             "description": null,
             "args": [
               {
@@ -567,7 +569,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackSubjectWhereInput",
+                  "name": "ProjectWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -577,7 +579,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "ENUM",
-                  "name": "FeedbackSubjectOrderByInput",
+                  "name": "ProjectOrderByInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -638,7 +640,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "FeedbackSubjectConnection",
+                "name": "ProjectConnection",
                 "ofType": null
               }
             },
@@ -646,7 +648,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "feedbackMedia",
+            "name": "feedbackTarget",
             "description": null,
             "args": [
               {
@@ -657,7 +659,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackMediaWhereUniqueInput",
+                    "name": "FeedbackTargetWhereUniqueInput",
                     "ofType": null
                   }
                 },
@@ -666,14 +668,14 @@ export default {
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackMedia",
+              "name": "FeedbackTarget",
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "feedbackMedias",
+            "name": "feedbackTargets",
             "description": null,
             "args": [
               {
@@ -681,7 +683,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackMediaWhereInput",
+                  "name": "FeedbackTargetWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -691,7 +693,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "ENUM",
-                  "name": "FeedbackMediaOrderByInput",
+                  "name": "FeedbackTargetOrderByInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -755,7 +757,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "FeedbackMedia",
+                  "name": "FeedbackTarget",
                   "ofType": null
                 }
               }
@@ -764,7 +766,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "feedbackMediasConnection",
+            "name": "feedbackTargetsConnection",
             "description": null,
             "args": [
               {
@@ -772,7 +774,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackMediaWhereInput",
+                  "name": "FeedbackTargetWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -782,7 +784,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "ENUM",
-                  "name": "FeedbackMediaOrderByInput",
+                  "name": "FeedbackTargetOrderByInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -843,7 +845,417 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "FeedbackMediaConnection",
+                "name": "FeedbackTargetConnection",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "department",
+            "description": null,
+            "args": [
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "DepartmentWhereUniqueInput",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Department",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "departments",
+            "description": null,
+            "args": [
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentWhereInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "orderBy",
+                "description": null,
+                "type": {
+                  "kind": "ENUM",
+                  "name": "DepartmentOrderByInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "skip",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "after",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "before",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "first",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "last",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Department",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "departmentsConnection",
+            "description": null,
+            "args": [
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentWhereInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "orderBy",
+                "description": null,
+                "type": {
+                  "kind": "ENUM",
+                  "name": "DepartmentOrderByInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "skip",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "after",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "before",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "first",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "last",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "DepartmentConnection",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "media",
+            "description": null,
+            "args": [
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "MediaWhereUniqueInput",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Media",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "medias",
+            "description": null,
+            "args": [
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MediaWhereInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "orderBy",
+                "description": null,
+                "type": {
+                  "kind": "ENUM",
+                  "name": "MediaOrderByInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "skip",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "after",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "before",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "first",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "last",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Media",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "mediasConnection",
+            "description": null,
+            "args": [
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MediaWhereInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "orderBy",
+                "description": null,
+                "type": {
+                  "kind": "ENUM",
+                  "name": "MediaOrderByInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "skip",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "after",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "before",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "first",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "last",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "MediaConnection",
                 "ofType": null
               }
             },
@@ -1225,7 +1637,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "feedbackProjects",
+            "name": "projects",
             "description": null,
             "args": [
               {
@@ -1233,7 +1645,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectWhereInput",
+                  "name": "ProjectWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1243,7 +1655,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "ENUM",
-                  "name": "FeedbackProjectOrderByInput",
+                  "name": "ProjectOrderByInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1307,7 +1719,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "FeedbackProject",
+                  "name": "Project",
                   "ofType": null
                 }
               }
@@ -1424,7 +1836,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectWhereInput",
+        "name": "ProjectWhereInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -1943,6 +2355,36 @@ export default {
             "defaultValue": null
           },
           {
+            "name": "departments_every",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "DepartmentWhereInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "departments_some",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "DepartmentWhereInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "departments_none",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "DepartmentWhereInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "AND",
             "description": null,
             "type": {
@@ -1953,7 +2395,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectWhereInput",
+                  "name": "ProjectWhereInput",
                   "ofType": null
                 }
               }
@@ -1971,7 +2413,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectWhereInput",
+                  "name": "ProjectWhereInput",
                   "ofType": null
                 }
               }
@@ -1989,7 +2431,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectWhereInput",
+                  "name": "ProjectWhereInput",
                   "ofType": null
                 }
               }
@@ -2668,31 +3110,31 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "feedbackProjects_every",
+            "name": "projects_every",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectWhereInput",
+              "name": "ProjectWhereInput",
               "ofType": null
             },
             "defaultValue": null
           },
           {
-            "name": "feedbackProjects_some",
+            "name": "projects_some",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectWhereInput",
+              "name": "ProjectWhereInput",
               "ofType": null
             },
             "defaultValue": null
           },
           {
-            "name": "feedbackProjects_none",
+            "name": "projects_none",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectWhereInput",
+              "name": "ProjectWhereInput",
               "ofType": null
             },
             "defaultValue": null
@@ -3326,8 +3768,415 @@ export default {
         "possibleTypes": null
       },
       {
+        "kind": "INPUT_OBJECT",
+        "name": "DepartmentWhereInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "id",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_lt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_lte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_gt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_gte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_starts_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_not_starts_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_ends_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_not_ends_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_lt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_lte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_gt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_gte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_starts_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_not_starts_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_ends_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_not_ends_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "projects_every",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "ProjectWhereInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "projects_some",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "ProjectWhereInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "projects_none",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "ProjectWhereInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "AND",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "OR",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "NOT",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
         "kind": "ENUM",
-        "name": "FeedbackProjectOrderByInput",
+        "name": "ProjectOrderByInput",
         "description": null,
         "fields": null,
         "inputFields": null,
@@ -3396,7 +4245,7 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "FeedbackProject",
+        "name": "Project",
         "description": null,
         "fields": [
           {
@@ -3471,6 +4320,290 @@ export default {
               "kind": "OBJECT",
               "name": "User",
               "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "departments",
+            "description": null,
+            "args": [
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentWhereInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "orderBy",
+                "description": null,
+                "type": {
+                  "kind": "ENUM",
+                  "name": "DepartmentOrderByInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "skip",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "after",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "before",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "first",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "last",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Department",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "DepartmentOrderByInput",
+        "description": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "id_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "id_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "name_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "name_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "createdAt_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "createdAt_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "updatedAt_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "updatedAt_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "Department",
+        "description": null,
+        "fields": [
+          {
+            "name": "id",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "name",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "projects",
+            "description": null,
+            "args": [
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectWhereInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "orderBy",
+                "description": null,
+                "type": {
+                  "kind": "ENUM",
+                  "name": "ProjectOrderByInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "skip",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "after",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "before",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "first",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "last",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Project",
+                  "ofType": null
+                }
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -3985,7 +5118,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectWhereUniqueInput",
+        "name": "ScriptWhereUniqueInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -4006,7 +5139,302 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "FeedbackProjectConnection",
+        "name": "Script",
+        "description": null,
+        "fields": [
+          {
+            "name": "id",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "ScriptWhereInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "id",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_lt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_lte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_gt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_gte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_starts_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_not_starts_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_ends_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_not_ends_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "AND",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ScriptWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "OR",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ScriptWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "NOT",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ScriptWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "ScriptOrderByInput",
+        "description": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "id_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "id_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "createdAt_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "createdAt_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "updatedAt_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "updatedAt_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "ScriptConnection",
         "description": null,
         "fields": [
           {
@@ -4037,7 +5465,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "FeedbackProjectEdge",
+                  "name": "ScriptEdge",
                   "ofType": null
                 }
               }
@@ -4054,7 +5482,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "AggregateFeedbackProject",
+                "name": "AggregateScript",
                 "ofType": null
               }
             },
@@ -4069,7 +5497,7 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "FeedbackProjectEdge",
+        "name": "ScriptEdge",
         "description": null,
         "fields": [
           {
@@ -4081,7 +5509,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "FeedbackProject",
+                "name": "Script",
                 "ofType": null
               }
             },
@@ -4112,7 +5540,7 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "AggregateFeedbackProject",
+        "name": "AggregateScript",
         "description": null,
         "fields": [
           {
@@ -4139,7 +5567,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackSubjectWhereUniqueInput",
+        "name": "ProjectWhereUniqueInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -4160,7 +5588,161 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "FeedbackSubject",
+        "name": "ProjectConnection",
+        "description": null,
+        "fields": [
+          {
+            "name": "pageInfo",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "PageInfo",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "edges",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ProjectEdge",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "aggregate",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "AggregateProject",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "ProjectEdge",
+        "description": null,
+        "fields": [
+          {
+            "name": "node",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "Project",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "cursor",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "AggregateProject",
+        "description": null,
+        "fields": [
+          {
+            "name": "count",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "FeedbackTargetWhereUniqueInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "id",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "FeedbackTarget",
         "description": null,
         "fields": [
           {
@@ -4236,7 +5818,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "FeedbackProject",
+                "name": "Project",
                 "ofType": null
               }
             },
@@ -4263,7 +5845,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackSubjectWhereInput",
+        "name": "FeedbackTargetWhereInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -4776,7 +6358,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectWhereInput",
+              "name": "ProjectWhereInput",
               "ofType": null
             },
             "defaultValue": null
@@ -4802,7 +6384,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackSubjectWhereInput",
+                  "name": "FeedbackTargetWhereInput",
                   "ofType": null
                 }
               }
@@ -4820,7 +6402,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackSubjectWhereInput",
+                  "name": "FeedbackTargetWhereInput",
                   "ofType": null
                 }
               }
@@ -4838,7 +6420,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackSubjectWhereInput",
+                  "name": "FeedbackTargetWhereInput",
                   "ofType": null
                 }
               }
@@ -4852,7 +6434,7 @@ export default {
       },
       {
         "kind": "ENUM",
-        "name": "FeedbackSubjectOrderByInput",
+        "name": "FeedbackTargetOrderByInput",
         "description": null,
         "fields": null,
         "inputFields": null,
@@ -4911,7 +6493,7 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "FeedbackSubjectConnection",
+        "name": "FeedbackTargetConnection",
         "description": null,
         "fields": [
           {
@@ -4942,7 +6524,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "FeedbackSubjectEdge",
+                  "name": "FeedbackTargetEdge",
                   "ofType": null
                 }
               }
@@ -4959,7 +6541,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "AggregateFeedbackSubject",
+                "name": "AggregateFeedbackTarget",
                 "ofType": null
               }
             },
@@ -4974,7 +6556,7 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "FeedbackSubjectEdge",
+        "name": "FeedbackTargetEdge",
         "description": null,
         "fields": [
           {
@@ -4986,7 +6568,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "FeedbackSubject",
+                "name": "FeedbackTarget",
                 "ofType": null
               }
             },
@@ -5017,7 +6599,7 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "AggregateFeedbackSubject",
+        "name": "AggregateFeedbackTarget",
         "description": null,
         "fields": [
           {
@@ -5044,7 +6626,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackMediaWhereUniqueInput",
+        "name": "DepartmentWhereUniqueInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -5065,7 +6647,161 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "FeedbackMedia",
+        "name": "DepartmentConnection",
+        "description": null,
+        "fields": [
+          {
+            "name": "pageInfo",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "PageInfo",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "edges",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "DepartmentEdge",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "aggregate",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "AggregateDepartment",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "DepartmentEdge",
+        "description": null,
+        "fields": [
+          {
+            "name": "node",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "Department",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "cursor",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "AggregateDepartment",
+        "description": null,
+        "fields": [
+          {
+            "name": "count",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "MediaWhereUniqueInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "id",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "Media",
         "description": null,
         "fields": [
           {
@@ -5133,7 +6869,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "subject",
+            "name": "target",
             "description": null,
             "args": [],
             "type": {
@@ -5141,7 +6877,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "FeedbackProject",
+                "name": "FeedbackTarget",
                 "ofType": null
               }
             },
@@ -5156,7 +6892,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackMediaWhereInput",
+        "name": "MediaWhereInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -5665,11 +7401,11 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "subject",
+            "name": "target",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectWhereInput",
+              "name": "FeedbackTargetWhereInput",
               "ofType": null
             },
             "defaultValue": null
@@ -5685,7 +7421,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackMediaWhereInput",
+                  "name": "MediaWhereInput",
                   "ofType": null
                 }
               }
@@ -5703,7 +7439,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackMediaWhereInput",
+                  "name": "MediaWhereInput",
                   "ofType": null
                 }
               }
@@ -5721,7 +7457,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackMediaWhereInput",
+                  "name": "MediaWhereInput",
                   "ofType": null
                 }
               }
@@ -5735,7 +7471,7 @@ export default {
       },
       {
         "kind": "ENUM",
-        "name": "FeedbackMediaOrderByInput",
+        "name": "MediaOrderByInput",
         "description": null,
         "fields": null,
         "inputFields": null,
@@ -5794,7 +7530,7 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "FeedbackMediaConnection",
+        "name": "MediaConnection",
         "description": null,
         "fields": [
           {
@@ -5825,7 +7561,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "FeedbackMediaEdge",
+                  "name": "MediaEdge",
                   "ofType": null
                 }
               }
@@ -5842,7 +7578,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "AggregateFeedbackMedia",
+                "name": "AggregateMedia",
                 "ofType": null
               }
             },
@@ -5857,7 +7593,7 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "FeedbackMediaEdge",
+        "name": "MediaEdge",
         "description": null,
         "fields": [
           {
@@ -5869,7 +7605,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "FeedbackMedia",
+                "name": "Media",
                 "ofType": null
               }
             },
@@ -5900,7 +7636,7 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "AggregateFeedbackMedia",
+        "name": "AggregateMedia",
         "description": null,
         "fields": [
           {
@@ -6338,7 +8074,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "createFeedbackProject",
+            "name": "createScript",
             "description": null,
             "args": [
               {
@@ -6349,7 +8085,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackProjectCreateInput",
+                    "name": "ScriptCreateInput",
                     "ofType": null
                   }
                 },
@@ -6361,7 +8097,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "FeedbackProject",
+                "name": "Script",
                 "ofType": null
               }
             },
@@ -6369,23 +8105,9 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "updateFeedbackProject",
+            "name": "deleteScript",
             "description": null,
             "args": [
-              {
-                "name": "data",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "FeedbackProjectUpdateInput",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              },
               {
                 "name": "where",
                 "description": null,
@@ -6394,7 +8116,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackProjectWhereUniqueInput",
+                    "name": "ScriptWhereUniqueInput",
                     "ofType": null
                   }
                 },
@@ -6403,36 +8125,22 @@ export default {
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackProject",
+              "name": "Script",
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "updateManyFeedbackProjects",
+            "name": "deleteManyScripts",
             "description": null,
             "args": [
-              {
-                "name": "data",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "FeedbackProjectUpdateManyMutationInput",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              },
               {
                 "name": "where",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectWhereInput",
+                  "name": "ScriptWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -6451,7 +8159,120 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "upsertFeedbackProject",
+            "name": "createProject",
+            "description": null,
+            "args": [
+              {
+                "name": "data",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ProjectCreateInput",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "Project",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "updateProject",
+            "description": null,
+            "args": [
+              {
+                "name": "data",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ProjectUpdateInput",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ProjectWhereUniqueInput",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Project",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "updateManyProjects",
+            "description": null,
+            "args": [
+              {
+                "name": "data",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ProjectUpdateManyMutationInput",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectWhereInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "BatchPayload",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "upsertProject",
             "description": null,
             "args": [
               {
@@ -6462,7 +8283,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackProjectWhereUniqueInput",
+                    "name": "ProjectWhereUniqueInput",
                     "ofType": null
                   }
                 },
@@ -6476,7 +8297,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackProjectCreateInput",
+                    "name": "ProjectCreateInput",
                     "ofType": null
                   }
                 },
@@ -6490,7 +8311,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackProjectUpdateInput",
+                    "name": "ProjectUpdateInput",
                     "ofType": null
                   }
                 },
@@ -6502,7 +8323,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "FeedbackProject",
+                "name": "Project",
                 "ofType": null
               }
             },
@@ -6510,7 +8331,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "deleteFeedbackProject",
+            "name": "deleteProject",
             "description": null,
             "args": [
               {
@@ -6521,7 +8342,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackProjectWhereUniqueInput",
+                    "name": "ProjectWhereUniqueInput",
                     "ofType": null
                   }
                 },
@@ -6530,14 +8351,14 @@ export default {
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackProject",
+              "name": "Project",
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "deleteManyFeedbackProjects",
+            "name": "deleteManyProjects",
             "description": null,
             "args": [
               {
@@ -6545,7 +8366,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectWhereInput",
+                  "name": "ProjectWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -6564,7 +8385,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "createFeedbackSubject",
+            "name": "createFeedbackTarget",
             "description": null,
             "args": [
               {
@@ -6575,7 +8396,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackSubjectCreateInput",
+                    "name": "FeedbackTargetCreateInput",
                     "ofType": null
                   }
                 },
@@ -6587,7 +8408,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "FeedbackSubject",
+                "name": "FeedbackTarget",
                 "ofType": null
               }
             },
@@ -6595,7 +8416,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "updateFeedbackSubject",
+            "name": "updateFeedbackTarget",
             "description": null,
             "args": [
               {
@@ -6606,7 +8427,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackSubjectUpdateInput",
+                    "name": "FeedbackTargetUpdateInput",
                     "ofType": null
                   }
                 },
@@ -6620,7 +8441,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackSubjectWhereUniqueInput",
+                    "name": "FeedbackTargetWhereUniqueInput",
                     "ofType": null
                   }
                 },
@@ -6629,14 +8450,14 @@ export default {
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackSubject",
+              "name": "FeedbackTarget",
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "updateManyFeedbackSubjects",
+            "name": "updateManyFeedbackTargets",
             "description": null,
             "args": [
               {
@@ -6647,7 +8468,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackSubjectUpdateManyMutationInput",
+                    "name": "FeedbackTargetUpdateManyMutationInput",
                     "ofType": null
                   }
                 },
@@ -6658,7 +8479,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackSubjectWhereInput",
+                  "name": "FeedbackTargetWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -6677,7 +8498,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "upsertFeedbackSubject",
+            "name": "upsertFeedbackTarget",
             "description": null,
             "args": [
               {
@@ -6688,7 +8509,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackSubjectWhereUniqueInput",
+                    "name": "FeedbackTargetWhereUniqueInput",
                     "ofType": null
                   }
                 },
@@ -6702,7 +8523,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackSubjectCreateInput",
+                    "name": "FeedbackTargetCreateInput",
                     "ofType": null
                   }
                 },
@@ -6716,7 +8537,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackSubjectUpdateInput",
+                    "name": "FeedbackTargetUpdateInput",
                     "ofType": null
                   }
                 },
@@ -6728,7 +8549,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "FeedbackSubject",
+                "name": "FeedbackTarget",
                 "ofType": null
               }
             },
@@ -6736,7 +8557,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "deleteFeedbackSubject",
+            "name": "deleteFeedbackTarget",
             "description": null,
             "args": [
               {
@@ -6747,7 +8568,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackSubjectWhereUniqueInput",
+                    "name": "FeedbackTargetWhereUniqueInput",
                     "ofType": null
                   }
                 },
@@ -6756,14 +8577,14 @@ export default {
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackSubject",
+              "name": "FeedbackTarget",
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "deleteManyFeedbackSubjects",
+            "name": "deleteManyFeedbackTargets",
             "description": null,
             "args": [
               {
@@ -6771,7 +8592,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackSubjectWhereInput",
+                  "name": "FeedbackTargetWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -6790,7 +8611,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "createFeedbackMedia",
+            "name": "createDepartment",
             "description": null,
             "args": [
               {
@@ -6801,7 +8622,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackMediaCreateInput",
+                    "name": "DepartmentCreateInput",
                     "ofType": null
                   }
                 },
@@ -6813,7 +8634,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "FeedbackMedia",
+                "name": "Department",
                 "ofType": null
               }
             },
@@ -6821,7 +8642,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "updateFeedbackMedia",
+            "name": "updateDepartment",
             "description": null,
             "args": [
               {
@@ -6832,7 +8653,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackMediaUpdateInput",
+                    "name": "DepartmentUpdateInput",
                     "ofType": null
                   }
                 },
@@ -6846,7 +8667,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackMediaWhereUniqueInput",
+                    "name": "DepartmentWhereUniqueInput",
                     "ofType": null
                   }
                 },
@@ -6855,14 +8676,14 @@ export default {
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackMedia",
+              "name": "Department",
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "updateManyFeedbackMedias",
+            "name": "updateManyDepartments",
             "description": null,
             "args": [
               {
@@ -6873,7 +8694,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackMediaUpdateManyMutationInput",
+                    "name": "DepartmentUpdateManyMutationInput",
                     "ofType": null
                   }
                 },
@@ -6884,7 +8705,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackMediaWhereInput",
+                  "name": "DepartmentWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -6903,7 +8724,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "upsertFeedbackMedia",
+            "name": "upsertDepartment",
             "description": null,
             "args": [
               {
@@ -6914,7 +8735,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackMediaWhereUniqueInput",
+                    "name": "DepartmentWhereUniqueInput",
                     "ofType": null
                   }
                 },
@@ -6928,7 +8749,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackMediaCreateInput",
+                    "name": "DepartmentCreateInput",
                     "ofType": null
                   }
                 },
@@ -6942,7 +8763,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackMediaUpdateInput",
+                    "name": "DepartmentUpdateInput",
                     "ofType": null
                   }
                 },
@@ -6954,7 +8775,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "FeedbackMedia",
+                "name": "Department",
                 "ofType": null
               }
             },
@@ -6962,7 +8783,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "deleteFeedbackMedia",
+            "name": "deleteDepartment",
             "description": null,
             "args": [
               {
@@ -6973,7 +8794,7 @@ export default {
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "FeedbackMediaWhereUniqueInput",
+                    "name": "DepartmentWhereUniqueInput",
                     "ofType": null
                   }
                 },
@@ -6982,14 +8803,14 @@ export default {
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackMedia",
+              "name": "Department",
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "deleteManyFeedbackMedias",
+            "name": "deleteManyDepartments",
             "description": null,
             "args": [
               {
@@ -6997,7 +8818,233 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackMediaWhereInput",
+                  "name": "DepartmentWhereInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "BatchPayload",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "createMedia",
+            "description": null,
+            "args": [
+              {
+                "name": "data",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "MediaCreateInput",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "Media",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "updateMedia",
+            "description": null,
+            "args": [
+              {
+                "name": "data",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "MediaUpdateInput",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "MediaWhereUniqueInput",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Media",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "updateManyMedias",
+            "description": null,
+            "args": [
+              {
+                "name": "data",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "MediaUpdateManyMutationInput",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MediaWhereInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "BatchPayload",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "upsertMedia",
+            "description": null,
+            "args": [
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "MediaWhereUniqueInput",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "create",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "MediaCreateInput",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "update",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "MediaUpdateInput",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "Media",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "deleteMedia",
+            "description": null,
+            "args": [
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "MediaWhereUniqueInput",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Media",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "deleteManyMedias",
+            "description": null,
+            "args": [
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MediaWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -7292,11 +9339,11 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "feedbackProjects",
+            "name": "projects",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectCreateManyWithoutCreatedByInput",
+              "name": "ProjectCreateManyWithoutCreatedByInput",
               "ofType": null
             },
             "defaultValue": null
@@ -7318,7 +9365,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectCreateManyWithoutCreatedByInput",
+        "name": "ProjectCreateManyWithoutCreatedByInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -7333,7 +9380,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectCreateWithoutCreatedByInput",
+                  "name": "ProjectCreateWithoutCreatedByInput",
                   "ofType": null
                 }
               }
@@ -7351,7 +9398,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectWhereUniqueInput",
+                  "name": "ProjectWhereUniqueInput",
                   "ofType": null
                 }
               }
@@ -7365,7 +9412,99 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectCreateWithoutCreatedByInput",
+        "name": "ProjectCreateWithoutCreatedByInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "id",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "departments",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "DepartmentCreateManyWithoutProjectsInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "DepartmentCreateManyWithoutProjectsInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "create",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentCreateWithoutProjectsInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "connect",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentWhereUniqueInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "DepartmentCreateWithoutProjectsInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -7503,11 +9642,11 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "feedbackProjects",
+            "name": "projects",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectUpdateManyWithoutCreatedByInput",
+              "name": "ProjectUpdateManyWithoutCreatedByInput",
               "ofType": null
             },
             "defaultValue": null
@@ -7529,7 +9668,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectUpdateManyWithoutCreatedByInput",
+        "name": "ProjectUpdateManyWithoutCreatedByInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -7544,7 +9683,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectCreateWithoutCreatedByInput",
+                  "name": "ProjectCreateWithoutCreatedByInput",
                   "ofType": null
                 }
               }
@@ -7562,7 +9701,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectWhereUniqueInput",
+                  "name": "ProjectWhereUniqueInput",
                   "ofType": null
                 }
               }
@@ -7580,7 +9719,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectWhereUniqueInput",
+                  "name": "ProjectWhereUniqueInput",
                   "ofType": null
                 }
               }
@@ -7598,7 +9737,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectWhereUniqueInput",
+                  "name": "ProjectWhereUniqueInput",
                   "ofType": null
                 }
               }
@@ -7616,7 +9755,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectWhereUniqueInput",
+                  "name": "ProjectWhereUniqueInput",
                   "ofType": null
                 }
               }
@@ -7634,7 +9773,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectUpdateWithWhereUniqueWithoutCreatedByInput",
+                  "name": "ProjectUpdateWithWhereUniqueWithoutCreatedByInput",
                   "ofType": null
                 }
               }
@@ -7652,7 +9791,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectUpsertWithWhereUniqueWithoutCreatedByInput",
+                  "name": "ProjectUpsertWithWhereUniqueWithoutCreatedByInput",
                   "ofType": null
                 }
               }
@@ -7670,7 +9809,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectScalarWhereInput",
+                  "name": "ProjectScalarWhereInput",
                   "ofType": null
                 }
               }
@@ -7688,7 +9827,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectUpdateManyWithWhereNestedInput",
+                  "name": "ProjectUpdateManyWithWhereNestedInput",
                   "ofType": null
                 }
               }
@@ -7702,7 +9841,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectUpdateWithWhereUniqueWithoutCreatedByInput",
+        "name": "ProjectUpdateWithWhereUniqueWithoutCreatedByInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -7714,7 +9853,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "FeedbackProjectWhereUniqueInput",
+                "name": "ProjectWhereUniqueInput",
                 "ofType": null
               }
             },
@@ -7728,7 +9867,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "FeedbackProjectUpdateWithoutCreatedByDataInput",
+                "name": "ProjectUpdateWithoutCreatedByDataInput",
                 "ofType": null
               }
             },
@@ -7741,7 +9880,250 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectUpdateWithoutCreatedByDataInput",
+        "name": "ProjectUpdateWithoutCreatedByDataInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "name",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "departments",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "DepartmentUpdateManyWithoutProjectsInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "DepartmentUpdateManyWithoutProjectsInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "create",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentCreateWithoutProjectsInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "delete",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentWhereUniqueInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "connect",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentWhereUniqueInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "set",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentWhereUniqueInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "disconnect",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentWhereUniqueInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "update",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentUpdateWithWhereUniqueWithoutProjectsInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "upsert",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentUpsertWithWhereUniqueWithoutProjectsInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "deleteMany",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentScalarWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "updateMany",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentUpdateManyWithWhereNestedInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "DepartmentUpdateWithWhereUniqueWithoutProjectsInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "where",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "DepartmentWhereUniqueInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "data",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "DepartmentUpdateWithoutProjectsDataInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "DepartmentUpdateWithoutProjectsDataInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -7762,7 +10144,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectUpsertWithWhereUniqueWithoutCreatedByInput",
+        "name": "DepartmentUpsertWithWhereUniqueWithoutProjectsInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -7774,7 +10156,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "FeedbackProjectWhereUniqueInput",
+                "name": "DepartmentWhereUniqueInput",
                 "ofType": null
               }
             },
@@ -7788,7 +10170,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "FeedbackProjectUpdateWithoutCreatedByDataInput",
+                "name": "DepartmentUpdateWithoutProjectsDataInput",
                 "ofType": null
               }
             },
@@ -7802,7 +10184,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "FeedbackProjectCreateWithoutCreatedByInput",
+                "name": "DepartmentCreateWithoutProjectsInput",
                 "ofType": null
               }
             },
@@ -7815,7 +10197,497 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectScalarWhereInput",
+        "name": "DepartmentScalarWhereInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "id",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_lt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_lte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_gt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_gte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_starts_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_not_starts_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_ends_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "id_not_ends_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_lt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_lte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_gt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_gte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_starts_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_not_starts_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_ends_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name_not_ends_with",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "AND",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentScalarWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "OR",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentScalarWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "NOT",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentScalarWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "DepartmentUpdateManyWithWhereNestedInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "where",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "DepartmentScalarWhereInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "data",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "DepartmentUpdateManyDataInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "DepartmentUpdateManyDataInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "name",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "ProjectUpsertWithWhereUniqueWithoutCreatedByInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "where",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "ProjectWhereUniqueInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "update",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "ProjectUpdateWithoutCreatedByDataInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "create",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "ProjectCreateWithoutCreatedByInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "ProjectScalarWhereInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -8334,7 +11206,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectScalarWhereInput",
+                  "name": "ProjectScalarWhereInput",
                   "ofType": null
                 }
               }
@@ -8352,7 +11224,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectScalarWhereInput",
+                  "name": "ProjectScalarWhereInput",
                   "ofType": null
                 }
               }
@@ -8370,7 +11242,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectScalarWhereInput",
+                  "name": "ProjectScalarWhereInput",
                   "ofType": null
                 }
               }
@@ -8384,7 +11256,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectUpdateManyWithWhereNestedInput",
+        "name": "ProjectUpdateManyWithWhereNestedInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -8396,7 +11268,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "FeedbackProjectScalarWhereInput",
+                "name": "ProjectScalarWhereInput",
                 "ofType": null
               }
             },
@@ -8410,7 +11282,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "FeedbackProjectUpdateManyDataInput",
+                "name": "ProjectUpdateManyDataInput",
                 "ofType": null
               }
             },
@@ -8423,7 +11295,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectUpdateManyDataInput",
+        "name": "ProjectUpdateManyDataInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9367,7 +12239,28 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectCreateInput",
+        "name": "ScriptCreateInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "id",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "ProjectCreateInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9400,7 +12293,17 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "UserCreateOneWithoutFeedbackProjectsInput",
+              "name": "UserCreateOneWithoutProjectsInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "departments",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "DepartmentCreateManyWithoutProjectsInput",
               "ofType": null
             },
             "defaultValue": null
@@ -9412,7 +12315,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "UserCreateOneWithoutFeedbackProjectsInput",
+        "name": "UserCreateOneWithoutProjectsInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9421,7 +12324,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "UserCreateWithoutFeedbackProjectsInput",
+              "name": "UserCreateWithoutProjectsInput",
               "ofType": null
             },
             "defaultValue": null
@@ -9443,7 +12346,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "UserCreateWithoutFeedbackProjectsInput",
+        "name": "UserCreateWithoutProjectsInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9502,7 +12405,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectUpdateInput",
+        "name": "ProjectUpdateInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9521,7 +12424,17 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "UserUpdateOneWithoutFeedbackProjectsInput",
+              "name": "UserUpdateOneWithoutProjectsInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "departments",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "DepartmentUpdateManyWithoutProjectsInput",
               "ofType": null
             },
             "defaultValue": null
@@ -9533,7 +12446,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "UserUpdateOneWithoutFeedbackProjectsInput",
+        "name": "UserUpdateOneWithoutProjectsInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9542,7 +12455,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "UserCreateWithoutFeedbackProjectsInput",
+              "name": "UserCreateWithoutProjectsInput",
               "ofType": null
             },
             "defaultValue": null
@@ -9552,7 +12465,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "UserUpdateWithoutFeedbackProjectsDataInput",
+              "name": "UserUpdateWithoutProjectsDataInput",
               "ofType": null
             },
             "defaultValue": null
@@ -9562,7 +12475,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "UserUpsertWithoutFeedbackProjectsInput",
+              "name": "UserUpsertWithoutProjectsInput",
               "ofType": null
             },
             "defaultValue": null
@@ -9604,7 +12517,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "UserUpdateWithoutFeedbackProjectsDataInput",
+        "name": "UserUpdateWithoutProjectsDataInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9645,7 +12558,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "UserUpsertWithoutFeedbackProjectsInput",
+        "name": "UserUpsertWithoutProjectsInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9657,7 +12570,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "UserUpdateWithoutFeedbackProjectsDataInput",
+                "name": "UserUpdateWithoutProjectsDataInput",
                 "ofType": null
               }
             },
@@ -9671,7 +12584,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "UserCreateWithoutFeedbackProjectsInput",
+                "name": "UserCreateWithoutProjectsInput",
                 "ofType": null
               }
             },
@@ -9684,7 +12597,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectUpdateManyMutationInput",
+        "name": "ProjectUpdateManyMutationInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9705,7 +12618,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackSubjectCreateInput",
+        "name": "FeedbackTargetCreateInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9741,7 +12654,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "FeedbackProjectCreateOneInput",
+                "name": "ProjectCreateOneInput",
                 "ofType": null
               }
             },
@@ -9764,7 +12677,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectCreateOneInput",
+        "name": "ProjectCreateOneInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9773,7 +12686,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectCreateInput",
+              "name": "ProjectCreateInput",
               "ofType": null
             },
             "defaultValue": null
@@ -9783,7 +12696,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectWhereUniqueInput",
+              "name": "ProjectWhereUniqueInput",
               "ofType": null
             },
             "defaultValue": null
@@ -9826,7 +12739,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackSubjectUpdateInput",
+        "name": "FeedbackTargetUpdateInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9845,7 +12758,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectUpdateOneRequiredInput",
+              "name": "ProjectUpdateOneRequiredInput",
               "ofType": null
             },
             "defaultValue": null
@@ -9867,7 +12780,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectUpdateOneRequiredInput",
+        "name": "ProjectUpdateOneRequiredInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9876,7 +12789,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectCreateInput",
+              "name": "ProjectCreateInput",
               "ofType": null
             },
             "defaultValue": null
@@ -9886,7 +12799,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectUpdateDataInput",
+              "name": "ProjectUpdateDataInput",
               "ofType": null
             },
             "defaultValue": null
@@ -9896,7 +12809,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectUpsertNestedInput",
+              "name": "ProjectUpsertNestedInput",
               "ofType": null
             },
             "defaultValue": null
@@ -9906,7 +12819,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectWhereUniqueInput",
+              "name": "ProjectWhereUniqueInput",
               "ofType": null
             },
             "defaultValue": null
@@ -9918,7 +12831,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectUpdateDataInput",
+        "name": "ProjectUpdateDataInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9937,7 +12850,17 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "UserUpdateOneWithoutFeedbackProjectsInput",
+              "name": "UserUpdateOneWithoutProjectsInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "departments",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "DepartmentUpdateManyWithoutProjectsInput",
               "ofType": null
             },
             "defaultValue": null
@@ -9949,7 +12872,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectUpsertNestedInput",
+        "name": "ProjectUpsertNestedInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9961,7 +12884,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "FeedbackProjectUpdateDataInput",
+                "name": "ProjectUpdateDataInput",
                 "ofType": null
               }
             },
@@ -9975,7 +12898,7 @@ export default {
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "FeedbackProjectCreateInput",
+                "name": "ProjectCreateInput",
                 "ofType": null
               }
             },
@@ -10084,11 +13007,11 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "feedbackProjects",
+            "name": "projects",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectUpdateManyWithoutCreatedByInput",
+              "name": "ProjectUpdateManyWithoutCreatedByInput",
               "ofType": null
             },
             "defaultValue": null
@@ -10149,7 +13072,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackSubjectUpdateManyMutationInput",
+        "name": "FeedbackTargetUpdateManyMutationInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -10170,7 +13093,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackMediaCreateInput",
+        "name": "DepartmentCreateInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -10199,15 +13122,58 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "subject",
+            "name": "projects",
             "description": null,
             "type": {
-              "kind": "NON_NULL",
+              "kind": "INPUT_OBJECT",
+              "name": "ProjectCreateManyWithoutDepartmentsInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "ProjectCreateManyWithoutDepartmentsInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "create",
+            "description": null,
+            "type": {
+              "kind": "LIST",
               "name": null,
               "ofType": {
-                "kind": "INPUT_OBJECT",
-                "name": "FeedbackProjectCreateOneInput",
-                "ofType": null
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectCreateWithoutDepartmentsInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "connect",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectWhereUniqueInput",
+                  "ofType": null
+                }
               }
             },
             "defaultValue": null
@@ -10219,7 +13185,52 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackMediaUpdateInput",
+        "name": "ProjectCreateWithoutDepartmentsInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "id",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "createdBy",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "UserCreateOneWithoutProjectsInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "DepartmentUpdateInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -10234,11 +13245,11 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "subject",
+            "name": "projects",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectUpdateOneRequiredInput",
+              "name": "ProjectUpdateManyWithoutDepartmentsInput",
               "ofType": null
             },
             "defaultValue": null
@@ -10250,7 +13261,566 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackMediaUpdateManyMutationInput",
+        "name": "ProjectUpdateManyWithoutDepartmentsInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "create",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectCreateWithoutDepartmentsInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "delete",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectWhereUniqueInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "connect",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectWhereUniqueInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "set",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectWhereUniqueInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "disconnect",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectWhereUniqueInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "update",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectUpdateWithWhereUniqueWithoutDepartmentsInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "upsert",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectUpsertWithWhereUniqueWithoutDepartmentsInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "deleteMany",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectScalarWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "updateMany",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectUpdateManyWithWhereNestedInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "ProjectUpdateWithWhereUniqueWithoutDepartmentsInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "where",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "ProjectWhereUniqueInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "data",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "ProjectUpdateWithoutDepartmentsDataInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "ProjectUpdateWithoutDepartmentsDataInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "name",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "createdBy",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "UserUpdateOneWithoutProjectsInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "ProjectUpsertWithWhereUniqueWithoutDepartmentsInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "where",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "ProjectWhereUniqueInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "update",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "ProjectUpdateWithoutDepartmentsDataInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "create",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "ProjectCreateWithoutDepartmentsInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "DepartmentUpdateManyMutationInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "name",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "MediaCreateInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "id",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "name",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "target",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "FeedbackTargetCreateOneInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "FeedbackTargetCreateOneInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "create",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "FeedbackTargetCreateInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "connect",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "FeedbackTargetWhereUniqueInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "MediaUpdateInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "name",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "target",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "FeedbackTargetUpdateOneRequiredInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "FeedbackTargetUpdateOneRequiredInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "create",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "FeedbackTargetCreateInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "update",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "FeedbackTargetUpdateDataInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "upsert",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "FeedbackTargetUpsertNestedInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "connect",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "FeedbackTargetWhereUniqueInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "FeedbackTargetUpdateDataInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "name",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "project",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "ProjectUpdateOneRequiredInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "createdBy",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "UserUpdateOneInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "FeedbackTargetUpsertNestedInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "update",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "FeedbackTargetUpdateDataInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "create",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "FeedbackTargetCreateInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "MediaUpdateManyMutationInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -10402,11 +13972,11 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "feedbackProjects",
+            "name": "projects",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectCreateManyWithoutCreatedByInput",
+              "name": "ProjectCreateManyWithoutCreatedByInput",
               "ofType": null
             },
             "defaultValue": null
@@ -10686,11 +14256,11 @@ export default {
             "defaultValue": null
           },
           {
-            "name": "feedbackProjects",
+            "name": "projects",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectUpdateManyWithoutCreatedByInput",
+              "name": "ProjectUpdateManyWithoutCreatedByInput",
               "ofType": null
             },
             "defaultValue": null
@@ -11598,7 +15168,7 @@ export default {
             "deprecationReason": null
           },
           {
-            "name": "feedbackProject",
+            "name": "script",
             "description": null,
             "args": [
               {
@@ -11606,7 +15176,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectSubscriptionWhereInput",
+                  "name": "ScriptSubscriptionWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -11614,14 +15184,14 @@ export default {
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackProjectSubscriptionPayload",
+              "name": "ScriptSubscriptionPayload",
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "feedbackSubject",
+            "name": "project",
             "description": null,
             "args": [
               {
@@ -11629,7 +15199,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackSubjectSubscriptionWhereInput",
+                  "name": "ProjectSubscriptionWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -11637,14 +15207,14 @@ export default {
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackSubjectSubscriptionPayload",
+              "name": "ProjectSubscriptionPayload",
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "feedbackMedia",
+            "name": "feedbackTarget",
             "description": null,
             "args": [
               {
@@ -11652,7 +15222,7 @@ export default {
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackMediaSubscriptionWhereInput",
+                  "name": "FeedbackTargetSubscriptionWhereInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -11660,7 +15230,53 @@ export default {
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackMediaSubscriptionPayload",
+              "name": "FeedbackTargetSubscriptionPayload",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "department",
+            "description": null,
+            "args": [
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "DepartmentSubscriptionWhereInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "DepartmentSubscriptionPayload",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "media",
+            "description": null,
+            "args": [
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MediaSubscriptionWhereInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "MediaSubscriptionPayload",
               "ofType": null
             },
             "isDeprecated": false,
@@ -12027,7 +15643,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackProjectSubscriptionWhereInput",
+        "name": "ScriptSubscriptionWhereInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -12100,7 +15716,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackProjectWhereInput",
+              "name": "ScriptWhereInput",
               "ofType": null
             },
             "defaultValue": null
@@ -12116,7 +15732,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectSubscriptionWhereInput",
+                  "name": "ScriptSubscriptionWhereInput",
                   "ofType": null
                 }
               }
@@ -12134,7 +15750,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectSubscriptionWhereInput",
+                  "name": "ScriptSubscriptionWhereInput",
                   "ofType": null
                 }
               }
@@ -12152,7 +15768,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackProjectSubscriptionWhereInput",
+                  "name": "ScriptSubscriptionWhereInput",
                   "ofType": null
                 }
               }
@@ -12166,7 +15782,7 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "FeedbackProjectSubscriptionPayload",
+        "name": "ScriptSubscriptionPayload",
         "description": null,
         "fields": [
           {
@@ -12191,7 +15807,7 @@ export default {
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackProject",
+              "name": "Script",
               "ofType": null
             },
             "isDeprecated": false,
@@ -12223,7 +15839,7 @@ export default {
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackProjectPreviousValues",
+              "name": "ScriptPreviousValues",
               "ofType": null
             },
             "isDeprecated": false,
@@ -12237,7 +15853,244 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "FeedbackProjectPreviousValues",
+        "name": "ScriptPreviousValues",
+        "description": null,
+        "fields": [
+          {
+            "name": "id",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "ProjectSubscriptionWhereInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "mutation_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "MutationType",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "updatedFields_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "updatedFields_contains_every",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "updatedFields_contains_some",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "node",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "ProjectWhereInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "AND",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectSubscriptionWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "OR",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectSubscriptionWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "NOT",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ProjectSubscriptionWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "ProjectSubscriptionPayload",
+        "description": null,
+        "fields": [
+          {
+            "name": "mutation",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "MutationType",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "node",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Project",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "updatedFields",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "previousValues",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "ProjectPreviousValues",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "ProjectPreviousValues",
         "description": null,
         "fields": [
           {
@@ -12312,7 +16165,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackSubjectSubscriptionWhereInput",
+        "name": "FeedbackTargetSubscriptionWhereInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -12385,7 +16238,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackSubjectWhereInput",
+              "name": "FeedbackTargetWhereInput",
               "ofType": null
             },
             "defaultValue": null
@@ -12401,7 +16254,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackSubjectSubscriptionWhereInput",
+                  "name": "FeedbackTargetSubscriptionWhereInput",
                   "ofType": null
                 }
               }
@@ -12419,7 +16272,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackSubjectSubscriptionWhereInput",
+                  "name": "FeedbackTargetSubscriptionWhereInput",
                   "ofType": null
                 }
               }
@@ -12437,7 +16290,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackSubjectSubscriptionWhereInput",
+                  "name": "FeedbackTargetSubscriptionWhereInput",
                   "ofType": null
                 }
               }
@@ -12451,7 +16304,7 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "FeedbackSubjectSubscriptionPayload",
+        "name": "FeedbackTargetSubscriptionPayload",
         "description": null,
         "fields": [
           {
@@ -12476,7 +16329,7 @@ export default {
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackSubject",
+              "name": "FeedbackTarget",
               "ofType": null
             },
             "isDeprecated": false,
@@ -12508,7 +16361,7 @@ export default {
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackSubjectPreviousValues",
+              "name": "FeedbackTargetPreviousValues",
               "ofType": null
             },
             "isDeprecated": false,
@@ -12522,7 +16375,7 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "FeedbackSubjectPreviousValues",
+        "name": "FeedbackTargetPreviousValues",
         "description": null,
         "fields": [
           {
@@ -12597,7 +16450,7 @@ export default {
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "FeedbackMediaSubscriptionWhereInput",
+        "name": "DepartmentSubscriptionWhereInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -12670,7 +16523,7 @@ export default {
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "FeedbackMediaWhereInput",
+              "name": "DepartmentWhereInput",
               "ofType": null
             },
             "defaultValue": null
@@ -12686,7 +16539,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackMediaSubscriptionWhereInput",
+                  "name": "DepartmentSubscriptionWhereInput",
                   "ofType": null
                 }
               }
@@ -12704,7 +16557,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackMediaSubscriptionWhereInput",
+                  "name": "DepartmentSubscriptionWhereInput",
                   "ofType": null
                 }
               }
@@ -12722,7 +16575,7 @@ export default {
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "FeedbackMediaSubscriptionWhereInput",
+                  "name": "DepartmentSubscriptionWhereInput",
                   "ofType": null
                 }
               }
@@ -12736,7 +16589,7 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "FeedbackMediaSubscriptionPayload",
+        "name": "DepartmentSubscriptionPayload",
         "description": null,
         "fields": [
           {
@@ -12761,7 +16614,7 @@ export default {
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackMedia",
+              "name": "Department",
               "ofType": null
             },
             "isDeprecated": false,
@@ -12793,7 +16646,7 @@ export default {
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "FeedbackMediaPreviousValues",
+              "name": "DepartmentPreviousValues",
               "ofType": null
             },
             "isDeprecated": false,
@@ -12807,7 +16660,260 @@ export default {
       },
       {
         "kind": "OBJECT",
-        "name": "FeedbackMediaPreviousValues",
+        "name": "DepartmentPreviousValues",
+        "description": null,
+        "fields": [
+          {
+            "name": "id",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "name",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "MediaSubscriptionWhereInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "mutation_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "MutationType",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "updatedFields_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "updatedFields_contains_every",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "updatedFields_contains_some",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "node",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "MediaWhereInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "AND",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MediaSubscriptionWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "OR",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MediaSubscriptionWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "NOT",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MediaSubscriptionWhereInput",
+                  "ofType": null
+                }
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "MediaSubscriptionPayload",
+        "description": null,
+        "fields": [
+          {
+            "name": "mutation",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "MutationType",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "node",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Media",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "updatedFields",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "previousValues",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "MediaPreviousValues",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "MediaPreviousValues",
         "description": null,
         "fields": [
           {
