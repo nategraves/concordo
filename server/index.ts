@@ -4,6 +4,8 @@ import * as path from "path";
 import { stringArg, idArg } from "nexus";
 import { prismaObjectType, makePrismaSchema } from "nexus-prisma";
 import { GraphQLServer } from "graphql-yoga";
+import { stripIgnoredCharacters } from "graphql";
+import * as bcrypt from "bcryptjs";
 
 //const Query = prismaObjectType({
 //name: 'Query',
@@ -45,6 +47,32 @@ const Mutation = prismaObjectType({
       "deleteDepartment",
       "deleteProject"
     ]);
+    t.field("register", {
+      type: "User",
+      args: {
+        //@ts-ignore
+        email: stringArg(),
+        //@ts-ignore
+        password: stringArg()
+      },
+      resolve: async (_, { email, password: rawPassword }, ctx) => {
+        const password = await bcrypt.hashSync(rawPassword, 8);
+        return ctx.prisma.createUser({ email, password });
+      }
+    });
+    t.field("login", {
+      type: "User",
+      args: {
+        //@ts-ignore
+        email: stringArg(),
+        //@ts-ignore
+        password: stringArg()
+      },
+      resolve: async (_, { email, password: rawPassword }, ctx) => {
+        const password = await bcrypt.hashSync(rawPassword, 8);
+        return ctx.prisma.users({ where: { email, password } });
+      }
+    });
   }
 });
 

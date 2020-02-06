@@ -360,7 +360,8 @@ export interface NexusGenInputs {
     email: string; // String!
     feedbackRounds?: NexusGenInputs['FeedbackRoundCreateManyWithoutUsersInput'] | null; // FeedbackRoundCreateManyWithoutUsersInput
     id?: string | null; // ID
-    name: string; // String!
+    name?: string | null; // String
+    password: string; // String!
     projects?: NexusGenInputs['ProjectCreateManyWithoutCreatedByInput'] | null; // ProjectCreateManyWithoutCreatedByInput
   }
   UserCreateManyWithoutFeedbackRoundsInput: { // input type
@@ -378,14 +379,16 @@ export interface NexusGenInputs {
   UserCreateWithoutFeedbackRoundsInput: { // input type
     email: string; // String!
     id?: string | null; // ID
-    name: string; // String!
+    name?: string | null; // String
+    password: string; // String!
     projects?: NexusGenInputs['ProjectCreateManyWithoutCreatedByInput'] | null; // ProjectCreateManyWithoutCreatedByInput
   }
   UserCreateWithoutProjectsInput: { // input type
     email: string; // String!
     feedbackRounds?: NexusGenInputs['FeedbackRoundCreateManyWithoutUsersInput'] | null; // FeedbackRoundCreateManyWithoutUsersInput
     id?: string | null; // ID
-    name: string; // String!
+    name?: string | null; // String
+    password: string; // String!
   }
   UserWhereInput: { // input type
     AND?: NexusGenInputs['UserWhereInput'][] | null; // [UserWhereInput!]
@@ -444,6 +447,20 @@ export interface NexusGenInputs {
     name_starts_with?: string | null; // String
     NOT?: NexusGenInputs['UserWhereInput'][] | null; // [UserWhereInput!]
     OR?: NexusGenInputs['UserWhereInput'][] | null; // [UserWhereInput!]
+    password?: string | null; // String
+    password_contains?: string | null; // String
+    password_ends_with?: string | null; // String
+    password_gt?: string | null; // String
+    password_gte?: string | null; // String
+    password_in?: string[] | null; // [String!]
+    password_lt?: string | null; // String
+    password_lte?: string | null; // String
+    password_not?: string | null; // String
+    password_not_contains?: string | null; // String
+    password_not_ends_with?: string | null; // String
+    password_not_in?: string[] | null; // [String!]
+    password_not_starts_with?: string | null; // String
+    password_starts_with?: string | null; // String
     projects_every?: NexusGenInputs['ProjectWhereInput'] | null; // ProjectWhereInput
     projects_none?: NexusGenInputs['ProjectWhereInput'] | null; // ProjectWhereInput
     projects_some?: NexusGenInputs['ProjectWhereInput'] | null; // ProjectWhereInput
@@ -469,7 +486,7 @@ export interface NexusGenEnums {
   MediaOrderByInput: "createdAt_ASC" | "createdAt_DESC" | "id_ASC" | "id_DESC" | "name_ASC" | "name_DESC" | "updatedAt_ASC" | "updatedAt_DESC"
   ProjectOrderByInput: "createdAt_ASC" | "createdAt_DESC" | "id_ASC" | "id_DESC" | "name_ASC" | "name_DESC" | "updatedAt_ASC" | "updatedAt_DESC"
   ScriptOrderByInput: "createdAt_ASC" | "createdAt_DESC" | "id_ASC" | "id_DESC" | "updatedAt_ASC" | "updatedAt_DESC"
-  UserOrderByInput: "createdAt_ASC" | "createdAt_DESC" | "email_ASC" | "email_DESC" | "id_ASC" | "id_DESC" | "name_ASC" | "name_DESC" | "updatedAt_ASC" | "updatedAt_DESC"
+  UserOrderByInput: "createdAt_ASC" | "createdAt_DESC" | "email_ASC" | "email_DESC" | "id_ASC" | "id_DESC" | "name_ASC" | "name_DESC" | "password_ASC" | "password_DESC" | "updatedAt_ASC" | "updatedAt_DESC"
 }
 
 export interface NexusGenRootTypes {
@@ -510,7 +527,8 @@ export interface NexusGenRootTypes {
     createdAt: any; // DateTime!
     email: string; // String!
     id: string; // ID!
-    name: string; // String!
+    name?: string | null; // String
+    password: string; // String!
     updatedAt: any; // DateTime!
   }
   String: string;
@@ -605,6 +623,8 @@ export interface NexusGenFieldTypes {
     createUser: NexusGenRootTypes['User']; // User!
     deleteDepartment: NexusGenRootTypes['Department'] | null; // Department
     deleteProject: NexusGenRootTypes['Project'] | null; // Project
+    login: NexusGenRootTypes['User']; // User!
+    register: NexusGenRootTypes['User']; // User!
   }
   Project: { // field return type
     createdAt: any; // DateTime!
@@ -638,7 +658,8 @@ export interface NexusGenFieldTypes {
     email: string; // String!
     feedbackRounds: NexusGenRootTypes['FeedbackRound'][] | null; // [FeedbackRound!]
     id: string; // ID!
-    name: string; // String!
+    name: string | null; // String
+    password: string; // String!
     projects: NexusGenRootTypes['Project'][] | null; // [Project!]
     updatedAt: any; // DateTime!
   }
@@ -694,6 +715,14 @@ export interface NexusGenArgTypes {
     }
     deleteProject: { // args
       where: NexusGenInputs['ProjectWhereUniqueInput']; // ProjectWhereUniqueInput!
+    }
+    login: { // args
+      email?: string | null; // String
+      password?: string | null; // String
+    }
+    register: { // args
+      email?: string | null; // String
+      password?: string | null; // String
     }
   }
   Project: {

@@ -1166,8 +1166,9 @@ type Subscription {
 
 type User {
   id: ID!
-  name: String!
+  name: String
   email: String!
+  password: String!
   createdAt: DateTime!
   updatedAt: DateTime!
   projects(where: ProjectWhereInput, orderBy: ProjectOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Project!]
@@ -1182,8 +1183,9 @@ type UserConnection {
 
 input UserCreateInput {
   id: ID
-  name: String!
+  name: String
   email: String!
+  password: String!
   projects: ProjectCreateManyWithoutCreatedByInput
   feedbackRounds: FeedbackRoundCreateManyWithoutUsersInput
 }
@@ -1205,15 +1207,17 @@ input UserCreateOneWithoutProjectsInput {
 
 input UserCreateWithoutFeedbackRoundsInput {
   id: ID
-  name: String!
+  name: String
   email: String!
+  password: String!
   projects: ProjectCreateManyWithoutCreatedByInput
 }
 
 input UserCreateWithoutProjectsInput {
   id: ID
-  name: String!
+  name: String
   email: String!
+  password: String!
   feedbackRounds: FeedbackRoundCreateManyWithoutUsersInput
 }
 
@@ -1229,6 +1233,8 @@ enum UserOrderByInput {
   name_DESC
   email_ASC
   email_DESC
+  password_ASC
+  password_DESC
   createdAt_ASC
   createdAt_DESC
   updatedAt_ASC
@@ -1237,8 +1243,9 @@ enum UserOrderByInput {
 
 type UserPreviousValues {
   id: ID!
-  name: String!
+  name: String
   email: String!
+  password: String!
   createdAt: DateTime!
   updatedAt: DateTime!
 }
@@ -1286,6 +1293,20 @@ input UserScalarWhereInput {
   email_not_starts_with: String
   email_ends_with: String
   email_not_ends_with: String
+  password: String
+  password_not: String
+  password_in: [String!]
+  password_not_in: [String!]
+  password_lt: String
+  password_lte: String
+  password_gt: String
+  password_gte: String
+  password_contains: String
+  password_not_contains: String
+  password_starts_with: String
+  password_not_starts_with: String
+  password_ends_with: String
+  password_not_ends_with: String
   createdAt: DateTime
   createdAt_not: DateTime
   createdAt_in: [DateTime!]
@@ -1328,6 +1349,7 @@ input UserSubscriptionWhereInput {
 input UserUpdateDataInput {
   name: String
   email: String
+  password: String
   projects: ProjectUpdateManyWithoutCreatedByInput
   feedbackRounds: FeedbackRoundUpdateManyWithoutUsersInput
 }
@@ -1335,6 +1357,7 @@ input UserUpdateDataInput {
 input UserUpdateInput {
   name: String
   email: String
+  password: String
   projects: ProjectUpdateManyWithoutCreatedByInput
   feedbackRounds: FeedbackRoundUpdateManyWithoutUsersInput
 }
@@ -1342,11 +1365,13 @@ input UserUpdateInput {
 input UserUpdateManyDataInput {
   name: String
   email: String
+  password: String
 }
 
 input UserUpdateManyMutationInput {
   name: String
   email: String
+  password: String
 }
 
 input UserUpdateManyWithoutFeedbackRoundsInput {
@@ -1387,12 +1412,14 @@ input UserUpdateOneWithoutProjectsInput {
 input UserUpdateWithoutFeedbackRoundsDataInput {
   name: String
   email: String
+  password: String
   projects: ProjectUpdateManyWithoutCreatedByInput
 }
 
 input UserUpdateWithoutProjectsDataInput {
   name: String
   email: String
+  password: String
   feedbackRounds: FeedbackRoundUpdateManyWithoutUsersInput
 }
 
@@ -1460,6 +1487,20 @@ input UserWhereInput {
   email_not_starts_with: String
   email_ends_with: String
   email_not_ends_with: String
+  password: String
+  password_not: String
+  password_in: [String!]
+  password_not_in: [String!]
+  password_lt: String
+  password_lte: String
+  password_gt: String
+  password_gte: String
+  password_contains: String
+  password_not_contains: String
+  password_starts_with: String
+  password_not_starts_with: String
+  password_ends_with: String
+  password_not_ends_with: String
   createdAt: DateTime
   createdAt_not: DateTime
   createdAt_in: [DateTime!]

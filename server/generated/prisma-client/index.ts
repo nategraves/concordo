@@ -363,6 +363,8 @@ export type UserOrderByInput =
   | "name_DESC"
   | "email_ASC"
   | "email_DESC"
+  | "password_ASC"
+  | "password_DESC"
   | "createdAt_ASC"
   | "createdAt_DESC"
   | "updatedAt_ASC"
@@ -499,6 +501,20 @@ export interface UserWhereInput {
   email_not_starts_with?: Maybe<String>;
   email_ends_with?: Maybe<String>;
   email_not_ends_with?: Maybe<String>;
+  password?: Maybe<String>;
+  password_not?: Maybe<String>;
+  password_in?: Maybe<String[] | String>;
+  password_not_in?: Maybe<String[] | String>;
+  password_lt?: Maybe<String>;
+  password_lte?: Maybe<String>;
+  password_gt?: Maybe<String>;
+  password_gte?: Maybe<String>;
+  password_contains?: Maybe<String>;
+  password_not_contains?: Maybe<String>;
+  password_starts_with?: Maybe<String>;
+  password_not_starts_with?: Maybe<String>;
+  password_ends_with?: Maybe<String>;
+  password_not_ends_with?: Maybe<String>;
   createdAt?: Maybe<DateTimeInput>;
   createdAt_not?: Maybe<DateTimeInput>;
   createdAt_in?: Maybe<DateTimeInput[] | DateTimeInput>;
@@ -785,8 +801,9 @@ export interface UserCreateOneWithoutProjectsInput {
 
 export interface UserCreateWithoutProjectsInput {
   id?: Maybe<ID_Input>;
-  name: String;
+  name?: Maybe<String>;
   email: String;
+  password: String;
   feedbackRounds?: Maybe<FeedbackRoundCreateManyWithoutUsersInput>;
 }
 
@@ -856,6 +873,7 @@ export interface UserUpdateOneWithoutProjectsInput {
 export interface UserUpdateWithoutProjectsDataInput {
   name?: Maybe<String>;
   email?: Maybe<String>;
+  password?: Maybe<String>;
   feedbackRounds?: Maybe<FeedbackRoundUpdateManyWithoutUsersInput>;
 }
 
@@ -1049,8 +1067,9 @@ export interface UserCreateManyWithoutFeedbackRoundsInput {
 
 export interface UserCreateWithoutFeedbackRoundsInput {
   id?: Maybe<ID_Input>;
-  name: String;
+  name?: Maybe<String>;
   email: String;
+  password: String;
   projects?: Maybe<ProjectCreateManyWithoutCreatedByInput>;
 }
 
@@ -1116,6 +1135,7 @@ export interface UserUpdateWithWhereUniqueWithoutFeedbackRoundsInput {
 export interface UserUpdateWithoutFeedbackRoundsDataInput {
   name?: Maybe<String>;
   email?: Maybe<String>;
+  password?: Maybe<String>;
   projects?: Maybe<ProjectUpdateManyWithoutCreatedByInput>;
 }
 
@@ -1289,6 +1309,20 @@ export interface UserScalarWhereInput {
   email_not_starts_with?: Maybe<String>;
   email_ends_with?: Maybe<String>;
   email_not_ends_with?: Maybe<String>;
+  password?: Maybe<String>;
+  password_not?: Maybe<String>;
+  password_in?: Maybe<String[] | String>;
+  password_not_in?: Maybe<String[] | String>;
+  password_lt?: Maybe<String>;
+  password_lte?: Maybe<String>;
+  password_gt?: Maybe<String>;
+  password_gte?: Maybe<String>;
+  password_contains?: Maybe<String>;
+  password_not_contains?: Maybe<String>;
+  password_starts_with?: Maybe<String>;
+  password_not_starts_with?: Maybe<String>;
+  password_ends_with?: Maybe<String>;
+  password_not_ends_with?: Maybe<String>;
   createdAt?: Maybe<DateTimeInput>;
   createdAt_not?: Maybe<DateTimeInput>;
   createdAt_in?: Maybe<DateTimeInput[] | DateTimeInput>;
@@ -1318,6 +1352,7 @@ export interface UserUpdateManyWithWhereNestedInput {
 export interface UserUpdateManyDataInput {
   name?: Maybe<String>;
   email?: Maybe<String>;
+  password?: Maybe<String>;
 }
 
 export interface FeedbackRoundUpdateManyMutationInput {
@@ -1350,8 +1385,9 @@ export interface UserCreateOneInput {
 
 export interface UserCreateInput {
   id?: Maybe<ID_Input>;
-  name: String;
+  name?: Maybe<String>;
   email: String;
+  password: String;
   projects?: Maybe<ProjectCreateManyWithoutCreatedByInput>;
   feedbackRounds?: Maybe<FeedbackRoundCreateManyWithoutUsersInput>;
 }
@@ -1392,6 +1428,7 @@ export interface UserUpdateOneInput {
 export interface UserUpdateDataInput {
   name?: Maybe<String>;
   email?: Maybe<String>;
+  password?: Maybe<String>;
   projects?: Maybe<ProjectUpdateManyWithoutCreatedByInput>;
   feedbackRounds?: Maybe<FeedbackRoundUpdateManyWithoutUsersInput>;
 }
@@ -1460,6 +1497,7 @@ export interface ScriptCreateInput {
 export interface UserUpdateInput {
   name?: Maybe<String>;
   email?: Maybe<String>;
+  password?: Maybe<String>;
   projects?: Maybe<ProjectUpdateManyWithoutCreatedByInput>;
   feedbackRounds?: Maybe<FeedbackRoundUpdateManyWithoutUsersInput>;
 }
@@ -1467,6 +1505,7 @@ export interface UserUpdateInput {
 export interface UserUpdateManyMutationInput {
   name?: Maybe<String>;
   email?: Maybe<String>;
+  password?: Maybe<String>;
 }
 
 export interface DepartmentSubscriptionWhereInput {
@@ -1686,8 +1725,9 @@ export interface ProjectNullablePromise
 
 export interface User {
   id: ID_Output;
-  name: String;
+  name?: String;
   email: String;
+  password: String;
   createdAt: DateTimeOutput;
   updatedAt: DateTimeOutput;
 }
@@ -1696,6 +1736,7 @@ export interface UserPromise extends Promise<User>, Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
   email: () => Promise<String>;
+  password: () => Promise<String>;
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
   projects: <T = FragmentableArray<Project>>(args?: {
@@ -1724,6 +1765,7 @@ export interface UserSubscription
   id: () => Promise<AsyncIterator<ID_Output>>;
   name: () => Promise<AsyncIterator<String>>;
   email: () => Promise<AsyncIterator<String>>;
+  password: () => Promise<AsyncIterator<String>>;
   createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   projects: <T = Promise<AsyncIterator<ProjectSubscription>>>(args?: {
@@ -1754,6 +1796,7 @@ export interface UserNullablePromise
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
   email: () => Promise<String>;
+  password: () => Promise<String>;
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
   projects: <T = FragmentableArray<Project>>(args?: {
@@ -2667,8 +2710,9 @@ export interface UserSubscriptionPayloadSubscription
 
 export interface UserPreviousValues {
   id: ID_Output;
-  name: String;
+  name?: String;
   email: String;
+  password: String;
   createdAt: DateTimeOutput;
   updatedAt: DateTimeOutput;
 }
@@ -2679,6 +2723,7 @@ export interface UserPreviousValuesPromise
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
   email: () => Promise<String>;
+  password: () => Promise<String>;
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
 }
@@ -2689,6 +2734,7 @@ export interface UserPreviousValuesSubscription
   id: () => Promise<AsyncIterator<ID_Output>>;
   name: () => Promise<AsyncIterator<String>>;
   email: () => Promise<AsyncIterator<String>>;
+  password: () => Promise<AsyncIterator<String>>;
   createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
 }

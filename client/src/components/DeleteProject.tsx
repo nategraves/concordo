@@ -9,14 +9,14 @@ interface DeleteProjectProps {
 }
 
 const DeleteProject: FC<DeleteProjectProps> = ({ id }) => {
-  const [
-    deleteProject,
-    { loading, error, data }
-  ] = useMutation(Mutations.deleteProject, {
-    variables: { id },
-    refetchQueries: [{ query: Queries.projects }]
-  });
-  return <Icon type="delete" key="delete" onClick={() => deleteProject} />;
+  const [deleteProject, { loading, error, data }] = useMutation(
+    Mutations.deleteProject,
+    {
+      variables: { where: { id } },
+      refetchQueries: [{ query: Queries.projects }]
+    }
+  );
+  return <Icon type="delete" key="delete" onClick={() => deleteProject()} />;
 };
 
 export default DeleteProject;

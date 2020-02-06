@@ -342,6 +342,8 @@ type Mutation {
   createUser(data: UserCreateInput!): User!
   deleteDepartment(where: DepartmentWhereUniqueInput!): Department
   deleteProject(where: ProjectWhereUniqueInput!): Project
+  login(email: String, password: String): User!
+  register(email: String, password: String): User!
 }
 
 type Project {
@@ -519,7 +521,8 @@ type User {
   email: String!
   feedbackRounds(after: String, before: String, first: Int, last: Int, orderBy: FeedbackRoundOrderByInput, skip: Int, where: FeedbackRoundWhereInput): [FeedbackRound!]
   id: ID!
-  name: String!
+  name: String
+  password: String!
   projects(after: String, before: String, first: Int, last: Int, orderBy: ProjectOrderByInput, skip: Int, where: ProjectWhereInput): [Project!]
   updatedAt: DateTime!
 }
@@ -528,7 +531,8 @@ input UserCreateInput {
   email: String!
   feedbackRounds: FeedbackRoundCreateManyWithoutUsersInput
   id: ID
-  name: String!
+  name: String
+  password: String!
   projects: ProjectCreateManyWithoutCreatedByInput
 }
 
@@ -550,7 +554,8 @@ input UserCreateOneWithoutProjectsInput {
 input UserCreateWithoutFeedbackRoundsInput {
   email: String!
   id: ID
-  name: String!
+  name: String
+  password: String!
   projects: ProjectCreateManyWithoutCreatedByInput
 }
 
@@ -558,7 +563,8 @@ input UserCreateWithoutProjectsInput {
   email: String!
   feedbackRounds: FeedbackRoundCreateManyWithoutUsersInput
   id: ID
-  name: String!
+  name: String
+  password: String!
 }
 
 enum UserOrderByInput {
@@ -570,6 +576,8 @@ enum UserOrderByInput {
   id_DESC
   name_ASC
   name_DESC
+  password_ASC
+  password_DESC
   updatedAt_ASC
   updatedAt_DESC
 }
@@ -631,6 +639,20 @@ input UserWhereInput {
   name_starts_with: String
   NOT: [UserWhereInput!]
   OR: [UserWhereInput!]
+  password: String
+  password_contains: String
+  password_ends_with: String
+  password_gt: String
+  password_gte: String
+  password_in: [String!]
+  password_lt: String
+  password_lte: String
+  password_not: String
+  password_not_contains: String
+  password_not_ends_with: String
+  password_not_in: [String!]
+  password_not_starts_with: String
+  password_starts_with: String
   projects_every: ProjectWhereInput
   projects_none: ProjectWhereInput
   projects_some: ProjectWhereInput

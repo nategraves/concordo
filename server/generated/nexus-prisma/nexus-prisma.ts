@@ -689,6 +689,7 @@ type UserObject =
   | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'name', args?: [] | false, alias?: string  } 
   | { name: 'email', args?: [] | false, alias?: string  } 
+  | { name: 'password', args?: [] | false, alias?: string  } 
   | { name: 'createdAt', args?: [] | false, alias?: string  } 
   | { name: 'updatedAt', args?: [] | false, alias?: string  } 
   | { name: 'projects', args?: UserProjectsArgs[] | false, alias?: string  } 
@@ -698,6 +699,7 @@ type UserFields =
   | 'id'
   | 'name'
   | 'email'
+  | 'password'
   | 'createdAt'
   | 'updatedAt'
   | 'projects'
@@ -736,10 +738,18 @@ export interface UserFieldDetails {
     args: {}
     description: string
     list: undefined
-    nullable: false
+    nullable: true
     resolve: undefined
   }
   email: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  password: {
     type: 'String'
     args: {}
     description: string
@@ -3064,6 +3074,7 @@ type UserPreviousValuesObject =
   | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'name', args?: [] | false, alias?: string  } 
   | { name: 'email', args?: [] | false, alias?: string  } 
+  | { name: 'password', args?: [] | false, alias?: string  } 
   | { name: 'createdAt', args?: [] | false, alias?: string  } 
   | { name: 'updatedAt', args?: [] | false, alias?: string  } 
 
@@ -3071,6 +3082,7 @@ type UserPreviousValuesFields =
   | 'id'
   | 'name'
   | 'email'
+  | 'password'
   | 'createdAt'
   | 'updatedAt'
 
@@ -3092,10 +3104,18 @@ export interface UserPreviousValuesFieldDetails {
     args: {}
     description: string
     list: undefined
-    nullable: false
+    nullable: true
     resolve: undefined
   }
   email: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  password: {
     type: 'String'
     args: {}
     description: string
@@ -3982,6 +4002,20 @@ export interface UserWhereInput {
   email_not_starts_with?: string | null
   email_ends_with?: string | null
   email_not_ends_with?: string | null
+  password?: string | null
+  password_not?: string | null
+  password_in?: string[]
+  password_not_in?: string[]
+  password_lt?: string | null
+  password_lte?: string | null
+  password_gt?: string | null
+  password_gte?: string | null
+  password_contains?: string | null
+  password_not_contains?: string | null
+  password_starts_with?: string | null
+  password_not_starts_with?: string | null
+  password_ends_with?: string | null
+  password_not_ends_with?: string | null
   createdAt?: string | null
   createdAt_not?: string | null
   createdAt_in?: string[]
@@ -4052,6 +4086,20 @@ export type UserWhereInputInputObject =
   | { name: 'email_not_starts_with', alias?: string  } 
   | { name: 'email_ends_with', alias?: string  } 
   | { name: 'email_not_ends_with', alias?: string  } 
+  | { name: 'password', alias?: string  } 
+  | { name: 'password_not', alias?: string  } 
+  | { name: 'password_in', alias?: string  } 
+  | { name: 'password_not_in', alias?: string  } 
+  | { name: 'password_lt', alias?: string  } 
+  | { name: 'password_lte', alias?: string  } 
+  | { name: 'password_gt', alias?: string  } 
+  | { name: 'password_gte', alias?: string  } 
+  | { name: 'password_contains', alias?: string  } 
+  | { name: 'password_not_contains', alias?: string  } 
+  | { name: 'password_starts_with', alias?: string  } 
+  | { name: 'password_not_starts_with', alias?: string  } 
+  | { name: 'password_ends_with', alias?: string  } 
+  | { name: 'password_not_ends_with', alias?: string  } 
   | { name: 'createdAt', alias?: string  } 
   | { name: 'createdAt_not', alias?: string  } 
   | { name: 'createdAt_in', alias?: string  } 
@@ -4531,8 +4579,9 @@ export type FeedbackRoundWhereUniqueInputInputObject =
   
 export interface UserCreateInput {
   id?: string | null
-  name?: string
+  name?: string | null
   email?: string
+  password?: string
   projects?: ProjectCreateManyWithoutCreatedByInput | null
   feedbackRounds?: FeedbackRoundCreateManyWithoutUsersInput | null
 }
@@ -4541,6 +4590,7 @@ export type UserCreateInputInputObject =
   | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
+  | { name: 'password', alias?: string  } 
   | { name: 'projects', alias?: string  } 
   | { name: 'feedbackRounds', alias?: string  } 
   
@@ -4603,6 +4653,7 @@ export type FeedbackRoundCreateWithoutUsersInputInputObject =
 export interface UserUpdateInput {
   name?: string | null
   email?: string | null
+  password?: string | null
   projects?: ProjectUpdateManyWithoutCreatedByInput | null
   feedbackRounds?: FeedbackRoundUpdateManyWithoutUsersInput | null
 }
@@ -4610,6 +4661,7 @@ export type UserUpdateInputInputObject =
   | Extract<keyof UserUpdateInput, string>
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
+  | { name: 'password', alias?: string  } 
   | { name: 'projects', alias?: string  } 
   | { name: 'feedbackRounds', alias?: string  } 
   
@@ -5069,11 +5121,13 @@ export type FeedbackRoundUpdateManyDataInputInputObject =
 export interface UserUpdateManyMutationInput {
   name?: string | null
   email?: string | null
+  password?: string | null
 }
 export type UserUpdateManyMutationInputInputObject =
   | Extract<keyof UserUpdateManyMutationInput, string>
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
+  | { name: 'password', alias?: string  } 
   
 export interface ScriptCreateInput {
   id?: string | null
@@ -5106,8 +5160,9 @@ export type UserCreateOneWithoutProjectsInputInputObject =
   
 export interface UserCreateWithoutProjectsInput {
   id?: string | null
-  name?: string
+  name?: string | null
   email?: string
+  password?: string
   feedbackRounds?: FeedbackRoundCreateManyWithoutUsersInput | null
 }
 export type UserCreateWithoutProjectsInputInputObject =
@@ -5115,6 +5170,7 @@ export type UserCreateWithoutProjectsInputInputObject =
   | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
+  | { name: 'password', alias?: string  } 
   | { name: 'feedbackRounds', alias?: string  } 
   
 export interface ProjectUpdateInput {
@@ -5148,12 +5204,14 @@ export type UserUpdateOneWithoutProjectsInputInputObject =
 export interface UserUpdateWithoutProjectsDataInput {
   name?: string | null
   email?: string | null
+  password?: string | null
   feedbackRounds?: FeedbackRoundUpdateManyWithoutUsersInput | null
 }
 export type UserUpdateWithoutProjectsDataInputInputObject =
   | Extract<keyof UserUpdateWithoutProjectsDataInput, string>
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
+  | { name: 'password', alias?: string  } 
   | { name: 'feedbackRounds', alias?: string  } 
   
 export interface UserUpsertWithoutProjectsInput {
@@ -5267,6 +5325,7 @@ export type UserUpdateOneInputInputObject =
 export interface UserUpdateDataInput {
   name?: string | null
   email?: string | null
+  password?: string | null
   projects?: ProjectUpdateManyWithoutCreatedByInput | null
   feedbackRounds?: FeedbackRoundUpdateManyWithoutUsersInput | null
 }
@@ -5274,6 +5333,7 @@ export type UserUpdateDataInputInputObject =
   | Extract<keyof UserUpdateDataInput, string>
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
+  | { name: 'password', alias?: string  } 
   | { name: 'projects', alias?: string  } 
   | { name: 'feedbackRounds', alias?: string  } 
   
@@ -5483,8 +5543,9 @@ export type UserCreateManyWithoutFeedbackRoundsInputInputObject =
   
 export interface UserCreateWithoutFeedbackRoundsInput {
   id?: string | null
-  name?: string
+  name?: string | null
   email?: string
+  password?: string
   projects?: ProjectCreateManyWithoutCreatedByInput | null
 }
 export type UserCreateWithoutFeedbackRoundsInputInputObject =
@@ -5492,6 +5553,7 @@ export type UserCreateWithoutFeedbackRoundsInputInputObject =
   | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
+  | { name: 'password', alias?: string  } 
   | { name: 'projects', alias?: string  } 
   
 export interface FeedbackRoundUpdateInput {
@@ -5538,12 +5600,14 @@ export type UserUpdateWithWhereUniqueWithoutFeedbackRoundsInputInputObject =
 export interface UserUpdateWithoutFeedbackRoundsDataInput {
   name?: string | null
   email?: string | null
+  password?: string | null
   projects?: ProjectUpdateManyWithoutCreatedByInput | null
 }
 export type UserUpdateWithoutFeedbackRoundsDataInputInputObject =
   | Extract<keyof UserUpdateWithoutFeedbackRoundsDataInput, string>
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
+  | { name: 'password', alias?: string  } 
   | { name: 'projects', alias?: string  } 
   
 export interface UserUpsertWithWhereUniqueWithoutFeedbackRoundsInput {
@@ -5600,6 +5664,20 @@ export interface UserScalarWhereInput {
   email_not_starts_with?: string | null
   email_ends_with?: string | null
   email_not_ends_with?: string | null
+  password?: string | null
+  password_not?: string | null
+  password_in?: string[]
+  password_not_in?: string[]
+  password_lt?: string | null
+  password_lte?: string | null
+  password_gt?: string | null
+  password_gte?: string | null
+  password_contains?: string | null
+  password_not_contains?: string | null
+  password_starts_with?: string | null
+  password_not_starts_with?: string | null
+  password_ends_with?: string | null
+  password_not_ends_with?: string | null
   createdAt?: string | null
   createdAt_not?: string | null
   createdAt_in?: string[]
@@ -5664,6 +5742,20 @@ export type UserScalarWhereInputInputObject =
   | { name: 'email_not_starts_with', alias?: string  } 
   | { name: 'email_ends_with', alias?: string  } 
   | { name: 'email_not_ends_with', alias?: string  } 
+  | { name: 'password', alias?: string  } 
+  | { name: 'password_not', alias?: string  } 
+  | { name: 'password_in', alias?: string  } 
+  | { name: 'password_not_in', alias?: string  } 
+  | { name: 'password_lt', alias?: string  } 
+  | { name: 'password_lte', alias?: string  } 
+  | { name: 'password_gt', alias?: string  } 
+  | { name: 'password_gte', alias?: string  } 
+  | { name: 'password_contains', alias?: string  } 
+  | { name: 'password_not_contains', alias?: string  } 
+  | { name: 'password_starts_with', alias?: string  } 
+  | { name: 'password_not_starts_with', alias?: string  } 
+  | { name: 'password_ends_with', alias?: string  } 
+  | { name: 'password_not_ends_with', alias?: string  } 
   | { name: 'createdAt', alias?: string  } 
   | { name: 'createdAt_not', alias?: string  } 
   | { name: 'createdAt_in', alias?: string  } 
@@ -5696,11 +5788,13 @@ export type UserUpdateManyWithWhereNestedInputInputObject =
 export interface UserUpdateManyDataInput {
   name?: string | null
   email?: string | null
+  password?: string | null
 }
 export type UserUpdateManyDataInputInputObject =
   | Extract<keyof UserUpdateManyDataInput, string>
   | { name: 'name', alias?: string  } 
   | { name: 'email', alias?: string  } 
+  | { name: 'password', alias?: string  } 
   
 export interface FeedbackRoundUpdateManyMutationInput {
   roundEnd?: string | null
@@ -5894,6 +5988,8 @@ export type UserOrderByInputValues =
   | 'name_DESC'
   | 'email_ASC'
   | 'email_DESC'
+  | 'password_ASC'
+  | 'password_DESC'
   | 'createdAt_ASC'
   | 'createdAt_DESC'
   | 'updatedAt_ASC'

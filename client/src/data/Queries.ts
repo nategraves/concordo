@@ -68,8 +68,8 @@ const Mutations = {
     }
   `,
   deleteProject: gql`
-    mutation deleteProject($data: DepartmentProjectInput!) {
-      deleteProject(data: $data) {
+    mutation deleteProject($where: ProjectWhereUniqueInput!) {
+      deleteProject(where: $where) {
         id
       }
     }

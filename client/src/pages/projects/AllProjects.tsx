@@ -4,6 +4,7 @@ import { Spin, Result, Card, List, Avatar, Typography, Icon } from "antd";
 import styled from "styled-components";
 
 import { Queries } from "../../data/Queries";
+import DeleteProject from "../../components/DeleteProject";
 
 const WrappingRow = styled.div`
   display: flex;
@@ -12,8 +13,24 @@ const WrappingRow = styled.div`
 `;
 
 const StyledCard = styled(Card)`
-  width: 15rem;
+  display: flex;
+  flex-direction: column;
   margin: 0 1rem 1rem;
+  width: 15rem;
+
+  .ant-card-head {
+    flex: 0;
+  }
+
+  .ant-card-body {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .ant-card-actions {
+    flex: 0;
+  }
 `;
 
 const { Text, Title } = Typography;
@@ -58,8 +75,7 @@ const AllProjects = () => {
           key={project.id}
           actions={[
             <Icon type="setting" key="setting" />,
-            <Icon type="edit" key="edit" />,
-            <Icon type="ellipsis" key="ellipsis" />
+            <DeleteProject id={project.id} />
           ]}
         >
           <List
