@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { Card, Row, Divider, Button, Carousel, Input } from "antd";
 
-import { Location } from "../../types";
+import { ILocation } from "../../types";
 
 import map from "./map.png";
 import park1 from "./park1.png";
@@ -33,12 +33,11 @@ const Flex = styled.div`
 const GalleryModes = ["Photos", "Map"];
 
 interface Props {
-  location: Location;
+  location: ILocation;
 }
 
 const Location: FC<Props> = ({ location }) => {
   const [galleryMode, setGalleryMode] = useState(0);
-  const [currentPhoto, setCurrentPhoto] = useState(park1);
 
   const title = (
     <Flex style={{ alignItems: "flex-end", justifyContent: "space-between" }}>

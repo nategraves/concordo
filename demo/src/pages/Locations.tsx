@@ -2,7 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Card } from "antd";
 
+import { ILocation } from "../types";
 import Location from "../components/locations/Location";
+
+const locations: ILocation[] = [{}];
 
 /*
       <Container>

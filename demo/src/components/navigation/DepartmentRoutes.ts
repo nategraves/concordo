@@ -1,6 +1,6 @@
-import { DepartmentRoute } from "../../types/index";
+import { IDepartmentRoute } from "../../types/index";
 
-export const DeparmentRoutes: DepartmentRoute[] = [
+export const DeparmentRoutes: IDepartmentRoute[] = [
   {
     count: 33,
     path: "/art",

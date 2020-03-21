@@ -1,17 +1,17 @@
-export type User = {
+export type IUser = {
   id: string;
   email: string;
   password: string;
 };
 
-export type ItemRating = {
+export type IItemRating = {
   id: string;
   rating: number;
   user: User;
   item: Item;
 };
 
-export type Comment = {
+export type IComment = {
   id: string;
   message: string;
   user: User;
@@ -19,7 +19,7 @@ export type Comment = {
   parent?: Comment;
 };
 
-export type Item = {
+export type IItem = {
   id: string;
   mediaUrls: string[];
   thumbnailUrl: string;
@@ -27,19 +27,19 @@ export type Item = {
   description: string;
 };
 
-export type DepartmentRoute = {
+export type IDepartmentRoute = {
   count: number;
   path: string;
   label: string;
 };
 
-export type Department = {
+export type IDepartment = {
   id: string;
   name: string;
   projects?: Project[];
 };
 
-export type Project = {
+export type IProject = {
   id: string;
   name: string;
   createdAt: string;
@@ -48,6 +48,6 @@ export type Project = {
   departments?: Department[];
 };
 
-export type Location = Item & {
+export type ILocation = Item & {
   address: string;
 };
