@@ -33,10 +33,71 @@ const StyledCard = styled(Card)`
   }
 `;
 
+interface Data {
+  projects: Project[];
+}
+
+interface Department {
+  id: string;
+  name: string;
+  projects: Project[];
+}
+
+interface Project {
+  id: string;
+  name: string;
+  createdAt: string;
+  updatedAt: string;
+  departments: Department[];
+}
+
 const { Text, Title } = Typography;
 
 const AllProjects = () => {
-  const { loading, error, data } = useQuery(Queries.projects);
+  //const { loading, error, data } = useQuery(Queries.projects);
+  let loading, error;
+
+  const data: Data = {
+    projects: [
+      {
+        id: "1",
+        name: "Yale to Oak Season 1",
+        createdAt: "2020-01-11 09:00:00",
+        updatedAt: "2020-01-11 09:00:00",
+        departments: [
+          {
+            id: "1",
+            name: "Art",
+            projects: []
+          },
+          {
+            id: "2",
+            name: "Casting",
+            projects: []
+          },
+          {
+            id: "3",
+            name: "Script",
+            projects: []
+          }
+        ]
+      },
+      {
+        id: "2",
+        name: "Limetown",
+        createdAt: "2020-01-12 10:00:00",
+        updatedAt: "2020-01-12 11:00:00",
+        departments: []
+      },
+      {
+        id: "3",
+        name: "VW Tiguan",
+        createdAt: "2020-01-14 12:00:00",
+        updatedAt: "2020-01-14 12:30:00",
+        departments: []
+      }
+    ]
+  };
 
   if (loading) {
     return <Spin />;

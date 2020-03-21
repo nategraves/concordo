@@ -1,14 +1,22 @@
 import { prisma } from "./generated/prisma-client";
 import datamodelInfo from "./generated/nexus-prisma";
 import * as path from "path";
-import { stringArg, idArg } from "nexus";
+import { stringArg, idArg, objectType } from "nexus";
 import { prismaObjectType, makePrismaSchema } from "nexus-prisma";
 import { GraphQLServer } from "graphql-yoga";
 import { stripIgnoredCharacters } from "graphql";
 import * as bcrypt from "bcryptjs";
+import * as jwt from "jsonwebtoken";
 
 //const Query = prismaObjectType({
 //name: 'Query',
+
+const LoginResponse = objectType({
+  name: "LoginResponse",
+  definition(t) {
+    t.prismaField("User"), t.string("token");
+  }
+});
 
 const Query = prismaObjectType({
   name: "Query",
@@ -60,7 +68,7 @@ const Mutation = prismaObjectType({
         return ctx.prisma.createUser({ email, password });
       }
     });
-    t.field("login", {
+    t.field("register", {
       type: "User",
       args: {
         //@ts-ignore
@@ -70,7 +78,44 @@ const Mutation = prismaObjectType({
       },
       resolve: async (_, { email, password: rawPassword }, ctx) => {
         const password = await bcrypt.hashSync(rawPassword, 8);
-        return ctx.prisma.users({ where: { email, password } });
+        return ctx.prisma.createUser({ email, password });
+      }
+    });
+    t.field("login", {
+      type: "String",
+      args: {
+        //@ts-ignore
+        email: stringArg(),
+        //@ts-ignore
+        password: stringArg()
+      },
+      resolve: async (_, { email, password }, ctx) => {
+        const user = await ctx.prisma.users({ where: { email } });
+
+        if (!user) {
+          throw new Error("Invalid login");
+        }
+
+        const passwordMatch = await bcrypt.compare(password, user.password);
+
+        if (!passwordMatch) {
+          throw new Error("Invalid login");
+        }
+
+        const { id, email: userEmail } = user;
+
+        const token = jwt.sign(
+          {
+            id,
+            email: userEmail
+          },
+          "my-super-secret-secret-that-is-super-safe-and-secure",
+          {
+            expiresIn: "30d"
+          }
+        );
+
+        return token;
       }
     });
   }

@@ -623,7 +623,7 @@ export interface NexusGenFieldTypes {
     createUser: NexusGenRootTypes['User']; // User!
     deleteDepartment: NexusGenRootTypes['Department'] | null; // Department
     deleteProject: NexusGenRootTypes['Project'] | null; // Project
-    login: NexusGenRootTypes['User']; // User!
+    login: string; // String!
     register: NexusGenRootTypes['User']; // User!
   }
   Project: { // field return type

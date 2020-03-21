@@ -73,6 +73,22 @@ const Mutations = {
         id
       }
     }
+  `,
+  login: gql`
+    mutation login($email: String!, $password: String!) {
+      login(email: $email, password: $password) {
+        token
+      }
+    }
+  `,
+  register: gql`
+    mutation register($email: String!, $password: String!) {
+      register(email: $email, password: $password) {
+        id
+        name
+        email
+      }
+    }
   `
 };
 

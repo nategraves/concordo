@@ -342,7 +342,7 @@ type Mutation {
   createUser(data: UserCreateInput!): User!
   deleteDepartment(where: DepartmentWhereUniqueInput!): Department
   deleteProject(where: ProjectWhereUniqueInput!): Project
-  login(email: String, password: String): User!
+  login(email: String, password: String): String!
   register(email: String, password: String): User!
 }
 

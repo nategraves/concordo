@@ -7,6 +7,8 @@ import Client from "./data/Client";
 import Index from "./pages/Index";
 import { CreateProject, AllProjects } from "./pages/projects";
 import Departments from "./pages/departments/";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Nav from "./components/Nav";
 
 import "./App.css";
@@ -28,6 +30,12 @@ const App = () => (
             </Route>
             <Route path="/departments">
               <Departments />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/register">
+              <Register />
             </Route>
             <Route path="/">
               <Index />
